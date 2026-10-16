@@ -1,4 +1,6 @@
 node_modules/
+frontend/dist/
+backend/service-account.json
 .clasprc.json
 *.log
 .DS_Store

@@ -1,14 +1,26 @@
 name: Deploy GAS Backend
 
+# ⚠️ PRASYARAT (sekali saja, lakukan manual di browser Google):
+#  1. Aktifkan "Apps Script API" di GCP project milik service account:
+#     https://console.developers.google.com/apis/api/script.googleapis.com/overview?project=546083972389
+#  2. Buka editor Apps Script (script ID di backend/.clasp.json) → Share →
+#     tambahkan opencode-google@simpeg-rsudluwuk.iam.gserviceaccount.com sebagai Editor.
+# Setelah itu, aktifkan kembali trigger `push` di bawah (hapus tanda #).
+#
+# Deploy memakai Apps Script API langsung (backend/deploy_gas.mjs),
+# BUKAN clasp — clasp tidak mendukung service account.
+
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'backend/**'
-      - '.github/workflows/deploy-backend.yml'
+  workflow_dispatch:
+
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'backend/**'
+  #     - '.github/workflows/deploy-backend.yml'
 
 jobs:
-  clasp-deploy:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -22,20 +34,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install clasp
-        run: npm i -g @google/clasp
-
-      - name: Authenticate clasp
+      - name: Write service-account key
         env:
           CLASP_CREDENTIALS: ${{ secrets.CLASP_CREDENTIALS }}
-        run: |
-          echo "$CLASP_CREDENTIALS" > clasp-credentials.json
-          clasp login --creds clasp-credentials.json
+        run: echo "$CLASP_CREDENTIALS" > service-account.json
 
-      - name: Push to GAS
-        run: |
-          clasp push
-
-      - name: Deploy as new version
-        run: |
-          clasp deploy --description "Automated deploy $(date +'%Y-%m-%d %H:%M:%S')"
+      - name: Deploy to Apps Script (content + version + deployment)
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/backend/service-account.json
+        run: node deploy_gas.mjs
