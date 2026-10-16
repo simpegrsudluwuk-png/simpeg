@@ -1,0 +1,897 @@
+﻿ID,ID Pegawai,Nama (snapshot),Status Pegawai,TMT Status Pegawai,Jenis Pegawai,TMT Jenis Pegawai,Nomor SK,TMT SK,Keterangan,Dibuat Oleh,Dibuat
+RST-000001,76295,"Pelci Sakoyang, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000002,18760,"Fitriani Tamrin, A.Md.Kep",Aktif,2025-11-01,PW Titipan,,,,,,2026-10-13 14:58:14
+RST-000003,99466,"Dessy Mpangulu, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000004,89307,"Chairunnisa, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000005,31679,"I Wayan Ardy Wiguna, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000006,35104,"Zulkifli Mangalia, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000007,53800,"Erly Longa, A.md.Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000008,6462,Deswinati Kumape,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000009,21437,"Lusmin Lelewana, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000010,79837,"Annisa Rizky Lianingsih Huraera, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000011,78614,"Merlinda A. Damuling, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000012,91694,"Muhammad Fadli Basir, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000013,51205,"Rabi'atul Adawiyah Su'ong, S.Kep,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000014,97706,"Sitti Nurbaya Liguan, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000015,12889,"Wahyu Okta Candra Kirana, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000016,92671,"Ni Made Dinda Ayundari, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000017,50115,Aldi Lasabung,Aktif,2021-08-13,Honor,,,,,,2026-10-13 14:58:14
+RST-000018,18932,Arnol Lolong,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000019,96267,"Bdn. Windy Anastasiya, Str.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000020,364715,dr. Hj. Rasminah Mahmud,Aktif,1990-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000021,659753,dr. Yusak Pongmari,Aktif,2004-10-18,PNS,,,,,,2026-10-13 14:58:14
+RST-000022,290276,"dr. Mohamad Gusti Talombo, MMR",Aktif,2008-10-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000023,122729,"dr. Ahmad Gazali, Sp. A",Aktif,2026-05-03,Honor,,,,,,2026-10-13 14:58:14
+RST-000024,80704,"dr. Juherinah, M. Kes, Sp. A",Aktif,2013-10-09,PNS,,,,,,2026-10-13 14:58:14
+RST-000025,139812,"dr. Sitti Ziarah, M.Kes, Sp. AN, M. Kes, SubSp. T.I (K)",Aktif,2023-11-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000026,846624,dr. Sumanti S. Malabar,Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000027,313848,"Ferawati Lamonjong, S.Si.Apt",Aktif,2004-06-14,PNS,,,,,,2026-10-13 14:58:14
+RST-000028,987038,"Novrianto Sualang, S.Kep.Ns",Aktif,1995-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000029,834717,"Merryanti Christina Sambeta, S.Si.Apt",Aktif,2004-05-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000030,604640,"dr. Emanuel Elisabeth Wantania, MPH",Aktif,2009-07-16,PNS,,,,,,2026-10-13 14:58:14
+RST-000031,458167,"Olviana Agustia S. Yunan, S.Farm.Apt",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000032,685044,"Satriani H. Ibrahim, S.Tr.Kep.Ns",Aktif,2011-10-14,PNS,,,,,,2026-10-13 14:58:14
+RST-000033,881620,"dr. Suriadi Masloman, Sp. B",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000034,762641,"Rahmah Abugar, S.Kep.Ns.MPH",Aktif,1995-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000035,338413,"Yuliana Purukan, S.Tr.Kep,Ns",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000036,644400,"Wiwik Pertiwi, SE",Aktif,1996-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000037,224235,"Mulyanah Santy, SKM",Aktif,1994-10-24,PNS,,,,,,2026-10-13 14:58:14
+RST-000038,698187,"Nurhadi Hi. Tendri, S.Farm",Aktif,2010-05-14,PNS,,,,,,2026-10-13 14:58:14
+RST-000039,809549,"dr. Asrawati Azis, Sp.F",Aktif,2007-07-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000040,743635,"Supartin Nur Abu, S.Tr.Kep.Ners",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000041,30520,"Haikal Fikry, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000042,24064,"Rosdianah, A. Md.Kep",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000043,9985,"Hamdi H. Mamonto, A.Md.Kep",Aktif,2011-06-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000044,69664,"Sri Anggrai Ningsi, A.Md.Kep",Aktif,2014-10-13,P3K,,,,,,2026-10-13 14:58:14
+RST-000045,18171,"Indra Astuti, Amd.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000046,3918,"Rusnaningsih, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000047,868442,"Yulia Ratih, S. Farm, M.Kes.Apt",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000048,514973,"Neltaris Mauk, Amd. Far",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000049,43812,"Ni Luh Nafiri Redita Sari, Amd.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000050,50007,"Rian Polibaon, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000051,677097,"Emma Yuliana Sopamena, S.KM",Aktif,1991-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000052,466895,"Indah Rakhmawati Muzamil, S.Si.Apt",Aktif,2015-11-24,PNS,,,,,,2026-10-13 14:58:14
+RST-000053,965366,"Selspri Kristin Tadjimo, S.Tr.Keb",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000054,96186,Susanti K. Melek,Aktif,2002-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000055,309244,"dr. Anang Wahyudi Januardi, Sp.KJ",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000056,862451,"Irma Lalusu, S.Tr.Keb",Aktif,2003-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000057,944799,"Yulianti, Amd. Far",Aktif,2015-11-20,PNS,,,,,,2026-10-13 14:58:14
+RST-000058,716231,"Wirda Djau, S.Tr.Keb. M.Keb",Aktif,2017-12-29,PNS,,,,,,2026-10-13 14:58:14
+RST-000059,521994,Santi Lalusu,Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000060,446002,"KAMARIA, S.Farm, Apt",Aktif,2024-12-24,PNS,,,,,,2026-10-13 14:58:14
+RST-000061,178602,"Novita, A.Md.Farm",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000062,93153,"Tirta Handayani, S.Farm.Apt",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000063,942403,"dr. Ramona Utami, M. Kes, Sp.DVE",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000064,56560,"Syahrina Panjili, S. Sos, SKM",Aktif,1996-06-26,PNS,,,,,,2026-10-13 14:58:14
+RST-000065,239859,Rona E. Mertosono,Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000066,67636,"Katrin Dangari, S.Si",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000067,746282,"dr. Mohamad Roni U. Alitu, Sp.M, M.Kes",Aktif,2009-01-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000068,309326,"dr. Afriani S. Djibran, Sp. M, M. Kes",Aktif,2016-01-27,PNS,,,,,,2026-10-13 14:58:14
+RST-000069,550541,dr. NUR AFNI,Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000070,49111,"Afriana AS DU'U, S. Farm",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000071,80435,"Wasuria La Pily, S.Farm,Apt",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000072,880663,"Djunaidi Rahim, SST",Aktif,1997-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000073,998707,"Nani Nurcahyani Hi. Yusuf, SE",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000074,722267,"Rosmiaty Hi. Idris, S. Kep. Ns",Aktif,2000-09-05,PNS,,,,,,2026-10-13 14:58:14
+RST-000075,848569,"Janiria Tandjawat, Amd. Keb",Aktif,2011-05-30,PNS,,,,,,2026-10-13 14:58:14
+RST-000076,59759,"Nurhayati Ismail, S. Farm",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000077,515929,"Hasriyanti Dg. Amin, SKM",Aktif,2014-07-25,PNS,,,,,,2026-10-13 14:58:14
+RST-000078,20915,"Elsanty Inri Suasa, S. Si",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000079,918866,"Bd. Mutmainnah, S.Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000080,619337,"Nurmasita, Amd. Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000081,18695,"Indri Nofriyanti Mallo, S. Farm",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000082,16685,"dr. Fendy, Sp. OT, M. Kes",Aktif,2025-02-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000083,796583,"Kadek Dwi Novrianti, Amd. Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000084,443941,"dr. Ramla Tongko, M. Kes. Sp. PK",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000085,272842,"dr. Ernita Kamindang, Sp. PD",Aktif,2007-08-07,PNS,,,,,,2026-10-13 14:58:14
+RST-000086,917379,"Yanecke G. Husain, S. Sos",Aktif,2018-07-31,PNS,,,,,,2026-10-13 14:58:14
+RST-000087,56078,"Stella Kristi Dadung, S.Farm",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000088,613065,Musdalia Marang. Amd. Keb,Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000089,358155,"Masry Madjido, S.Kep, M.P.H",Aktif,1996-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000090,998745,"Apt.Sri Wahyuni Falihu, S.Farm",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000091,998752,"Faradila Rusno, S.Farm",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000092,748810,"Khaterina Magdalena Yamudi, SKM",Aktif,2011-05-30,PNS,,,,,,2026-10-13 14:58:14
+RST-000093,130036,"Irawaty A. Sintae, AMKL",Aktif,2018-07-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000094,801305,"Nur Eli Asomah H, S. Gz Dietisien",Aktif,2009-07-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000095,76204,"Ayu M. Bualo, A.Md.Keb.",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000096,329109,"Agustina Pansonge, S.KM",Aktif,1999-04-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000097,688071,"dr. Agussalim, Sp. PD.",Aktif,2017-11-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000098,67395,"Fitriana, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000099,993753,"Rostin Ladjoma, S.KM",Aktif,2011-01-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000100,732616,"dr. Andi Yanti, Sp. P",Aktif,2010-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000101,902714,"Merry Margaret Possumah, S.Gz",Aktif,2006-07-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000102,864549,"Elsyi Suhastina Tabange, S.KM",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000103,26759,"Nurshinta AM. Purman, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000104,23877,"Rahma Wiyani Ibrahim, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000105,946188,"Asmawati, S.Gz.RD",Aktif,2024-02-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000106,47699,"Rahmi Tomayahu, A. Md. Keb",Aktif,2013-01-04,P3K,,,,,,2026-10-13 14:58:14
+RST-000107,20298,"Rahmida Tamrin, Amd. Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000108,174900,"Dian Pratiwi Ibrahim, S. Gz, Dietisien",Aktif,2026-04-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000109,807669,"Benedikta Basio, SKM",Aktif,2016-11-10,PNS,,,,,,2026-10-13 14:58:14
+RST-000110,93178,"Sri Rahayu, AM.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000111,636301,"Sulastra, SKM",Aktif,1990-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000112,829822,"Nita D. Lampa, S.Gz",Aktif,2011-01-02,PNS,,,,,,2026-10-13 14:58:14
+RST-000113,13662,"Tatik Ariati Padidi, SST, Ns",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000114,846304,"Hijrawati Masang, S. Kep. Ns",Aktif,2011-04-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000115,460401,dr. Juliastuti K. Lasari,Aktif,2015-08-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000116,481152,"UMRA, S. Kep. Ns",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000117,548284,"Munafri Muhammad, SST",Aktif,1999-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000118,619038,dr. Fransisca Christianty,Aktif,2017-08-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000119,96917,"Ervianti Vergo, SKM",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000120,607695,"RAHMAWATY, S. Kep. Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000121,685500,"Santi Yahya, S.Kep, Ns",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000122,243053,"Indra R. Husain, SKM",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000123,774289,"Cindyanna Sualang, S. Si",Aktif,2012-06-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000124,98679,"Nirwana Yusuf, Amd. Kep",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000125,796056,"dr. Yayuk Erma Fatmawatiningsih, Sp. Rad. M. Kes",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000126,708484,"dr. NOVITA, M.Kes, Sp. Rad",Aktif,2016-08-18,PNS,,,,,,2026-10-13 14:58:14
+RST-000127,159054,"dr. Budiyanto Uda'a, Sp. KFR, M. Ked. Klin,",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000128,54535,"Evita Mononege, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000129,8900,"Fatrianti Nggiu, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000130,93321,"Fenny Indriani Landu, S, Kep. Ns",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000131,65173,"Friskila Putri Valentina Rapatia, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000132,166561,"Novi Damayanti, A. Md. Kep",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000133,32449,"Lily Wahyuni Gandali, SKM",Aktif,2018-07-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000134,956822,"Simson Lamatoa, S. Kep. Ns",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000135,983095,"IRAWATY, S.Kep.Ns",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000136,403922,"dr. ANDINA, Sp. OG, M. Kes",Aktif,2014-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000137,30337,"Friskila Marselawati Nuhab, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000138,296477,"Christin Natalia Arginggang, SKM",Aktif,2018-07-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000139,19745,"Neti Verra Wati, SKM",Aktif,2017-06-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000140,56533,"Helen Khosworo, S. Farm. Apt",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000141,23277,"Hesti Ayu Mahasuni, A. Md. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000142,14944,"Desni Astuti Rosita Kondinga, SH",Aktif,2007-07-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000143,54205,"Qursia Lasandang, SKM",Aktif,2025-11-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000144,480781,"Ahmad Hamid, SH, MH",Aktif,2009-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000145,368229,"Muniati, S. Kep. NS",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000146,139673,"Desmiyati Djaka, S. Sos",Aktif,1999-01-02,PNS,,,,,,2026-10-13 14:58:14
+RST-000147,192069,"Erlina F. Sinadja, SH",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000148,295132,"Ian Rizkianto, SKM",Aktif,2012-01-10,PNS,,,,,,2026-10-13 14:58:14
+RST-000149,636091,"Citra Mustikawaty Otolowa, SKM",Aktif,2018-07-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000150,870550,"Alfriyanti Liku Padang, SKM",Aktif,2019-03-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000151,731564,"Roni Thie, Hyperkes",Aktif,2005-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000152,816774,"Wawan Kurniawan, SKM",Aktif,2018-09-07,PNS,,,,,,2026-10-13 14:58:14
+RST-000153,90902,"Nindi Elsa Subandi, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000154,746347,"Bintaria Pangabean, Amd. Kep",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000155,410756,"Slamet Riadi, SKM",Aktif,2019-06-02,PNS,,,,,,2026-10-13 14:58:14
+RST-000156,896550,"Munira, S.KM",Aktif,2019-01-05,PNS,,,,,,2026-10-13 14:58:14
+RST-000157,865457,"Treysrianinda Yusuf, S. Si",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000158,937301,"Wen Marciano Malota, AMAK",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000159,45356,"Rosmawati Awang, A. Md. Kep",Aktif,2025-09-01,P3K Titipan,,800.1.3.1/3000/BKPSDM,2025-08-14,,,2026-10-13 14:58:14
+RST-000160,904814,"Wasamsia La Pily, AMAK",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000161,862105,"Salma Muhamad S. Akum, S.Kep.NS",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000162,412834,"Steva Jabar, S.Kep. Ns",Aktif,2024-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000163,413924,"Titik Mutiara, S.Tr.Kep. Ns",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000164,266646,"JAFAR, S. I. K",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000165,668524,"Meice Tahaka, S. Sos",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000166,206687,"Ni Wayan Fitriani, S.Tr.Kep. Ners",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000167,308967,Sri Yunita Lasandre,Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000168,522798,Sumitro Sindali,Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000169,460687,"Besse Tingka, S. Kep. Ns",Aktif,1998-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000170,818733,"Hijramayasari Hasan, S. Tr. Kes",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000171,307533,"Deciani Tambing, S. Kep, Ns",Aktif,1996-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000172,730734,"Yuliana Rerung, Amd. AK",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000173,907493,"Sri Lestari Makarao, S. Kep. Ns",Aktif,2003-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000174,656728,"Ratna Eka Saputri, S.Tr. A.K",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000175,90333,"Dewi Arisandi Ali, S. Kep. Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000176,709994,"Dina Afiani Dj. Kambu, S.Kep.Ns",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000177,903386,"Yanti Laode Monda, Amd. Kep",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000178,948327,"Marwah, S. Kep. Ns",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000179,8372,"Nurtin Hasan, S.Tr.Kep.Ners",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000180,173901,"Restu Rizky Anggreani Lasadam, Ns.S.Kep",Aktif,2015-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000181,15196,"Ninuk Zakiyah Saluki, S. ST",Aktif,2008-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000182,181519,"Harminingsi Lamonjong, S. IP",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000183,795284,Sutriani Leoko,Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000184,28222,"Hj. Isna Larasati Labohari, S. Kep. Ns",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000185,956410,"Dewi Ariani Dg. Manrapi, Amd. AK",Aktif,2004-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000186,82074,"Muh. Furqan Abugar, A.Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000187,194630,"Astuti Hj. Sasada, Str.Kep. Ners",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000188,988584,"Agnes Anita Palebangan, S. Kep. Ns",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000189,979267,"Siska Misali, S.Kep.Ns.M.Kep",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000190,197873,"Cahyaning Wahyuni, S. Kep. NS",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000191,158041,"Bdn.IRAWATI, S.Tr.Keb",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000192,41631,"Nanda Angelita Rombe, Amd. AK",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000193,532516,"Wahyu Rosandi, S. Kep. Ns",Aktif,2002-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000194,360781,"Dewi Sukarelawati R, S.Tr.Kep.Ners",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000195,926300,"Silvia Labuan, S. ST. Keb",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000196,478484,"Agus Yermanto Lope, S.Tr.Kep.Ns",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000197,189647,"Bambang Rinaldi Hatibie, S. Kep, Ners",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000198,936919,"Bd.Lisdawati Labuan, S.Keb",Aktif,2012-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000199,841551,"ROSMIATI, A. Md. Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000200,944128,"Hodim Mombilia, Amd. Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000201,867841,"I Nyoman Wiarta, S.Tr.Kes",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000202,856289,"Ramlah Hi. Dg. Manrapi, Amd. Keb",Aktif,2020-06-15,PNS,,,,,,2026-10-13 14:58:14
+RST-000203,7677,"Nur Rahma, Amd. Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000204,929177,"Luluk Ufaeroh, Amd. Keb",Aktif,2025-06-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000205,64398,"Adrianus Hataa, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000206,81433,"Ayu Angraeni, S. Kep. Ns",Aktif,2025-01-10,P3K Titipan,,800.1.3.1/33/BKPSDM,2025-01-08,,,2026-10-13 14:58:14
+RST-000207,46089,"Dewi Krangkawi Sarifa, A. Md. Keb.",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000208,966150,"Febryanti Alita Tuwah, S. Kep, Ns",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000209,97398,"Eka Suriani Musati, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000210,49738,"Fahmi Anggraini Kasim, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000211,72810,"Fitriyani Akil, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000212,889089,"Zulfain k. Ishak, S.H",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000213,89635,"Ismawati, A.Md.Keb.",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000214,10338,"La Adi, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000215,32093,"Siska Safitri Am Purman, Amd.AK",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000216,58086,"Liliyana Efendi H, S.Kep.,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000217,77050,"Merlianti Djaka, S.Kep.Ns",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000218,885873,"ANITA, S. Kep. Ns",Aktif,2021-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000219,9473,"Ni Luh Nurlinasari, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000220,90840,"Nopan Rahim, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000221,178313,Roslina Lanipi,Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000222,46726,"Rahmayanti, S.Tr. Keb",Aktif,2025-08-01,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000223,38239,"Rahmi R. Tomik, S. Tr. Kes",Aktif,2026-07-13,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000224,46947,"Siti Nuraini Madjido, A. Md. Kep",Aktif,2025-07-01,P3K Titipan,,800.1.3.1/1748/BKPSDM,2025-06-11,,,2026-10-13 14:58:14
+RST-000225,13699,"Sri Hastuty Adjib, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000226,516433,"Rika Devianti, Ns,S.Kep",Aktif,2015-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000227,15781,"Vergina Ahmad, S. Kep. Ns",Aktif,2003-12-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000228,531062,"Yuliyarti B.L.R. Patinasarani, Amd. Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000229,624878,"Juniarti Labani, S.Tr.Kep.Ners",Aktif,2009-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000230,425387,"Jayanti Tuneli, Amd. Kep",Aktif,2016-05-31,PNS,,,,,,2026-10-13 14:58:14
+RST-000231,465562,"Hilda Nanggele, S.Kep.Ns",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000232,841332,"Ni Wayan Sinta Nurwati, S.Tr.Kep.Ns",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000233,252569,"Lisa Lisnawati Abdul Hamid, S.Tr.Kep.Ns",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000234,909593,"Rizka Erlita, S. Kep, Ns",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000235,234239,"Dian Fitriana Hasan, Amd. Kep",Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000236,50843,Kurniati,Aktif,2018-11-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000237,89259,"Eka Dwivayanti, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000238,4599,"Roswati Papong, A.Md.Keb",Aktif,2011-11-30,PNS,,,,,,2026-10-13 14:58:14
+RST-000239,42374,"Geraldi Y. Rengkuan, A. Md. Kep",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000240,140713,"Alser Keayo, Ns, S.Kep",Aktif,2009-07-10,PNS,,,,,,2026-10-13 14:58:14
+RST-000241,12583,"Alvian Tipaka, Amd.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000242,64873,Candra Wulandari,Aktif,2016-02-02,PNS,,,,,,2026-10-13 14:58:14
+RST-000243,758062,Norman Ndabuke,Aktif,2024-01-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000244,70410,"Hilman Laode Halifa, A. Md. Kep",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000245,15580,"Ni Wayan Pusniati, A. Md. Kep",Aktif,2025-07-12,P3K Titipan,,800.1.3.1/2845/BKPSDM,2025-07-09,,,2026-10-13 14:58:14
+RST-000246,145142,"Sumarti Ente, S. Kep. Ns",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000247,31231,"Ona Yulasti Dewi Lutani, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000248,52087,"Rafik Faruk, Amd. Kep",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000249,913562,Ten Somun,Aktif,2025-05-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000250,332504,Misri B. Mogolo,Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000251,92576,Denny Ismail,Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000252,20572,"Rini Yunita, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000253,69051,"Selmianty Saluki, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000254,2571,"Sriwahyuni Junus, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000255,321206,"Nila Krisna Ape, S. Kep. Ns",Aktif,2014-01-11,PNS,,,,,,2026-10-13 14:58:14
+RST-000256,54573,"Aco Kandusu, SST",Aktif,1994-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000257,86823,"Arif Firmanto J. Atisina, S. Kep. Ns",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000258,201917,"ARWINA, S. Kep. Ns",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000259,5762,"Asmidawati, S.Kep,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000260,33317,"Dian Istiqamah, A. Md. Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000261,13153,"Dwi Olifia Ningsi, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000262,39342,"Faddly Laami, A. Md. Kep",Aktif,2022-06-27,P3K Titipan,,800.1.3.1/33/BKPSDM,2022-06-22,,,2026-10-13 14:58:14
+RST-000263,46609,"Fetra Caprili Sosinggih, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000264,1264,"I Wayan Sudarmika, A. Md. Kep",Aktif,2026-05-04,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000265,68202,"Jaecsen Haecler Stenlait Th. Takapente, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000266,70485,"Masyita, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000267,25927,Nuzul Yusuf,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000268,67443,"Oshin Woley, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000269,98296,"Parhan Arsjad, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000270,226624,Despriningsi Bode,Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000271,4133484,Ambrosius Junius Djaka,Aktif,2025-05-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000272,814553,Hendra Laempah,Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000273,118460,Supriadi Pakaya,Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000274,4934,"Yuslianti Belopangan, SKM",Aktif,2017-09-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000275,307279,"Roni Pusung, S.IP",Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000276,883750,"Asmar Anas Rugani, SH",Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000277,419326,Ivon Nggohele,Aktif,2014-01-11,PNS,,,,,,2026-10-13 14:58:14
+RST-000278,390650,Edi Sulistyo,Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000279,815891,Hamka Balahanti,Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000280,156040,Miiyah Mangalia,Aktif,2009-01-02,PNS,,,,,,2026-10-13 14:58:14
+RST-000281,362199,Marwan P. Insak,Aktif,2007-01-10,PNS,,,,,,2026-10-13 14:58:14
+RST-000282,80360,Abd. Rahman Uloli,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000283,39543,Ardianto Uloli,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000284,28217,"Feni Angriani Mabing, S.KM",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000285,42268,"Merlin Dalim, SE",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000286,75374,Penrianto Riba,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000287,48203,Ramli Ambololo,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000288,92856,"Rizki H. Malang, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000289,30762,"Yudi Chandra Kupande, A. Md. Kep",Aktif,2026-01-12,P3K Titipan,,800.1.3.1/16/BKPSDM,2026-01-08,,,2026-10-13 14:58:14
+RST-000290,50163,Bernard Lantemona,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000291,47617,Ridwan Mantu,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000292,93251,Ismail A. Sue,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000293,99374,Alain D. Budikusuma,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000294,89938,"Aprisca L. Pasande, SKM",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000295,17951,Masna Larau,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000296,76642,"Nincy Palinggi, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000297,74748,"Nurlaela Kalawa, SKM",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000298,80073,"Riska Lande, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000299,40311,"Alfini Kou Latampa, A.Md.Kom",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000300,4165,"Wirda Kusuma Wardani, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000301,8729,"Yuyan T Mandjo, S. Kom",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000302,97018,"Fatmawati N. Van Gobel, SKM",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000303,10645,"Steven Mardianto Kimboto, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000304,43837,"Susanti Lodik, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000305,76885,"Iqbal Ngadi, S.Ak",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000306,7445,"Erna Margaretha Dalim, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000307,27854,Fadni Dayanun,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000308,4577,"Dwijayanti S. Bula, S. IP",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000309,87401,"Wulandari Saosang, S. Kom",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000310,80103,"Utari Julianti A. Idris, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000311,81313,Susanti Samiden,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000312,1000261,"Ratna Diana Ningsih Ishak, S.M",Aktif,2024-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000313,45071,Richard Sumantri,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000314,36847,Yonita Marina Djaka,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000315,2602,Yuniarti Nasir,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000316,93375,"Karmila Malindu, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000317,43523,"Rina Saputri Warito, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000318,63859,"I Nengah Edi Kusumajaya, SKM",Aktif,2024-10-01,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000319,54428,"Elda Sulaiyo, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000320,12365,"Heidy Gustina Maong, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000321,79669,"Iin Raodha, AS",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000322,92155,"Mario Adrianto Lasabung, SKM",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000323,94528,"Ni Putu Srigunadi, S. Pd",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000324,99185,Nur Aisyah,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000325,27791,"Ramdhan Nurrahman H. Saleh, SKM",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000326,40077,"Reshi Indrianty, A. Md. Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000327,59960,"Rico Dalim, SKM",Aktif,2025-11-01,PW Titipan,,,,,,2026-10-13 14:58:14
+RST-000328,98489,"Rosniati Sarudin, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000329,51926,Sunartin,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000330,24195,"Ucik Kumalasari, Amd.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000331,11547,"Widiya, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000332,4771,Yudi Sutrisno Labalo,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000333,80225,"Medina Kurniati, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000334,31230,"Liska Tangdiayun Palinggi, S.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000335,65486,Jesi Satolom,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000336,401615,"Irma N. Geni, S. Tr. Keb",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000337,4134546,"Maxweber Tiak, SKM",Aktif,2026-05-01,P3K Titipan,,800.1.3.1/613/BKPSDM,2026-04-17,,,2026-10-13 14:58:14
+RST-000338,413004,"Rasma Sono, SKM",Aktif,2011-04-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000339,901955,"Rinny Pamolango, S.Kes.Ftr",Aktif,2024-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000340,66434,"Diana Apriyanti M. Nusi, A. Md. Ft",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000341,483213,"Darmawati Birahi, Amd. Rad",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000342,891508,"RASNI, A.Md.Rad",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000343,51538,Irene Muji Lestari,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000344,39097,Kristin Bode,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000345,29616,Ratni Karim,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000346,67047,Rina Damayanti Usman,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000347,5806,Rusni Ishak,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000348,11057,Sheri Sapule,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000349,72330,Aprianti Mointi,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000350,2645,Desi Mone,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000351,52075,Eko Satrio Laohan,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000352,61143,Fitri A. Pilok,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000353,53022,Gita Revalita Boroho,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000354,56439,In Napas,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000355,27146,Irawati,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000356,14388,Irna Karim,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000357,24640,"Linoy Manete, S.KM",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000358,89538,Mariani Lukum,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000359,14334,Martini Bang,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000360,8162,Meisye Ambalao,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000361,77852,Nurhalijah Sidali,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000362,94771,Nurjaenah,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000363,3240,Nurlaela Lewang,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000364,47182,Rasna Tanete,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000365,88003,Rivi Arisandi Mandang,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000366,58356,Rudi Hartono Molenda,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000367,22038,Sarawia Sidu Sanaa,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000368,11951,Sila,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000369,56522,Srimulyati Muhamad,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000370,8221,Wa Ice,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000371,8333,Hana Widiawati Biatan,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000372,7977,"Singgih Pramesti, A.Md.Rad",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000373,96097,Sitti Muslimah L,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000374,16567,Utari Halil,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000375,27803,"Nurlaela T. Matuangi, SKM",Aktif,2025-02-19,P3K Titipan,,800.1.3.1/147/BKPSDM,2025-02-17,,,2026-10-13 14:58:14
+RST-000376,717305,"Kristina Pabalik, A. Md. Ft",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000377,602776,"Teresia Fitri Rumende, S. St",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000378,258560,"Richavilla, A. Md. Ft",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000379,8768,"Asfirman Mahmud Ali, Amd. Ft",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000380,41083,"Gisman La'adam, A.Md.Ft",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000381,99017,"Markrison Janri Pabalik, A.Md.Ft",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000382,72884,"Sri Rahayu Idam H. Pasman, SKM",Aktif,2023-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000383,585071,"Misnawati, Amd. Hiperkes",Aktif,2003-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000384,824887,"Gabrielle A. D. Pongsampe, Amd. PK",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000385,37035,"Winarsih, SKM",Aktif,2018-08-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000386,77668,Ayu Yolanda Siby,Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000387,84499,"Pricilia Sinolang, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000388,395722,"Putu Agus Suarsana, A.Md.Kes",Aktif,2024-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000389,630223,"Bd. Nani Rusdawati Hasan, S.Keb, SKM",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000390,72707,"Novianti Pakaya, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000391,581401,"Luh Budiastri, A.Md.Keb",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000392,120037,"Kesumawati Hinelo, S. Tr. Keb, M. Keb",Aktif,2017-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000393,481875,Marlina Lambidju,Aktif,2011-04-28,PNS,,,,,,2026-10-13 14:58:14
+RST-000394,9122,"Ronald Malota, Amd. Kom",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000395,827120,"Rupita Sari S, Amd. Keb",Aktif,2017-05-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000396,9977,"Bd.Lisa Binti Bahrun, S.Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000397,46344,"Arini Christiningrum, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000398,8853,"Asniar D. Asrafi, AM.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000399,93193,"Cahaya Haerani, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000400,92706,"Della Angrainy, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000401,4134810,"Dina Anggriana D. Dako, A. Md. Keb",Aktif,2026-07-09,P3K Titipan,,800.1.3.1/1043/BKPSDM,2026-07-06,,,2026-10-13 14:58:14
+RST-000402,60319,Ferdianto Pakaya,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000403,84967,"Faliyana Fasia L, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000404,75856,"Nurmagfirah HM Said, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000405,1000144,"Ririn Andini Saputeng, S.Tr.Keb.,Bdn",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000406,31809,"Santi, A. Md. Keb",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000407,85473,"Saraswati Yudi Putra, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000408,68528,"Wiwit Wijaya Ningsih, A.Md.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000409,8488,"Rosnia Abd. Wahab, S. Kep, Ns",Aktif,1989-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000410,626282,"Irnawaty Sevtyningsih Amir, S. ST",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000411,62853,"Riny Lamido, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000412,53012,"Desfin Pasulu, S. Kep. Ns",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000413,15643,"Nuryanti Latani, S.KM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000414,41643,"Finarlin Tobigo, S.Tr.Kep.Ns",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000415,785418,"Robert Sambeta, Amd. Kep",Aktif,2015-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000416,82214,"Astuti, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000417,42609,"Enny Suwarti, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000418,24400,"Fatmawati Hi. Umar, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000419,15551,"Fitria, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000420,5725,"Gusti Rai Prayuni, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000421,7507,"Hikmah, S. Kep. Ns",Aktif,2024-09-04,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000422,44172,"Roslince Yatoko, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000423,33274,"Susanti, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000424,946220,"Muzida Abd. Karim, S. Kep. Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000425,54992,"Deden Kusmaya, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000426,240801,"Febby Linggamo, S.Tr.Kep.Ns",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000427,310250,Juwarti,Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000428,46306,"Ardiansyah Setyawan Ahmad, S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000429,33170,"Rani Arman Mandala, SKM",Aktif,2026-08-10,P3K Titipan,,800.1.3.1/1199/BKPSDM,2026-08-06,,,2026-10-13 14:58:14
+RST-000430,89955,"Chaidir Lahasima, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000431,85141,"Moh. Reza Pahlevi, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000432,10887,"Muhamad Fauzan Aminullah, S. Kep, Ns",Aktif,2026-04-28,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000433,2490,"Nurwita S. Hatiba, AMK",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000434,393594,"Bdn. Dewi Maulita Labuan, S.S.T. Keb",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000435,999203,"Zainuddin Ahmad, S.Kep.Ns",Aktif,2023-04-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000436,560060,"Erny Batewa, S.ST., Ns, M.Kep",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000437,354757,"Vera Handi Tapa, S. Kep. Ns",Aktif,2024-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000438,756418,"Nilawati Karolin Pinamangun, Amd. Kep",Aktif,2024-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000439,576373,"Ns.Maena, S.Tr.Kep.Ns",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000440,514528,"Rizki Khairunissa, S. ST",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000441,16863,"Sukmawati, Amk. Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000442,62335,"Satria, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000443,59220,"Anggita Sari Husain, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000444,88192,"Christina Natalia Tatuil, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000445,3627,"Ilma Annisyah A. Badawi, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000446,16231,"Lilis Saraswati, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000447,33646,"Lisma Lataha, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000448,9756,"Lisna Bte Baharuddin, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000449,31723,Ni Nyoman Citradewi. A. Md. Keb,Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000450,13452,"Novita Bonde, A. Md. Kep",Aktif,2026-01-15,P3K Titipan,,800.1.3.1/29/BKPSDM,2026-01-15,,,2026-10-13 14:58:14
+RST-000451,42915,"Nurjannah, A. Md. Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000452,96898,"Restu Safitry. T. L, S. Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000453,15057,"Sitti Hamidah, Amd.Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000454,76555,"Nurlita Kader, A.Md.Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000455,76438,"Stella Yalume, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000456,35618,"Widya Indriyani Bolong, A. Md. Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000457,417923,"Yance Lamatoa, S.Kep",Aktif,1989-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000458,698432,"Erly Puahadi, Amd. Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000459,168742,"Zulkarnain Azona, SST, Ns",Aktif,2005-05-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000460,802664,"Hj. Suharni, A.Md.Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000461,439519,"Irma Pamolango, S.Tr.Kep, Ns",Aktif,2005-05-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000462,11759,"Sri Madang Dg. Pabila, S. Kep. Ns",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000463,444711,"Juliana Kateluang, Amd. Kes",Aktif,2002-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000464,806380,"Hapsah Hapsiah Hasan, SST",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000465,900368,"Dewi Maulida Pibete, S. Kep. Ns",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000466,376023,"Eden Rara, AMKG",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000467,792464,"Lily Herlina Batewa, S. Kep. Ns",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000468,101348,"Bartholomeus Rimba, SST. Ns",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000469,686521,"Nirwana, S.Kep.Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000470,676353,"Herlina Panigoro, S. Kep",Aktif,2009-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000471,189973,"Devianti Pakaya, Amd. Kep",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000472,121055,"Elis Gasong, Amd. Kep",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000473,941680,Reni Nasaru,Aktif,2007-02-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000474,899553,"Lutfiah Djibran, S.Tr. Keb",Aktif,2012-03-20,PNS,,,,,,2026-10-13 14:58:14
+RST-000475,22393,"Dina Pu'unono, S.K.M",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000476,168328,"Herawati, S. Kep. Ns",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000477,797540,Nawan Belopangan,Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000478,689768,Victor Pinamangun,Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000479,297816,"Julce Andih, Amd. Kep",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000480,991620,"Any Handayani, S.Tr.Kep.Ners",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000481,592334,"Nurlaela M. Nawir, S.Tr.Kep.Ners",Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000482,98372,"Kurniawati Rasyid, A. Md. Kep",Aktif,2025-06-23,P3K Titipan,,800.1.3.1/1530/BKPSDM/800.1.3.1/922/BKPSDM,2026-06-03,,,2026-10-13 14:58:14
+RST-000483,32327,"Nurijma S. Huraera, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000484,84407,"Oktaviyana, Amd. KG",Aktif,2025-03-17,P3K Titipan,,800.1.3.1/178/BKPSDM,2025-03-11,,,2026-10-13 14:58:14
+RST-000485,61746,"Ulfasari L. Lapendo, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000486,49643,"Sri Muliyana, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000487,614301,"Ferdayani Ladjidji, S.ST",Aktif,2013-07-26,PNS,,,,,,2026-10-13 14:58:14
+RST-000488,13666,"Fernita A.S, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000489,790445,"Fitra Niada, Amd. Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000490,4076,"Fitri M Ali, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000491,128084,"Bd.Hilmawaty Pujiastuti Ahsan, S.Keb",Aktif,2019-04-29,PNS,,,,,,2026-10-13 14:58:14
+RST-000492,12833,"Nerliana Busura, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000493,88124,"Neti Herawati, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000494,1000114,"Wenti Lataundu, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000495,371515,"Ni Made Sukariasih, S. Tr. Keb",Aktif,2009-01-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000496,790971,"Bdn. Ni Wayan Poliartini, S.Tr.Keb",Aktif,2020-08-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000497,455176,"Nova Susanti Hamzah, A. S",Aktif,2012-03-20,PNS,,,,,,2026-10-13 14:58:14
+RST-000498,89378,"Nur Qomaria, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000499,998753,"Nur Rahmah Mubarak, A. Md. Keb",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000500,681567,"Bdn. Nuraeni Djalamang, S.St",Aktif,2000-09-05,PNS,,,,,,2026-10-13 14:58:14
+RST-000501,20032,"Nurfianti Laode Harfia, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000502,90689,"Yuyun, S.Kep.Ns",Aktif,2026-06-17,P3K Titipan,,800.1.3.1/947/BKPSDM,2026-06-10,,,2026-10-13 14:58:14
+RST-000503,20426,Chrisdianty Juta,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000504,22266,Elisa Prisili Hakim,Aktif,2018-08-30,Honor,,,,,,2026-10-13 14:58:14
+RST-000505,883014,"Putri Ratnasari Syahril, S.Tr.Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000506,700816,"Bd.Putri Rizka Fadhillah Saud, S.Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000507,920226,Ramlah Nggau,Aktif,2006-05-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000508,37068,"Bd. Rizka Rochma Wahyuni, S.Keb",Aktif,2019-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000509,334492,"Selfiani Andarias, S.Keb",Aktif,2019-05-13,PNS,,,,,,2026-10-13 14:58:14
+RST-000510,25491,"Yoan Kristianti Natalia Palali, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000511,72547,"Apriyanti Yudongio, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000512,388279,"Dewi Kartika Lantarawe, S. Kep. Ns",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000513,464,"Dina Mojang, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000514,428647,"YUSNITA, A. Md.Kep",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000515,34110,"Hendrianus Mundi, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000516,466451,"Indrawati M, S. Kep. Ns",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000517,23054,"Lispana Yuda, S. Kep. Ns",Aktif,2026-07-14,P3K Titipan,,800.1.3.1/1096/BKPSDM,2026-03-16,,,2026-10-13 14:58:14
+RST-000518,67422,"Lusiana M. Noor, Amd.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000519,15652,"Elsafrida Palagigi, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000520,62251,"Liestiani Mangimbo, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000521,246288,"Mariany Djafar, Amd. Kep",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000522,225368,Marniati Dayanun Amd.Kep,Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000523,78660,"Melike Sataong, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000524,29461,"Nurlaela A. Bande, SKM",Aktif,2008-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000525,47397,"Rahmi Kuasan, A. Md. Kep",Aktif,2025-07-12,P3K Titipan,,800.1.3.1/2846/BKPSDM,2025-07-09,,,2026-10-13 14:58:14
+RST-000526,21355,"Rohani Lageni, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000527,25529,"Tati Botutihe, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000528,47052,"Vicry Febriyanto, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000529,454462,Wirda Kadili,Aktif,1992-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000530,99678,"Marwa Dg. Mappunna, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000531,570094,"Masto Hamid Laali, Amd. Kep",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000532,279991,"Mochammad Nur Idham Abbas, S. Kep. Ns",Aktif,2012-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000533,38709,"Moh. Tasri Maulana, A.Md.Kep",Aktif,2025-11-01,PW Titipan,,,,,,2026-10-13 14:58:14
+RST-000534,78140,"Natania Koju, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000535,670008,"Bd. Ni Ketut Sri Milyawati, S.Keb",Aktif,2019-08-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000536,843768,"Olyfiani Chandra, Amd. Kep",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000537,42703,"Rafika Natalia, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000538,41574,"Selfi Sigar, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000539,52610,"Simon Gustiana Putra Buttang, S. Kep, Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000540,30395,"Novriani Patinggi, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000541,29105,"Sri Samsiar, S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000542,48288,"Nurhaya Lasubu, Amd. Kep",Aktif,2018-11-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000543,78187,Dewi Kurnia Wardani,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000544,678885,"Supartini Talang, Amd. Kep",Aktif,2010-05-05,PNS,,,,,,2026-10-13 14:58:14
+RST-000545,772710,"Nurlaela Latempoh, Amd. Kep",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000546,83649,"Anita Tidore, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000547,50887,"Cecep Andriyani Indaha, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000548,952654,"RAMLAN, SST, Ns",Aktif,1995-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000549,660461,"Yunirtha Khrisniwatty Babo, S.Kep.Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000550,817187,"Rani Suryani Lukman, S. Kep, Ns",Aktif,2006-01-04,PNS,,,,,,2026-10-13 14:58:14
+RST-000551,771106,"Wahyuni S. Hi. Arsan, S.Kep.Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000552,550697,"Lydia Barusu, S.Kep.Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000553,500687,"Nurma Lamera, S.Kep.Ns",Aktif,2021-05-27,PNS,,,,,,2026-10-13 14:58:14
+RST-000554,70845,"Ulfa Ince Dahlan, A. Md. Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000555,97224,"Dwi Yulianti Molenda, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000556,87065,"Fitri Widianningsih, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000557,11701,"Henni Widyasari Lamido, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000558,5791,"Wini Purnamasari Mangantjo, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000559,54436,"Iin Farlina Masulili, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000560,96130,"Rosalita Banun, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000561,321284,"Titin Suhartin, Ns, S.Kep",Aktif,2011-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000562,538830,"Merry N. Napas, Amd. Kep",Aktif,2014-01-11,PNS,,,,,,2026-10-13 14:58:14
+RST-000563,597482,"Wilka Noviyanti Lahagina, Amd. Kep",Aktif,2014-01-12,PNS,,,,,,2026-10-13 14:58:14
+RST-000564,5123,"Zulfa Yakin, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000565,15854,"Cindhy Pranita Sudar, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000566,96942,"Ni Wayan Metriani, Amd.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000567,24576,"Nita Agrianti Salote, A. Md. Kep",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000568,18573,"dr. Gray R. Nagaring, Sp. OG, M. Kes",Aktif,2019-09-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000569,364810,"dr. Andi Hasriawan, Sp. S, M. Kes",Aktif,2014-11-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000570,645995,"dr. Veinels Christian Lomboan, Sp.S.M.Kes",Aktif,2024-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000571,68030,"Alfiansa, S.I.P",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000572,95697,Alfredi Sabudu,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000573,35667,Aprianus Dongge,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000574,20886,Arif Tungka,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000575,3654,Dwi Muliadi Musati,Aktif,2022-10-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000576,25497,Hasrun Mardjuni,Aktif,2018-05-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000577,29769,"Muh. Taufik, S. Pd",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000578,91936,Nixon Gugule,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000579,6589,Pein Sollitan,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000580,58076,Suaib Lewang,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000581,43354,Sugianto,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000582,9042,Aprianto Dongge,Aktif,2026-03-02,PW,,,,,,2026-10-13 14:58:14
+RST-000583,33796,"Hijrawati Sriwahyuni De'u, S. Kom",Aktif,2026-03-02,PW,,,2025-11-01,,,2026-10-13 14:58:14
+RST-000584,998452,"Indah Cahyani Wiyono, A.Md.Kes",Aktif,2024-02-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000585,462660,"Musdalifa, S.Kep.Ns",Aktif,2007-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000586,678062,"Nur Afni Mang, Amd. Kep",Aktif,2010-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000587,102915,"Yulianti Budjang, S. Kep. Ns",Aktif,2006-04-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000588,54139,"Komang Dewi Jayanti, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000589,55821,"Lindawati, A. Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000590,4134316,"Lucy Trisnawati S. Todingan, S. Kep. Ns",Aktif,2026-03-17,P3K Titipan,,800.1.3.1/415/BKPSDM,2026-03-04,,,2026-10-13 14:58:14
+RST-000591,58430,"Megawati, A. Md. Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000592,73145,"Ockna Verawaty, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000593,88306,Selfi Nalia Dala,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000594,35595,"Rafikasari, Amd.Farm",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000595,68948,"Selviati Tato, A. Md. Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000596,93145,"Yusri Dalima, A.Md.Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000597,930482,"dr. Nurjannah Jusuf, M. Kes , Sp. THT - KL",Aktif,2005-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000598,84868,"Ridwan, S. Tr. Kes",Aktif,2023-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000599,27709,"Meyling Indah Lestari Soekirno, A.Md.Gz",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000600,72623,"Rifaldi Taher, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000601,12031,"Ni Made Finiasih, A.Md.Gz",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000602,47797,Riswandi N. Tatu,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000603,83671,"Andi Nurdiana Safitri, S.Kep, Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000604,35870,"Fera Arista Arifat, A.Md.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000605,575258,"Puspita Karlinda Hadju, Amd. Keb",Aktif,2020-01-16,PNS,,,,,,2026-10-13 14:58:14
+RST-000606,4752,Trisnawati Linggi,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000607,90513,Megaputri Julinsari Noman,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000608,86223,"Fitri Sampargadi, Amd. Kep",Aktif,2026-08-10,P3K Titipan,,800.1.3.1./1172/BKPSDM,2026-08-04,,,2026-10-13 14:58:14
+RST-000609,22343,"Miswati Dayanun, S. Kep. Ns",Aktif,2024-04-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000610,30745,Budi Sutrisno A. Madjido,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000611,21912,Tirza Lisa Kuamano,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000612,55583,"dr. Theresa Laura Limanto, Sp. A, Subsp. Kardio(K)",Aktif,2026-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000613,47389,"dr. Yolanda Manule, Sp. PA",Aktif,2020-01-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000614,14744,"Monita, Amd. Kep",Aktif,2022-02-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000615,30122,"Aisyah Purnamasari M. Kadir, S.Kep, Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000616,998949,"Nuriyani Safitri, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000617,93033,"Apt. Rugaya Yuni Muharram, S.Si",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000618,274,"Bd.Tenri Ajeng, SST, M. Keb",Aktif,2020-04-17,PNS,,,,,,2026-10-13 14:58:14
+RST-000619,99944,"Komang Ayu Sulastri, A.Md.Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000620,4134054,"Abdi Tahta Pribumi, S. Kep. Ns",Aktif,2026-01-12,P3K Titipan,,800.1.3.1/17/BKPSDM,2026-01-08,,,2026-10-13 14:58:14
+RST-000621,311695,Fadlilah Djibran,Aktif,2020-05-27,PNS,,,,,,2026-10-13 14:58:14
+RST-000622,66158,"Hikma Satali, S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000623,31913,"Widyastuti Potabuga, S.Tr.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000624,65209,Dion Disky Goas,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000625,81033,"Yusnita Rahmi Sapa, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000626,769007,"Verawati Said, A.Md.Keb",Aktif,2022-05-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000627,993144,"H. Ruslan, Amd. Kep",Aktif,2020-12-30,PNS,,,,,,2026-10-13 14:58:14
+RST-000628,37580,Yusrin,Aktif,2026-03-02,PW,,,2025-11-01,,,2026-10-13 14:58:14
+RST-000629,55176,"Yuli Sabati, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000630,10294,"Suci Sri Amelia Natsir, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000631,80051,"Nur Syafitri S. Tule, S.Kep.,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000632,93347,"Abdul Razak Poiyo, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000633,35420,"Tiara Eka Putri Christiningrum, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000634,20325,"Isra Minarti Widi Astuti Saud, A.Md.A.K",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000635,48333,"Nuraini Barnabas, SE",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000636,72951,"Moh. Muhaimin H. Stibis, A.Md.Kes",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000637,35077,"Nazzarudin N. Van Gobel, A. Md. Kep",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000638,96951,"Wahyuni, A.Md.Keb",Aktif,2025-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000639,37362,"Rahmi Mangendre, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000640,50052,"Nur Winda Fachri, S. Psi",Aktif,2021-02-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000641,67654,dr. Anggun Puspita,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000642,25691,"Nurhayati Djasman, Amd. Kep",Aktif,2026-04-09,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000643,21831,"Ariska Febriani, A.Md.Keb",Aktif,2025-11-01,PW Titipan,,,,,,2026-10-13 14:58:14
+RST-000644,10677,Meidrick Saler Tiak,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000645,15360,"Muhamad Randy Bareta, AMd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000646,4133407,"Yumna Budjang, S. Kep",Aktif,2025-05-14,PNS,,,,,,2026-10-13 14:58:14
+RST-000647,28503,"Arlikson Mombilia, A.Md.Kes",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000648,58712,Awaluddin M. Amir,Aktif,2021-04-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000649,875223,Bety Margaretha Manangkoda,Aktif,2021-06-17,PNS,,,,,,2026-10-13 14:58:14
+RST-000650,70697,"Ririn Kasim, A.Md.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000651,640491,"Fitrawati, Amd. Keb",Aktif,2021-06-16,PNS,,,,,,2026-10-13 14:58:14
+RST-000652,29859,"Intan Pratiwi, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000653,890970,"Mohamad Agus Budianto, S. Kep. Ns",Aktif,2021-09-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000654,48157,"Muti'ah Senen, S. Kep. Ns",Aktif,2021-09-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000655,213811,"dr. Eko Putri Rahajeng, Sp. PK",Aktif,2021-10-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000656,595381,"Fitriyani Susilawati Padju, Amd. Kep",Aktif,2021-10-30,PNS Titipan,,,,,,2026-10-13 14:58:14
+RST-000657,58467,"Mari'atul Qiftia Nursin, Amd. Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000658,60797,"Nur Sarma, A.Md.Keb",Aktif,2025-11-01,PW Titipan,,,,,,2026-10-13 14:58:14
+RST-000659,34226,"Rita Oktari, A.Md.Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000660,98095,"Muh. Arpan Sahrin, A.Md.Kes",Aktif,2026-03-02,PW,,,2025-11-01,,,2026-10-13 14:58:14
+RST-000661,40873,"P Sintha Redistia, A.Md.Kes",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000662,206599,Yobel Helon Kokudang,Aktif,2021-11-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000663,281631,"I Nyoman Pasek Artawan, A. Md. Rad",Aktif,2022-01-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000664,15226,Sepriyanto Kasili,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000665,908873,"dr. Winarny Abdullah, Sp. A",Aktif,2023-05-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000666,807673,"Weni Parabang, A. Md. Keb",Aktif,2022-01-12,PNS Titipan,,,,,,2026-10-13 14:58:14
+RST-000667,27249,dr. Unun Budiarti M.G.T,Aktif,2022-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000668,67018,"Nurjana Bidalo, A.Md.Kom",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000669,16577,"Nur Muslimah, A. Md. Kes",Aktif,2022-02-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000670,81098,Saldi Simuk,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000671,345868,"dr. Fitrah Anissa I Balengge, S. Ked",Aktif,2022-03-23,PNS,,,,,,2026-10-13 14:58:14
+RST-000672,711495,"Agus Hardiyanto, A. Md. Kep",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000673,907551,"Astri Nurlaela Yinata, Amd. Kep",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000674,920255,"Nurul Hifziyati, Amd. Keb",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000675,175075,"Rafinda Wiwin Savitri, Amd. Keb",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000676,473677,"Fhilia Suci Nugraheni, S. Tr. Keb",Aktif,2022-03-23,PNS,,,,,,2026-10-13 14:58:14
+RST-000677,442084,"Megawati, Amd. Kep",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000678,910159,"Liliani Jalil, Amd. Kep",Aktif,2022-03-23,P3K,,,,,,2026-10-13 14:58:14
+RST-000679,39178,Yanti Ra'na,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000680,42522,"Chaesar Rafsanjani R. Sampo, S. Gz",Aktif,2022-04-07,Honor,,,,,,2026-10-13 14:58:14
+RST-000681,77117,"Noviyanti Asteria Lantang, SST",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000682,4,"Sri Tresny Banteng, SH",Aktif,2022-02-14,PNS,,,,,,2026-10-13 14:58:14
+RST-000683,822,"Bambang Ismanto P. Abdullah, SP",Aktif,2022-02-14,PNS,,14/02/2022,,,,2026-10-13 14:58:14
+RST-000684,43277,"I Wayan Riyanto,S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000685,79887,"Syafriati Djuda, Amd. Kep",Aktif,2022-05-13,PNS,,,,,,2026-10-13 14:58:14
+RST-000686,21595,"Nursanti Nuhu, S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000687,73446,Febiyanto A. Dem,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000688,78215,"Linda Polibaon, A.Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000689,74383,"Cahya Kristian Tadjimo, S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000690,15971,Hastuti,Aktif,2022-06-13,Honor,,,,,,2026-10-13 14:58:14
+RST-000691,4135216,"Asa Nurani. A., S.Tr.Keb",Aktif,2026-08-11,P3K Titipan,,800.1.3.1/1180/BKPSDM,2026-08-05,,,2026-10-13 14:58:14
+RST-000692,46537,"Ijajulianingsih Lamato, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000693,18542,"Nur Annisa SK Pitter, A.Md. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000694,36811,"Dewi Rahmayanti, Amd. Keb",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000695,77485,"Silfia Kaluku, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000696,76669,"Roslindawati R. Samaduri, Amd. Keb",Aktif,2025-01-15,P3K Titipan,,,,,,2026-10-13 14:58:14
+RST-000697,68483,Melinda,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000698,28437,Indriani Silangen,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000699,47596,Lusi Pikilan,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000700,4134166,"Sarah Nurjannah Saida, S.Farm, Apt.",Aktif,2026-02-11,P3K Titipan,,800.1.3.1/83/BKPSDM,2026-02-11,,,2026-10-13 14:58:14
+RST-000701,99866,Ningsi Malota,Aktif,2022-06-29,Honor,,,,,,2026-10-13 14:58:14
+RST-000702,69356,Nining Herawati L,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000703,75628,"Afif Alghifari, A.Md.TEM",Aktif,2025-12-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000704,325268,"dr. Maya Shofia, Sp. JP",Aktif,2026-07-17,PNS,,,,,,2026-10-13 14:58:14
+RST-000705,999455,"dr. Astrina Supandy, Sp.OG",Aktif,2022-01-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000706,93977,"Pardji, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000707,998744,"Irnayanti, A.Md. AK",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000708,51987,"Nurul Gina Oktaviyana Mahmud, Amd. Kes",Aktif,2022-10-05,Honor,,,,,,2026-10-13 14:58:14
+RST-000709,73928,"Novryanto Djapong, S. Kep, Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000710,999533,"Stevani Charlotte Tendelawa, SKM",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000711,547428,"Kartini Novianty A. Line, S. Kep. Ns",Aktif,2022-11-16,PNS,,,,,,2026-10-13 14:58:14
+RST-000712,69108,Dion Ta'alek,Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000713,771845,"Syamsina S. Akum, S. Kep. Ns",Aktif,2022-11-18,PNS,,,,,,2026-10-13 14:58:14
+RST-000714,542814,"drg. Murniati Muhiddin, Sp.KG",Aktif,2022-11-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000715,72893,"Savira Aulia Putri Rahim, S. Tr. Kes",Aktif,2026-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000716,82945,"Zoya Krisnandari Utari, S. Tr. Kes",Aktif,2026-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000717,998743,dr. Budi Setiawan Lakukua,Aktif,2023-01-09,Honor,,,,,,2026-10-13 14:58:14
+RST-000718,998709,Uchy Yolanda Tamsur,Aktif,2023-01-30,Honor,,,,,,2026-10-13 14:58:14
+RST-000719,998713,Ponan Kapala,Aktif,2023-01-30,Honor,,,,,,2026-10-13 14:58:14
+RST-000720,998711,Sukriyadi T. Pulula,Aktif,2023-01-30,Honor,,,,,,2026-10-13 14:58:14
+RST-000721,998741,dr. Cindy Fitriyani,Aktif,2023-02-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000722,4134540,"dr. Andi R. Bastario Sitorus, Sp.JP",Aktif,2025-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000723,998953,"Warda Tuldjana Dg. Palari, Amd. Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000724,998932,"Suryaningsi Dulang, S. Kep. NS",Aktif,2023-03-21,PNS,,,,,,2026-10-13 14:58:14
+RST-000725,998943,"Ni Luh Ria Apriyanti, S.Gz",Aktif,2023-04-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000726,998958,"Alsesrinalti Dika, A.Md.Kep",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000727,998948,"Pepy Dwi Rahayu Kadjim,S.Kep.Ns",Aktif,2025-11-01,PW,,,,,,2026-10-13 14:58:14
+RST-000728,998956,"Rini Latifa Ayu Kurniasih Bullah, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000729,998965,"Rezki Wahyudin, S. Tr. Kes",Aktif,2023-04-06,Honor,,3403/445.800/IV/RSUD-2023,,,,2026-10-13 14:58:14
+RST-000730,998962,"Lia Salsabillah, S. Tr. Kes",Aktif,2023-04-06,Honor,,3403/445.800/IV/RSUD-2023,,,,2026-10-13 14:58:14
+RST-000731,998963,"Nurul Maghfirah Gerta, S. Tr. Kes",Aktif,2023-04-06,Honor,,3403/445.800/IV/RSUD-2023,,,,2026-10-13 14:58:14
+RST-000732,998964,"Ni Luh Ayu Fildayanti, A.Md. Kes",Aktif,2023-04-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000733,999534,"Regista Pemasi, Amd. Farm",Aktif,2023-06-26,Honor,,,,,,2026-10-13 14:58:14
+RST-000734,999518,"Vika A Paaka, S.Kep.Ns",Aktif,2023-07-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000735,999517,"Anita Permatasari Andi Muhtar, A.Md.Kep",Aktif,2023-07-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000736,999549,"Asrandi Van Gobel, S.Kep.Ns",Aktif,2023-07-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000737,999546,Pendi Landean,Aktif,2023-07-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000738,1000403,"dr. Ahmad Muthadir, Sp. AN-TI",Aktif,2023-08-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000739,999700,Miko Saputra,Aktif,2023-10-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000740,999687,"Moh Zainul Nayu, S.Tr.Kes",Aktif,2023-10-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000741,999688,"Laelatul Khusna, S. Si. Apt",Aktif,2023-10-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000742,999715,Abd. Malik Labolong,Aktif,2023-11-03,Honor,,,,,,2026-10-13 14:58:14
+RST-000743,999703,"Ni Luh Utami Dewi, Amd. Keb",Aktif,2023-11-03,PNS,,,,,,2026-10-13 14:58:14
+RST-000744,999984,"dr. Rika Adriati Datu Adam, Sp. PK",Aktif,2024-01-08,PNS,,,,,,2026-10-13 14:58:14
+RST-000745,1000055,"Cindi, Amd. Kes",Aktif,2023-12-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000746,4134610,"dr. Nur Hasnah Husain Hasan, Sp. B",Aktif,2024-01-31,Honor,,,,,,2026-10-13 14:58:14
+RST-000747,1000097,"Femi Ambado, A.Md.Keb",Aktif,2024-02-09,Honor,,,,,,2026-10-13 14:58:14
+RST-000748,1000098,"Nursufia Aulia, S.Tr.Kes",Aktif,2024-02-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000749,1000058,"Meitlin Djadi, S.Kep.NS",Aktif,2024-01-04,Honor,,,,,,2026-10-13 14:58:14
+RST-000750,1000010,"Orin, SKM",Aktif,2024-02-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000751,1000068,"Arisandy H. HI. Dg. Sibali, S.Kep.Ns",Aktif,2024-02-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000752,1000070,"Gayus Firdaus Lasompoh, Amd. Kep",Aktif,2024-02-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000753,1000072,"Wulandari Ladewan, S.Kep.Ns",Aktif,2024-02-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000754,1000069,"Fitriani Nur Aziza, S.Tr.Kep.Ns",Aktif,2024-02-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000755,1000090,"Sri Ulvi Damayanti, Amd. Kep",Aktif,2024-02-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000756,1000071,"Adriati Alimuddin, S. Kep. Ns",Aktif,2024-02-12,PNS,,800.1.3.1.3/0026-MP/2024,,,,2026-10-13 14:58:14
+RST-000757,1000094,"Joni Sunandar, S.Tr.Kep.Ners",Aktif,2024-02-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000758,1000095,"Apt. Ica Said, S.Farm",Aktif,2024-02-19,PNS,,,,,,2026-10-13 14:58:14
+RST-000759,1000103,"Elfina Pamoso, Amd. Kep",Aktif,2024-02-22,PNS,,820/222/BKPSDM,,,,2026-10-13 14:58:14
+RST-000760,1000105,Yermia Lahagina,Aktif,2024-02-22,Honor,,,,,,2026-10-13 14:58:14
+RST-000761,1000159,"Randy Christiadi, S. Tr. Kes",Aktif,2024-02-23,Honor,,,,,,2026-10-13 14:58:14
+RST-000762,1000109,"Magvira Rullu, S.Tr.Kes",Aktif,2024-02-23,Honor,,,,,,2026-10-13 14:58:14
+RST-000763,1000130,"Ni Wayan Prismayanti, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000764,1000126,"Nurriska Ariani, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000765,1000150,"Sidratul Muntaha, S.Tr.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000766,1000110,"Windarsi Daiyeng, Amd.Keb",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000767,1000117,"Amelia Putri, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000768,1000125,"Dian Kristanti, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000769,1000120,"Irmayanti Dambing, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000770,1000112,"Dian Lestari Mustapa, A. Md. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000771,1000127,"Fadilah, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000772,1000116,"Febriani Eka Putri, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000773,1000113,"Fitrianuary Hadoya, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000774,1000122,"Hijrawati Hamadok, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000775,1000129,"Hendra R. Rambing, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000776,1000146,"Muh. Alfajri Hi. Abd. Madjid, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000777,1000123,"Munawara Hi. Abd. Madjid, S.Kep.,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000778,1000142,"Hamsar, Amd. Kes",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000779,1000124,"Nela Angriani Mane, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000780,1000119,"Ns. Putu Sri Astuti, S. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000781,1000149,"Rahmatika, Amd. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000782,1000128,"Srimubarka Sangketa, Amd. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000783,1000115,"Yuni Arista Ali, Amd. Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000784,1000111,"Marce Kenda, AMG",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000785,1000121,"Sandy Darmawan, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000786,1000147,"Sandi Muh.Nur, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000787,1000118,"Sinthia Lahiya, S.Kep.,Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000788,1000151,"Viviyanti Whelny Tim Bayo, A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000789,1000148,"Satriyani Petalolo, S.Kep.Ns",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000790,1000169,"Nur Cahyanti Abd. Rahim, SKM",Aktif,2024-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000791,1000168,Miftah Fathirah,Aktif,2024-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000792,1000160,"Ni Wayan Wilantari, S. Tr. Gz",Aktif,2024-03-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000793,1000173,"Nurul Amanah Dahlan, S. Tr. Gz",Aktif,2024-03-19,Honor,,,,,,2026-10-13 14:58:14
+RST-000794,1000181,"Fatmawati, Amd. Kes",Aktif,2024-03-25,Honor,,,,,,2026-10-13 14:58:14
+RST-000795,1000184,"Nurlia Safitri P. Bintan, S. Tr. Kes",Aktif,2024-03-25,Honor,,,,,,2026-10-13 14:58:14
+RST-000796,1000179,"Nurmila Koju, S. AK",Aktif,2024-03-26,Honor,,,,,,2026-10-13 14:58:14
+RST-000797,1000182,"Triana Indah Lestari Kape, A.Md.Keb",Aktif,2024-04-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000798,1000183,Yane Florensia Lomalo,Aktif,2024-04-05,Honor,,,,,,2026-10-13 14:58:14
+RST-000799,1000206,"Frengki E Olii, A.Md.Kep",Aktif,2024-04-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000800,1000188,"Alfared Grendio,A.Md.Kep",Aktif,2024-03-01,P3K,,,,,,2026-10-13 14:58:14
+RST-000801,1000246,Wilda B. Sulina,Aktif,2024-05-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000802,1000253,Michael Refven Patoh,Aktif,2024-05-22,Honor,,,,,,2026-10-13 14:58:14
+RST-000803,1000256,"Chrystina Natalia Pilok, S.KM",Aktif,2024-06-03,Honor,,,,,,2026-10-13 14:58:14
+RST-000804,1000260,"Khairunnisa Hamid Cante, A.MD.RMIKA",Aktif,2024-06-04,Honor,,,,,,2026-10-13 14:58:14
+RST-000805,1000270,"Emmilya Maghfirah, S.Tr.Kes",Aktif,2024-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000806,1000283,"Fajril Musrifah, A.Md.Kes",Aktif,2024-07-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000807,1000268,"Amalia Rahayu Djalumang, A.Md.Kep",Aktif,2024-06-24,PNS Titipan,,,,,,2026-10-13 14:58:14
+RST-000808,1000282,"I Wayan Atmaja, S.Kom",Aktif,2024-07-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000809,1000285,Cheril Paada,Aktif,2024-07-19,Honor,,,,,,2026-10-13 14:58:14
+RST-000810,1000287,Daniela Josefintje Sollitan,Aktif,2024-07-29,Honor,,,,,,2026-10-13 14:58:14
+RST-000811,1000288,"Raodhatul Jannah, S. Kep. Ns.",Aktif,2024-08-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000812,1000399,dr. Tika Minawati Dewi,Aktif,2024-09-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000813,4132874,"dr. Wisnu Adrianto, Sp. PD",Aktif,2022-08-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000814,4132882,dr. Riska Amalia Djalumang,Aktif,2024-03-04,Honor,,,,,,2026-10-13 14:58:14
+RST-000815,4132946,"Irawati Palalente, Amd. Kep",Aktif,2024-11-01,PNS Titipan,,,,,,2026-10-13 14:58:14
+RST-000816,4132948,"Pillyano Prisilia Sukel, S. Tr. Kes",Aktif,2024-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000817,4133016,Muh. Fajar Jampa,Aktif,2025-01-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000818,4132982,"Hastuti, S.Tr.Keb",Aktif,2025-01-10,PNS,,,,,,2026-10-13 14:58:14
+RST-000819,4133021,"Reynaldi U. Sapae, S.KM",Aktif,2025-01-14,Honor,,,,,,2026-10-13 14:58:14
+RST-000820,4132987,Jhondry Mangulu,Aktif,2025-01-02,Honor,,,,,,2026-10-13 14:58:14
+RST-000821,4133020,"Valdha Varadilla, Amd.Keb",Aktif,2025-09-11,Honor,,,,,,2026-10-13 14:58:14
+RST-000822,4133051,"Margaretha Wehelmina Wahani, S,Kep, Ns",Aktif,2025-01-30,Honor,,,,,,2026-10-13 14:58:14
+RST-000823,4133029,"Dewi Ageng Winarsih, SKM",Aktif,2025-01-20,Honor,,,,,,2026-10-13 14:58:14
+RST-000824,4133046,"Apt. Desak Kadek Mahayanti, S.Farm",Aktif,2025-01-24,Honor,,,,,,2026-10-13 14:58:14
+RST-000825,4133047,dr. Yudha Erlangga Saputra,Aktif,2025-02-12,Honor,,,,,,2026-10-13 14:58:14
+RST-000826,4133080,"dr. Indra Sampe Parimba, Sp.P",Aktif,2025-02-18,PNS,,,,,,2026-10-13 14:58:14
+RST-000827,4133133,"Ni.Luh Aprillia Virhintina, S.M",Aktif,2025-03-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000828,4133132,Assyifa Dwi Yandri,Aktif,2025-03-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000829,4133283,"Dewi Dumillah Sekarsari, S.Si",Aktif,2026-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000830,4133284,"Windrayanti Camoh, S. Kom",Aktif,2026-03-01,PNS,,,,,,2026-10-13 14:58:14
+RST-000831,4133131,dr. Fitri Amalia Djafar,Aktif,2025-03-01,Honor,,Aktif RS 17/03/2025,,,,2026-10-13 14:58:14
+RST-000832,4133532,"Clessiya Rafdalista R.Sampo, S.Tr.Keb",Aktif,2025-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000833,4133533,"Chintya Margaretha Sultan, S.Kep.Ns",Aktif,2025-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000834,4133535,"Apt.Nurul Annisa Dwi Ningsih, S.Farm",Aktif,2025-07-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000835,4133536,"Rial Alfarazi Suni, A.Md.Kes",Aktif,2025-07-15,Honor,,,,,,2026-10-13 14:58:14
+RST-000836,12121212,"drg. Yeyen Sutasmi, Sp.B.M.M",Aktif,2025-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000837,4133111,"dr. Mohammad Gilang Fajriansyah Nohu, Sp.PD",Aktif,2025-07-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000838,4133755,dr. Raj Chandra,Aktif,2025-09-01,Honor,,01/08/2025,,,,2026-10-13 14:58:14
+RST-000839,4133756,dr. Merysca Tricillia Sandana,Aktif,2025-09-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000840,4133565,"Ayu Efriyanti Aminullah, S.ST",Aktif,2025-07-21,P3K,,,,,,2026-10-13 14:58:14
+RST-000841,4133563,"Aprisilia Parabang, S. Tr. Keb",Aktif,2025-07-21,P3K,,,,,,2026-10-13 14:58:14
+RST-000842,4133566,"Rahayu Candra Yuli Ningtias, SKM",Aktif,2025-07-21,P3K,,,,,,2026-10-13 14:58:14
+RST-000843,4133578,"Rahmawati Awaludin, A.Md.Keb",Aktif,2025-07-21,P3K,,,,,,2026-10-13 14:58:14
+RST-000844,4133579,"Tuti Alawiyah S. Palanakan, A.Md.Keb",Aktif,2025-07-21,P3K,,,,,,2026-10-13 14:58:14
+RST-000845,4133643,M. Hafid Maulana S. Samrin,Aktif,2025-07-25,Honor,,,,,,2026-10-13 14:58:14
+RST-000846,4133677,"Ellysha Anggreini Heryanto, S.Gz,Dietisien",Aktif,2025-08-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000847,4133673,"Bdn.Mery Minasa, S.Keb",Aktif,2025-08-08,Honor,,,,,,2026-10-13 14:58:14
+RST-000848,4133666,Agung Pratama,Aktif,2025-08-07,Honor,,,,,,2026-10-13 14:58:14
+RST-000849,4133757,dr. Triwahyuni Purwaningsih Basuki,Aktif,2025-09-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000850,4133762,"Ni Nyoman Sumiarti, A.Md.Kep",Aktif,2025-09-20,Honor,,,,,,2026-10-13 14:58:14
+RST-000851,4133761,"Indra Janu, A.Md.Kep",Aktif,2025-09-20,Honor,,id absennya : 4133761,,,,2026-10-13 14:58:14
+RST-000852,4133794,"Nur Arda, S.Kep.Ns",Aktif,2025-10-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000853,4133811,Siti Mawaddah Madi,Aktif,2025-10-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000854,4133795,"Arif Rahman Hadi, A.Md.RMIK",Aktif,2025-10-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000855,4133814,Moch. Alief Al. Farizhy,Aktif,2025-10-20,Honor,,,,,,2026-10-13 14:58:14
+RST-000856,4133815,"Selvira Amelia Ambalao,A.Md.Kom",Aktif,2025-10-20,Honor,,,,,,2026-10-13 14:58:14
+RST-000857,4133827,Gracia Evelyn Belopangan,Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000858,4133823,"Joice Veronicha Stevani, Amd.Kep",Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000859,4133825,"Denada Anastasi Basompe, S.Kep.Ns",Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000860,4133824,"Ns. Nurdia Purwaningsih Pettalolo, S.Tr.Kep",Aktif,2025-11-13,Honor,,,,,,2026-10-13 14:58:14
+RST-000861,4133826,"Riri Desita Saluki, S.Kep.Ns",Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000862,4133832,Haji Putra Rahmat Lagonah,Aktif,2025-11-05,Honor,,,,,,2026-10-13 14:58:14
+RST-000863,4133872,"Candra Setiawan, Str.Kep.Ns",Aktif,2025-12-04,P3K,,,,,,2026-10-13 14:58:14
+RST-000864,4133910,Devi Oktaviani Kandouw A.Md.Kom,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000865,4133909,Sinar Salsabillah Mihan A.Md.Kep,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000866,4133907,Rafidah Yuntya Ika Cahyani S.Kep.Ns,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000867,4133906,"Deviani Vinolia Gamoi, A.Md.Keb",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000868,4133905,Della Puspita Amalia Latudi S.Tr.Kes,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000869,4133904,"Mustika Adi Candra S. Kep, Ns",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000870,4133903,Fitryah Wardayani S.Tr.Kes,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000871,4133902,Fatimah S.Kep.Ns,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000872,4133891,Graciela Clarisa Pontoh A. Md.Kep,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000873,4133892,Ari Labolo,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000874,4133893,"Ananda Pratiwi, A.Md.Kes",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000875,4133894,Noveryan Yusuf Malota S.Tr.Kes,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000876,4133895,"Risky Kurniawaty S. Farm, Apt",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000877,4133896,"Moh. Syahrul Hamunta, A.Md.Kes",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000878,4133897,"Apt. Nurhijayanti E. Bentearu, S. Farm",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000879,4133898,Apt. Andi Ailzah Sartika S. Farm,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000880,4133899,dr. Chrestella Ivenna Rustjo,Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000881,4133900,"Alessandro Federico Dumpapa, A.Md.Kep",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000882,4133901,"Alifika Julianinta Sudarmono, S.Tr.Kes",Aktif,2025-12-10,Honor,,,,,,2026-10-13 14:58:14
+RST-000883,4133918,dr. Diva Nindya Almira,Aktif,2025-10-16,Honor,,,,,,2026-10-13 14:58:14
+RST-000884,4133822,dr. Fitrah Amalia,Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000885,4133821,dr. Moh. Yusril,Aktif,2025-11-01,Honor,,,,,,2026-10-13 14:58:14
+RST-000886,4133920,"Ni Kadek Effiyanti, A.Md.Keb",Aktif,2025-12-18,PNS,,Pindahan dari Luar,,,,2026-10-13 14:58:14
+RST-000887,4134034,Wardi N Bading,Aktif,2026-01-21,Honor,,,,,,2026-10-13 14:58:14
+RST-000888,4134038,"Restu Anugrah Wati Sorayah, SM,A.Md.KG",Aktif,2026-01-21,PNS Titipan,,,,,,2026-10-13 14:58:14
+RST-000889,4134276,"Mardiana Pempe, S.Tr. Kep, Ns",Aktif,2026-03-09,PNS,,,,,,2026-10-13 14:58:14
+RST-000890,4134317,"Sitti Zaenab, S.Tr.Kep.Ns",Aktif,2026-03-16,PNS,,,,,,2026-10-13 14:58:14
+RST-000891,4133845,"Vivin H. Darusu, S.Kep.Ns",Aktif,2026-04-23,P3K Titipan,,800.1.3.1/612/BKPSDM,2026-04-17,,,2026-10-13 14:58:14
+RST-000892,4134561,dr. Faramita M. Saud,Aktif,2026-05-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000893,9134618,dr. I Made Dwi Pramana,Aktif,2026-05-18,Honor,,,,,,2026-10-13 14:58:14
+RST-000894,4134804,"Liza Indriyati, S. ST",Aktif,2026-07-06,PNS,,,,,,2026-10-13 14:58:14
+RST-000895,4134806,"dr. Hariadi, M.Kes",Aktif,2026-07-07,PNS,,800.1.3.1.4/1020/BKPSDM,2026-06-30,,,2026-10-13 14:58:14
+RST-000896,4135610,"Wulan D Pisu, A.Md.Ak",Aktif,2026-08-26,PNS Titipan,,800.1.3.1/5371/BKPSDM,2026-08-20,,,2026-10-13 14:58:14

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIMPEG RS</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <?!= include('Stylesheet'); ?>
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">RS</div>
+        <div>
+          <div class="brand-title">SIMPEG RS</div>
+          <div class="brand-sub">Sistem Info. Kepegawaian</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard">
+          <span class="ic">&#9632;</span> Dashboard
+        </button>
+        <button class="nav-item" data-page="pegawai">
+          <span class="ic">&#9776;</span> Data Pegawai
+        </button>
+        <button class="nav-item" data-page="tambah">
+          <span class="ic">&#43;</span> Tambah Pegawai
+        </button>
+        <button class="nav-item" data-page="riwayat">
+          <span class="ic">&#8635;</span> Input Riwayat
+        </button>
+        <button class="nav-item" data-page="dms">
+          <span class="ic">&#128193;</span> Dokumen (DMS)
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btnRefreshAll" class="btn-ghost small">Muat Ulang Data</button>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+      <header class="topbar">
+        <div class="topbar-title" id="pageTitle">Dashboard</div>
+        <div class="search-box">
+          <input type="text" id="globalSearch" placeholder="Cari nama atau ID Absen pegawai...">
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <div class="loading" id="globalLoading">Memuat data...</div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ===== TEMPLATE: DASHBOARD ===== -->
+  <template id="tpl-dashboard">
+    <!-- [BARU] Widget Notifikasi: klik utk lihat daftar pegawai -->
+    <div class="stat-cards" id="notifWidgets" style="margin-bottom:14px;"></div>
+
+    <div class="stat-cards" id="statCards"></div>
+    <div class="chart-grid">
+      <div class="card"><h3>Jenis Kelamin</h3><canvas id="chartGender"></canvas></div>
+      <div class="card"><h3>Agama</h3><canvas id="chartAgama"></canvas></div>
+      <div class="card"><h3>Golongan (Top 10)</h3><canvas id="chartGolongan"></canvas></div>
+      <div class="card"><h3>Tingkat Pendidikan</h3><canvas id="chartPend"></canvas></div>
+      <div class="card"><h3>Jurusan / Peminatan (Top 10)</h3><canvas id="chartJurusan"></canvas></div>
+      <div class="card"><h3>Kelompok Usia</h3><canvas id="chartUmur"></canvas></div>
+      <div class="card wide"><h3>Unit / Tempat Tugas x Jabatan (Top 10)</h3><canvas id="chartUnit"></canvas></div>
+    </div>
+  </template>
+
+  <!-- ===== TEMPLATE: LIST PEGAWAI ===== -->
+  <template id="tpl-pegawai">
+    <div class="card">
+      <div class="list-toolbar">
+        <input type="text" id="listSearch" placeholder="Ketik nama atau ID Absen...">
+        <span class="muted" id="listCount"></span>
+        <button class="btn-outline btn-sm" id="btnDownloadPegawai">&#8681; Download Data</button>
+        <button class="btn-outline btn-sm" id="btnDownloadFilter">&#8681; Download Data (Filter)</button>
+      </div>
+      <div class="table-wrap">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>ID Absen</th><th>Nama</th><th>Jabatan</th><th>Unit Kerja</th><th>Status</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="listBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </template>
+
+  <!-- ===== TEMPLATE: TAMBAH PEGAWAI ===== -->
+  <!-- [BARU] Form multi-section: Biodata (wajib) + Status Kepegawaian (wajib,
+       syarat pegawai dianggap "Aktif" & tampil di Tbl Pegawai/Profil/Dashboard)
+       + 4 section riwayat opsional yang bisa dibuka/tutup, diisi hanya jika
+       datanya sudah tersedia saat ini. Dikirim sekaligus lewat saveNewPegawai(). -->
+  <template id="tpl-tambah">
+    <div class="card form-card">
+      <h3>Biodata Pegawai Baru</h3>
+      <div id="bioFormArea"></div>
+    </div>
+
+    <div class="card form-card">
+      <h3>Status Kepegawaian <span class="req-mark">*wajib diisi</span></h3>
+      <div id="statusFormArea"></div>
+    </div>
+
+    <div class="card form-card">
+      <h3 class="section-toggle" data-section="pend">
+        Pendidikan <span class="opt-mark">(opsional &ndash; isi jika datanya sudah tersedia)</span>
+        <span class="chev">&#9656;</span>
+      </h3>
+      <div class="section-body hidden" id="pendFormArea"></div>
+    </div>
+
+    <div class="card form-card">
+      <h3 class="section-toggle" data-section="pangkat">
+        Pangkat &amp; Jabatan <span class="opt-mark">(opsional &ndash; isi jika datanya sudah tersedia)</span>
+        <span class="chev">&#9656;</span>
+      </h3>
+      <div class="section-body hidden" id="pangkatFormArea"></div>
+    </div>
+
+    <div class="card form-card">
+      <h3 class="section-toggle" data-section="t4tugas">
+        Tempat Tugas <span class="opt-mark">(opsional &ndash; isi jika datanya sudah tersedia)</span>
+        <span class="chev">&#9656;</span>
+      </h3>
+      <div class="section-body hidden" id="t4tugasFormArea"></div>
+    </div>
+
+    <div class="card form-card">
+      <h3 class="section-toggle" data-section="sipstr">
+        SIP / STR <span class="opt-mark">(opsional &ndash; isi jika datanya sudah tersedia)</span>
+        <span class="chev">&#9656;</span>
+      </h3>
+      <div class="section-body hidden" id="sipstrFormArea"></div>
+    </div>
+
+    <div class="card">
+      <div class="btnrow" style="border-top:none; margin-top:0; padding-top:0;">
+        <button class="btn-primary" id="btnSaveNewPegawai">Simpan Pegawai Baru</button>
+        <button class="btn-outline" id="btnUpdateTblPegawai">Update Tabel Pegawai</button>
+      </div>
+      <div class="muted" style="margin-top:10px;">
+        "Simpan Pegawai Baru" hanya menyimpan data ke Tbl Bio &amp; sheet riwayat.
+        Klik "Update Tabel Pegawai" setelah selesai menyimpan agar pegawai baru
+        muncul di Tbl Pegawai, Data Pegawai, Profil, dan Dashboard.
+      </div>
+    </div>
+  </template>
+
+  <!-- ===== TEMPLATE: INPUT TABEL RIWAYAT ===== -->
+  <!-- [BARU] Menu terpisah untuk menambah riwayat (Status/Pend/Pangkat/
+       T4 Tugas/SIP-STR) ke PEGAWAI YANG SUDAH ADA, tanpa perlu masuk
+       ke halaman Profil satu-satu. Pilih pegawai dulu lewat pencarian,
+       lalu isi bagian mana saja yang perlu ditambah (boleh lebih dari
+       satu sekaligus), kirim lewat saveRiwayatBulk(). -->
+  <template id="tpl-riwayat">
+    <div class="card form-card">
+      <h3>Pilih Pegawai</h3>
+      <div class="field" style="max-width:420px; position:relative;">
+        <label>Cari ID Absen atau Nama</label>
+        <input type="text" id="rwPegawaiSearch" autocomplete="off" placeholder="Ketik ID Absen atau nama pegawai...">
+        <div id="rwPegawaiResults" class="search-results hidden" style="top:64px;"></div>
+      </div>
+      <div class="muted" id="rwSelectedInfo" style="margin-top:10px;"></div>
+    </div>
+
+    <div id="rwFormWrap" class="hidden">
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwStatus">
+          Status Kepegawaian <span class="opt-mark">(opsional &ndash; isi jika ada perubahan)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwStatusFormArea"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwPend">
+          Pendidikan <span class="opt-mark">(opsional)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwPendFormArea"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwPangkat">
+          Pangkat &amp; Jabatan <span class="opt-mark">(opsional)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwPangkatFormArea"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwT4tugas">
+          Tempat Tugas <span class="opt-mark">(opsional)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwT4tugasFormArea"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwSipstr">
+          SIP / STR <span class="opt-mark">(opsional)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwSipstrFormArea"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3 class="section-toggle" data-section="rwKgb">
+          KGB (Kenaikan Gaji Berkala) <span class="opt-mark">(opsional)</span>
+          <span class="chev">&#9656;</span>
+        </h3>
+        <div class="section-body hidden" id="rwKgbFormArea"></div>
+      </div>
+
+      <div class="card">
+        <div class="btnrow" style="border-top:none; margin-top:0; padding-top:0;">
+          <button class="btn-primary" id="btnSaveRiwayatBulk">Simpan Riwayat</button>
+        </div>
+        <div class="muted" style="margin-top:10px;">
+          Isi minimal satu bagian di atas, lalu klik Simpan. Tbl Pegawai / Dashboard / Profil akan otomatis ikut diperbarui.
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="tpl-detail">
+    <div class="detail-header card">
+      <div class="avatar" id="detAvatar">-</div>
+      <div class="detail-info">
+        <h2 id="detNama">-</h2>
+        <div class="muted" id="detJabatan">-</div>
+        <div class="badges" id="detBadges"></div>
+      </div>
+      <button class="btn-outline" id="btnEditBio">Edit Biodata</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="biodata">Biodata</button>
+      <button class="tab-btn" data-tab="status">Status Kepegawaian</button>
+      <button class="tab-btn" data-tab="pend">Pendidikan</button>
+      <button class="tab-btn" data-tab="pangkat">Pangkat &amp; Jabatan</button>
+      <button class="tab-btn" data-tab="t4tugas">Tempat Tugas</button>
+      <button class="tab-btn" data-tab="sipstr">SIP &amp; STR</button>
+      <button class="tab-btn" data-tab="kgb">KGB</button>
+    </div>
+
+    <div class="tab-panels" id="tabPanels"></div>
+  </template>
+
+  <!-- ===== TEMPLATE: DMS (Dokumen Manajemen Sistem) ===== -->
+  <!-- [BARU] Upload, cari, preview & download dokumen PDF per pegawai.
+       File disimpan di subfolder Drive per pegawai (link folder utama
+       ditentukan di DMS.gs), metadata dicatat di sheet "Tbl Dokumen". -->
+  <template id="tpl-dms">
+    <div class="card form-card">
+      <h3>Pilih Pegawai</h3>
+      <div class="field" style="max-width:420px; position:relative;">
+        <label>Cari ID Absen atau Nama</label>
+        <input type="text" id="dmsPegawaiSearch" autocomplete="off" placeholder="Ketik ID Absen atau nama pegawai...">
+        <div id="dmsPegawaiResults" class="search-results hidden" style="top:64px;"></div>
+      </div>
+      <div class="muted" id="dmsSelectedInfo" style="margin-top:10px;"></div>
+    </div>
+
+    <div id="dmsWrap" class="hidden">
+      <div class="card">
+        <h3>Dokumen Saat Ini</h3>
+        <div id="dmsCurrentDoc"></div>
+      </div>
+
+      <div class="card form-card">
+        <h3>Upload / Ganti Dokumen (PDF)</h3>
+        <div class="muted" style="margin-bottom:10px;">
+          1 pegawai = 1 file PDF (gabungan seluruh dokumen kepegawaian). Upload baru akan MENGGANTI file sebelumnya.
+        </div>
+        <div class="field">
+          <label>File PDF</label>
+          <input type="file" id="dmsFileInput" accept="application/pdf">
+        </div>
+        <div class="btnrow" style="border-top:none; margin-top:14px; padding-top:0;">
+          <button class="btn-primary" id="btnUploadDokumen">Upload Dokumen</button>
+        </div>
+        <div class="muted" style="margin-top:8px;">Maks 15 MB, hanya file PDF.</div>
+      </div>
+    </div>
+  </template>
+
+  <!-- ===== Modal Preview PDF ===== -->
+  <div class="modal-overlay hidden" id="dmsPreviewOverlay">
+    <div class="modal" style="width:820px; max-width:95vw; height:88vh;">
+      <div class="modal-head">
+        <span id="dmsPreviewTitle">Preview Dokumen</span>
+        <button id="dmsPreviewClose" class="modal-close">&times;</button>
+      </div>
+      <iframe id="dmsPreviewFrame" style="width:100%; height:calc(88vh - 54px); border:none;"></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Modal Form Generik (Riwayat) ===== -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <span id="modalTitle">Form</span>
+        <button id="modalClose" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <?!= include('JavaScript'); ?>
+</body>
+</html>

@@ -1,0 +1,1393 @@
+<script>
+/*************************************************************
+ * SIMPEG RS - Frontend Logic (Vanilla JS SPA)
+ *
+ * [FIX 3] Card dashboard "Jenis Pegawai", "Golongan", dan
+ * "Tingkat Pendidikan" diubah menjadi horizontal bar chart,
+ * mengikuti gaya card "Jurusan / Peminatan" -- dilakukan dengan
+ * menambahkan argumen ke-4 (horizontal = true) pada pemanggilan
+ * drawChart() di renderDashboard().
+ *************************************************************/
+
+// ------- state global -------
+var STATE = {
+  dropdowns: {}, headers: {}, dashboard: {}, pegawaiRingkas: [],
+  page: 'dashboard', charts: {}
+};
+
+var BUTTON_LIST_FIELDS = ['JENIS KELAMIN', 'AGAMA'];
+// [DIUBAH] STATUS PEGAWAI, TINGKAT PEND, JENIS PEGAWAI dipindah dari
+// button-list ke sini; NAMA KAMPUS & JURUSAN/PEMINATAN baru ditambah.
+// Semua sumber datanya kolom & rentang tetap di Tbl Reff (lihat
+// REFF_COLUMN_MAP_ di Code.gs).
+var SELECT_FIELDS = ['GOL', 'NAMA SK', 'JABATAN PERMENPAN', 'KELAS JABATAN',
+  'JABATAN TPP', 'TEMPAT TUGAS', 'JABATAN',
+  'STATUS PEGAWAI', 'TINGKAT PEND', 'NAMA KAMPUS', 'JURUSAN/PEMINATAN', 'JENIS PEGAWAI'];
+
+// ------- helper: bungkus google.script.run jadi Promise -------
+function gs(fnName) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  return new Promise(function (resolve, reject) {
+    google.script.run
+      .withSuccessHandler(resolve)
+      .withFailureHandler(function (err) { reject(err); })
+      [fnName].apply(null, args);
+  });
+}
+
+function toast(msg, isError) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError ? ' error' : '');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function () { t.classList.add('hidden'); }, 3200);
+}
+
+// [BARU] debounce sederhana -- dipakai di kotak pencarian supaya filter
+// tidak jalan di setiap ketukan tombol, terutama saat data pegawai banyak.
+function debounce(fn, delay) {
+  var timer = null;
+  return function () {
+    var args = arguments, ctx = this;
+    clearTimeout(timer);
+    timer = setTimeout(function () { fn.apply(ctx, args); }, delay || 250);
+  };
+}
+
+// [BARU] tandai tombol "sedang memproses" supaya user tidak bisa klik
+// ganda selagi menunggu balasan google.script.run (mencegah submit
+// duplikat, mis. dua riwayat yang sama ter-append).
+function setBtnBusy(btn, busyText) {
+  if (!btn) return;
+  btn.dataset.origText = btn.dataset.origText || btn.textContent;
+  btn.textContent = busyText || 'Memproses...';
+  btn.disabled = true;
+}
+function clearBtnBusy(btn) {
+  if (!btn) return;
+  btn.disabled = false;
+  if (btn.dataset.origText) btn.textContent = btn.dataset.origText;
+}
+
+// ------- boot -------
+document.addEventListener('DOMContentLoaded', function () {
+  bindNav();
+  bindGlobalSearch();
+  bindModalClose();
+  document.getElementById('btnRefreshAll').addEventListener('click', boot);
+  boot();
+});
+
+function boot() {
+  document.getElementById('content').innerHTML = '<div class="loading">Memuat data...</div>';
+  gs('getInitialData').then(function (data) {
+    STATE.dropdowns = data.dropdowns;
+    STATE.headers = data.headers;
+    STATE.dashboard = data.dashboard;
+    STATE.pegawaiRingkas = data.pegawaiRingkas;
+    renderPage(STATE.page);
+  }).catch(function (err) { toast('Gagal memuat data: ' + err, true); });
+}
+
+// ------- navigasi -------
+function bindNav() {
+  document.querySelectorAll('.nav-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.nav-item').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderPage(btn.dataset.page);
+    });
+  });
+}
+
+function renderPage(page, param) {
+  STATE.page = page;
+  var titles = { dashboard: 'Dashboard', pegawai: 'Data Pegawai', tambah: 'Tambah Pegawai', riwayat: 'Input Tabel Riwayat', dms: 'Dokumen (DMS)', detail: 'Profil Pegawai' };
+  document.getElementById('pageTitle').textContent = titles[page] || '';
+  var content = document.getElementById('content');
+
+  if (page === 'dashboard') {
+    content.innerHTML = document.getElementById('tpl-dashboard').innerHTML;
+    renderDashboard();
+  } else if (page === 'pegawai') {
+    content.innerHTML = document.getElementById('tpl-pegawai').innerHTML;
+    renderPegawaiList('');
+    document.getElementById('listSearch').addEventListener('input', debounce(function (e) {
+      renderPegawaiList(e.target.value);
+    }, 200));
+    document.getElementById('btnDownloadPegawai').addEventListener('click', openDownloadPegawaiModal);
+    document.getElementById('btnDownloadFilter').addEventListener('click', openDownloadFilterModal);
+  } else if (page === 'tambah') {
+    content.innerHTML = document.getElementById('tpl-tambah').innerHTML;
+    renderTambahPegawaiForm();
+  } else if (page === 'riwayat') {
+    content.innerHTML = document.getElementById('tpl-riwayat').innerHTML;
+    renderInputRiwayatForm();
+  } else if (page === 'dms') {
+    content.innerHTML = document.getElementById('tpl-dms').innerHTML;
+    renderDmsPage();
+  } else if (page === 'detail') {
+    content.innerHTML = document.getElementById('tpl-detail').innerHTML;
+    loadDetail(param);
+  }
+}
+
+// ------- pencarian global (topbar) -------
+function bindGlobalSearch() {
+  var input = document.getElementById('globalSearch');
+  var box = document.getElementById('searchResults');
+  input.addEventListener('input', debounce(function () {
+    var q = input.value.trim().toLowerCase();
+    if (!q) { box.classList.add('hidden'); return; }
+    var results = STATE.pegawaiRingkas.filter(function (p) {
+      return String(p['ID ABSEN']).toLowerCase().indexOf(q) > -1 ||
+             String(p['NAMA']).toLowerCase().indexOf(q) > -1;
+    }).slice(0, 12);
+    box.innerHTML = results.length ? results.map(function (p) {
+      return '<div class="search-item" data-id="' + escapeHtml(p['ID ABSEN']) + '">' +
+        '<b>' + escapeHtml(p['NAMA'] || '-') + '</b> &middot; ' + escapeHtml(p['ID ABSEN']) +
+        '<div class="s-sub">' + escapeHtml(p['JABATAN'] || '-') + ' &middot; ' + escapeHtml(p['TEMPAT TUGAS'] || '-') + '</div></div>';
+    }).join('') : '<div class="search-item muted">Tidak ditemukan</div>';
+    box.classList.remove('hidden');
+  }, 200));
+  box.addEventListener('click', function (e) {
+    var item = e.target.closest('.search-item');
+    if (item && item.dataset.id) {
+      input.value = ''; box.classList.add('hidden');
+      goToDetail(item.dataset.id);
+    }
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.search-box')) box.classList.add('hidden');
+  });
+}
+
+// ------- FUNGSI GO TO DETAIL (DI PERBAIKI) -------
+function goToDetail(idAbsen) {
+  if (idAbsen === null || idAbsen === undefined || String(idAbsen).trim() === '') {
+    toast('ID Pegawai tidak valid.', true);
+    return;
+  }
+  var cleanId = String(idAbsen).trim();
+  document.querySelectorAll('.nav-item').forEach(function (b) { b.classList.remove('active'); });
+  renderPage('detail', cleanId);
+}
+
+// =========================================================
+// DASHBOARD
+// =========================================================
+function renderDashboard() {
+  var d = STATE.dashboard;
+  var jp = d.byJenisPegawai || {};
+
+  // [BARU] Widget PNS & P3K sekarang menjumlahkan beberapa sub-kategori
+  // sekaligus, dengan rincian per sub-kategori ditampilkan di dalam card.
+  var pnsTotal = (jp['PNS'] || 0) + (jp['PNS Titipan'] || 0) + (jp['CPNS'] || 0);
+  var p3kTotal = (jp['P3K'] || 0) + (jp['P3K Titipan'] || 0) + (jp['PW'] || 0);
+
+  var cardsHtml =
+    statCard(d.total, 'Total Pegawai Aktif') +
+    statCardDetailed(pnsTotal, 'PNS (Total)', [
+      ['PNS', jp['PNS'] || 0], ['PNS Titipan', jp['PNS Titipan'] || 0], ['CPNS', jp['CPNS'] || 0]
+    ]) +
+    statCardDetailed(p3kTotal, 'P3K (Total)', [
+      ['P3K', jp['P3K'] || 0], ['P3K Titipan', jp['P3K Titipan'] || 0], ['PW', jp['PW'] || 0]
+    ]) +
+    statCard((jp['Honor'] || 0), 'Honor / Kontrak');
+  document.getElementById('statCards').innerHTML = cardsHtml;
+
+  renderNotifWidgets();
+
+  drawChart('chartGender', 'doughnut', d.byGender);
+  drawChart('chartAgama', 'doughnut', d.byAgama);
+  // [FIX 3] Golongan & Tingkat Pendidikan -> horizontal bar (argumen ke-4 = true)
+  drawChart('chartGolongan', 'bar', topN(d.byGolongan, 10), true);
+  drawChart('chartPend', 'bar', d.byTingkatPend, true);
+  drawChart('chartJurusan', 'bar', topN(d.byJurusan, 10), true);
+  // [BARU] Kelompok Usia sekarang doughnut (sebelumnya bar)
+  drawChart('chartUmur', 'doughnut', d.ageBuckets);
+  // [BARU] Unit / Tempat Tugas sekarang stacked bar per Jabatan
+  drawStackedBarUnit('chartUnit', d.byUnitJabatan);
+}
+
+function statCard(num, lbl) {
+  return '<div class="stat-card"><div class="num">' + (num || 0) + '</div><div class="lbl">' + lbl + '</div></div>';
+}
+
+// [BARU] Varian stat-card dengan rincian sub-kategori (utk widget PNS & P3K)
+function statCardDetailed(num, lbl, details) {
+  var detailHtml = details.map(function (d) {
+    return '<span>' + escapeHtml(d[0]) + ': <b>' + (d[1] || 0) + '</b></span>';
+  }).join('');
+  return '<div class="stat-card">' +
+    '<div class="num">' + (num || 0) + '</div><div class="lbl">' + lbl + '</div>' +
+    '<div class="stat-detail">' + detailHtml + '</div>' +
+    '</div>';
+}
+
+function topN(obj, n) {
+  var entries = Object.keys(obj || {}).map(function (k) { return [k, obj[k]]; });
+  entries.sort(function (a, b) { return b[1] - a[1]; });
+  var out = {};
+  entries.slice(0, n).forEach(function (e) { out[e[0]] = e[1]; });
+  return out;
+}
+
+var PALETTE = ['#17a398', '#0f6b64', '#5fc9bd', '#c98a10', '#d64545', '#7a5fc9', '#2b8fd6', '#a3b845', '#c96f9a', '#4a7c6f'];
+
+// [BARU] Palet "different hues" -- tiap warna dipisah rata di roda warna
+// (hue berbeda jauh satu sama lain), dipakai khusus chart doughnut supaya
+// tiap potongan gampang dibedakan sekilas, beda dari PALETTE bernuansa
+// teal di atas yang dipakai bar chart.
+function generateHuePalette(n) {
+  var colors = [];
+  for (var i = 0; i < n; i++) {
+    var hue = Math.round((360 / Math.max(n, 1)) * i);
+    colors.push('hsl(' + hue + ', 68%, 54%)');
+  }
+  return colors;
+}
+
+function drawChart(canvasId, type, dataObj, horizontal) {
+  var el = document.getElementById(canvasId);
+  if (!el) return;
+  if (STATE.charts[canvasId]) STATE.charts[canvasId].destroy();
+  var labels = Object.keys(dataObj || {});
+  var values = labels.map(function (k) { return dataObj[k]; });
+  var colors = (type === 'doughnut') ? generateHuePalette(labels.length) : PALETTE;
+  STATE.charts[canvasId] = new Chart(el.getContext('2d'), {
+    type: type,
+    data: { labels: labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: horizontal ? 'y' : 'x',
+      plugins: { legend: { display: type === 'doughnut', position: 'bottom', labels: { boxWidth: 11, font: { size: 11 } } } },
+      scales: type === 'doughnut' ? {} : { y: { beginAtZero: true, ticks: { precision: 0 } } }
+    }
+  });
+}
+
+// [BARU] Stacked bar chart Unit/Tempat Tugas x Jabatan. Beda dari
+// drawChart() biasa karena butuh BANYAK dataset sekaligus (1 dataset
+// per Jabatan), bukan 1 dataset per label seperti chart lain.
+function drawStackedBarUnit(canvasId, data) {
+  var el = document.getElementById(canvasId);
+  if (!el) return;
+  if (STATE.charts[canvasId]) STATE.charts[canvasId].destroy();
+
+  var units = (data && data.units) || [];
+  var jabatanKeys = (data && data.jabatanKeys) || [];
+  var matrix = (data && data.matrix) || {};
+  var colors = generateHuePalette(jabatanKeys.length);
+
+  var datasets = jabatanKeys.map(function (jabatan, i) {
+    return {
+      label: jabatan,
+      data: units.map(function (u) { return (matrix[u] && matrix[u][jabatan]) || 0; }),
+      backgroundColor: colors[i]
+    };
+  });
+
+  STATE.charts[canvasId] = new Chart(el.getContext('2d'), {
+    type: 'bar',
+    data: { labels: units, datasets: datasets },
+    options: {
+      indexAxis: 'y', // [BARU] horizontal, sama seperti orientasi chart bar lain
+      plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 11, font: { size: 10 } } } },
+      scales: {
+        x: { stacked: true, beginAtZero: true, ticks: { precision: 0 } },
+        y: { stacked: true, ticks: { autoSkip: false } }
+      }
+    }
+  });
+}
+
+// =========================================================
+// LIST PEGAWAI
+// =========================================================
+function renderPegawaiList(query) {
+  var q = (query || '').trim().toLowerCase();
+  var list = STATE.pegawaiRingkas.filter(function (p) {
+    return !q || String(p['ID ABSEN']).toLowerCase().indexOf(q) > -1 ||
+      String(p['NAMA']).toLowerCase().indexOf(q) > -1;
+  });
+  document.getElementById('listCount').textContent = list.length + ' pegawai';
+  document.getElementById('listBody').innerHTML = list.map(function (p) {
+    return '<tr>' +
+      '<td>' + escapeHtml(p['ID ABSEN']) + '</td>' +
+      '<td class="row-link" data-id="' + escapeHtml(p['ID ABSEN']) + '">' + escapeHtml(p['NAMA'] || '-') + '</td>' +
+      '<td>' + escapeHtml(p['JABATAN'] || '-') + '</td>' +
+      '<td>' + escapeHtml(p['TEMPAT TUGAS'] || '-') + '</td>' +
+      '<td><span class="pill aktif">' + escapeHtml(p['STATUS PEGAWAI'] || '-') + '</span></td>' +
+      '<td><button class="btn-outline btn-sm" data-id="' + escapeHtml(p['ID ABSEN']) + '">Lihat</button></td>' +
+      '</tr>';
+  }).join('') || '<tr><td colspan="6" class="empty-state">Belum ada data pegawai aktif.</td></tr>';
+
+  document.getElementById('listBody').querySelectorAll('[data-id]').forEach(function (el) {
+    el.addEventListener('click', function () { goToDetail(el.dataset.id); });
+  });
+}
+
+// =========================================================
+// FORM BUILDER (dipakai di Tambah Pegawai & Edit Biodata & Riwayat)
+// =========================================================
+function buildFieldHtml(header, value, fieldId) {
+  value = value === undefined || value === null ? '' : value;
+  var dateFields = STATE.dropdowns.DATE_FIELDS || [];
+
+  if (dateFields.indexOf(header) > -1) {
+    var iso = toISODateForInput(value);
+    return '<div class="field"><label>' + header + '</label>' +
+      '<input type="date" id="' + fieldId + '" value="' + iso + '"></div>';
+  }
+  if (BUTTON_LIST_FIELDS.indexOf(header) > -1) {
+    var opts = STATE.dropdowns[header] || [];
+    var btns = opts.map(function (o) {
+      var sel = String(o) === String(value) ? ' selected' : '';
+      return '<div class="opt' + sel + '" data-val="' + escapeHtml(o) + '">' + escapeHtml(o) + '</div>';
+    }).join('');
+    return '<div class="field"><label>' + header + '</label>' +
+      '<input type="hidden" id="' + fieldId + '" value="' + escapeHtml(value) + '">' +
+      '<div class="btn-list" data-target="' + fieldId + '">' + btns + '</div></div>';
+  }
+  if (SELECT_FIELDS.indexOf(header) > -1 && (STATE.dropdowns[header] || []).length) {
+    var options = STATE.dropdowns[header].map(function (o) {
+      var sel = String(o) === String(value) ? ' selected' : '';
+      return '<option value="' + escapeHtml(o) + '"' + sel + '>' + escapeHtml(o) + '</option>';
+    }).join('');
+    return '<div class="field"><label>' + header + '</label>' +
+      '<select id="' + fieldId + '"><option value="">- pilih -</option>' + options + '</select></div>';
+  }
+  var type = header === 'EMAIL' ? 'email' : (header.indexOf('GAJI') > -1 || header === 'NOMOR HP' ? 'text' : 'text');
+  return '<div class="field"><label>' + header + '</label>' +
+    '<input type="' + type + '" id="' + fieldId + '" value="' + escapeHtml(value) + '"></div>';
+}
+
+function escapeHtml(v) {
+  return String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function toISODateForInput(val) {
+  if (!val) return '';
+  var bulan = ['januari','februari','maret','april','mei','juni','juli','agustus','september','oktober','november','desember'];
+  var m = String(val).trim().match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+  if (m) {
+    var idx = bulan.indexOf(m[2].toLowerCase());
+    if (idx > -1) {
+      var mm = ('0' + (idx + 1)).slice(-2);
+      var dd = ('0' + m[1]).slice(-2);
+      return m[3] + '-' + mm + '-' + dd;
+    }
+  }
+  var us = String(val).trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (us) return us[3] + '-' + ('0' + us[1]).slice(-2) + '-' + ('0' + us[2]).slice(-2);
+  var d = new Date(val);
+  if (!isNaN(d.getTime())) {
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  return '';
+}
+
+function bindButtonLists(container) {
+  container.querySelectorAll('.btn-list').forEach(function (list) {
+    list.querySelectorAll('.opt').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        list.querySelectorAll('.opt').forEach(function (o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        document.getElementById(list.dataset.target).value = opt.dataset.val;
+      });
+    });
+  });
+}
+
+// [FIX 7] Sebelumnya mencari elemen dengan id = prefix + h APA ADANYA,
+// padahal buildFieldHtml() selalu men-sanitize nama header (spasi/simbol
+// -> underscore) saat membentuk id elemen. Akibatnya HAMPIR SEMUA field
+// (mis. "STATUS PEGAWAI", "TEMPAT LAHIR", "PANGKAT GOL.RUANG") tidak
+// pernah terbaca saat submit karena id tidak pernah cocok. Sanitasi di
+// sini disamakan persis dengan yang dipakai buildFieldHtml().
+function readFormValues(headers, prefix) {
+  var payload = {};
+  headers.forEach(function (h) {
+    var id = prefix + h.replace(/[^A-Za-z0-9]/g, '_');
+    var el = document.getElementById(id);
+    if (el) payload[h] = el.value;
+  });
+  return payload;
+}
+
+// =========================================================
+// FORM TAMBAH PEGAWAI BARU (Bio + Status wajib + riwayat opsional)
+// [FIX 3] Menggantikan renderBioForm(null) lama. Status Kepegawaian
+// WAJIB diisi karena itu satu-satunya syarat pegawai dianggap "Aktif"
+// dan tampil di Tbl Pegawai/Tbl Profil/Tbl Dashboard (lihat
+// rebuildTblPegawai() di Code.gs). Section Pendidikan/Pangkat &
+// Jabatan/Tempat Tugas/SIP-STR sifatnya opsional -- dibiarkan
+// tertutup (collapsed) secara default dan hanya dikirim ke server
+// bila memang diisi oleh user.
+// =========================================================
+function renderTambahPegawaiForm() {
+  // --- Biodata (wajib) ---
+  var bioHeaders = STATE.headers.BIO;
+  document.getElementById('bioFormArea').innerHTML = '<div class="form-grid">' +
+    bioHeaders.map(function (h) {
+      return buildFieldHtml(h, '', 'bio_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+    }).join('') + '</div>';
+
+  // --- Status Kepegawaian (wajib) ---
+  var statusHeaders = STATE.headers.STATUS.filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+  document.getElementById('statusFormArea').innerHTML = '<div class="form-grid">' +
+    statusHeaders.map(function (h) {
+      return buildFieldHtml(h, '', 'status_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+    }).join('') + '</div>';
+
+  // --- 4 section riwayat opsional ---
+  var OPTIONAL_SECTIONS = [
+    { kind: 'pend', headerKey: 'PEND', area: 'pendFormArea' },
+    { kind: 'pangkat', headerKey: 'PANGKAT', area: 'pangkatFormArea' },
+    { kind: 't4tugas', headerKey: 'T4TUGAS', area: 't4tugasFormArea' },
+    { kind: 'sipstr', headerKey: 'SIPSTR', area: 'sipstrFormArea' }
+  ];
+  OPTIONAL_SECTIONS.forEach(function (sec) {
+    var headers = STATE.headers[sec.headerKey].filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+    var area = document.getElementById(sec.area);
+    area.innerHTML = '<div class="form-grid">' +
+      headers.map(function (h) {
+        return buildFieldHtml(h, '', sec.kind + '_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+      }).join('') + '</div>';
+    bindButtonLists(area);
+  });
+
+  bindButtonLists(document.getElementById('bioFormArea'));
+  bindButtonLists(document.getElementById('statusFormArea'));
+
+  // Toggle buka/tutup section opsional
+  document.querySelectorAll('.section-toggle').forEach(function (h3) {
+    h3.addEventListener('click', function () {
+      var kind = h3.dataset.section;
+      var area = document.getElementById(kind + 'FormArea');
+      area.classList.toggle('hidden');
+      h3.classList.toggle('open');
+    });
+  });
+
+  document.getElementById('btnSaveNewPegawai').addEventListener('click', function () {
+    var btn = this;
+    var bio = readFormValues(bioHeaders, 'bio_');
+    var status = readFormValues(statusHeaders, 'status_');
+
+    if (!bio['ID ABSEN']) { toast('ID ABSEN wajib diisi.', true); return; }
+    if (!bio['NAMA']) { toast('NAMA wajib diisi.', true); return; }
+    if (!status['STATUS PEGAWAI']) { toast('Status Pegawai wajib diisi (mis. "Aktif").', true); return; }
+
+    var payload = { bio: bio, status: status };
+    OPTIONAL_SECTIONS.forEach(function (sec) {
+      var headers = STATE.headers[sec.headerKey].filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+      payload[sec.kind] = readFormValues(headers, sec.kind + '_');
+    });
+
+    setBtnBusy(btn, 'Menyimpan...');
+    // [BARU] Tombol ini SEKARANG hanya menulis ke Tbl Bio + sheet
+    // riwayat (Status/Pend/Pangkat/T4 Tugas/SIP-STR) -- Tbl Pegawai
+    // (dan Tbl Dashboard/Tbl Profil yang formulanya bersumber dari
+    // situ) BELUM ikut diperbarui di sini. Karena itu jangan langsung
+    // pindah ke halaman Profil/Dashboard (datanya belum tentu muncul);
+    // cukup render ulang form kosong & ingatkan user memakai tombol
+    // "Update Tabel Pegawai" setelah selesai input.
+    gs('saveNewPegawai', payload).then(function () {
+      toast('Data biodata & riwayat berhasil disimpan. Klik "Update Tabel Pegawai" agar tampil di sistem.');
+      clearBtnBusy(btn);
+      renderPage('tambah');
+    }).catch(function (err) {
+      clearBtnBusy(btn);
+      toast('Gagal menyimpan: ' + err, true);
+    });
+  });
+
+  document.getElementById('btnUpdateTblPegawai').addEventListener('click', function () {
+    var btn = this;
+    setBtnBusy(btn, 'Memperbarui...');
+    gs('updateTblPegawai').then(function () {
+      toast('Tabel Pegawai berhasil diperbarui.');
+      clearBtnBusy(btn);
+      boot();
+    }).catch(function (err) {
+      clearBtnBusy(btn);
+      toast('Gagal update Tabel Pegawai: ' + err, true);
+    });
+  });
+}
+
+// =========================================================
+// DETAIL / PROFIL PEGAWAI (DI PERBAIKI)
+// =========================================================
+var CURRENT_DETAIL = null;
+
+function loadDetail(idAbsen) {
+  if (idAbsen === null || idAbsen === undefined || String(idAbsen).trim() === '') {
+    toast('ID Pegawai tidak valid.', true);
+    renderPage('pegawai');
+    return;
+  }
+
+  var targetId = String(idAbsen).trim();
+  document.getElementById('content').innerHTML = '<div class="loading">Memuat profil pegawai (' + escapeHtml(targetId) + ')...</div>';
+
+  gs('getPegawaiDetail', targetId).then(function (raw) {
+    // [FIX] getPegawaiDetail() sekarang mengembalikan STRING JSON
+    // (lihat catatan di Code.gs) supaya lolos dari bug serializer
+    // otomatis google.script.run untuk object bersarang kompleks --
+    // jadi wajib di-parse dulu di sini sebelum dipakai.
+    var detail = null;
+    if (raw) {
+      try {
+        detail = (typeof raw === 'string') ? JSON.parse(raw) : raw;
+      } catch (e) {
+        toast('Gagal membaca data profil (format tidak valid): ' + e, true);
+        renderPage('pegawai');
+        return;
+      }
+    }
+
+    if (!detail) {
+      toast('Pegawai dengan ID ' + targetId + ' tidak ditemukan.', true);
+      renderPage('pegawai');
+      return;
+    }
+
+    CURRENT_DETAIL = detail;
+    document.getElementById('content').innerHTML = document.getElementById('tpl-detail').innerHTML;
+
+    fillDetailHeader(detail);
+    bindTabs();
+    renderTabPanel('biodata');
+
+    // [FIX 4] Tombol Edit Biodata sekarang baca & tulis LANGSUNG ke
+    // "Tbl Bio" lewat getBioByIdAbsen()/saveBio() -- BUKAN lagi ke
+    // "Tbl Profil", karena Tbl Profil adalah hasil formula QUERY
+    // (read-only) dan akan selalu gagal jika ditulis.
+    var btnEditBio = document.getElementById('btnEditBio');
+    if (btnEditBio) {
+      btnEditBio.addEventListener('click', function () {
+        setBtnBusy(btnEditBio, 'Memuat...');
+        gs('getBioByIdAbsen', targetId).then(function (bio) {
+          clearBtnBusy(btnEditBio);
+          if (!bio) { toast('Data biodata dasar tidak ditemukan di Tbl Bio.', true); return; }
+
+          var headers = STATE.headers.BIO;
+          openModal('Edit Biodata', '<div id="editBioArea"></div>');
+          var area = document.getElementById('editBioArea');
+          area.innerHTML = '<div class="form-grid">' +
+            headers.map(function (h) {
+              var f = buildFieldHtml(h, bio[h], 'ebio_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+              if (h === 'ID ABSEN') f = f.replace('<input', '<input readonly style="background:#f1f5f4"');
+              return f;
+            }).join('') + '</div>' +
+            '<div class="btnrow">' +
+            '<button class="btn-primary" id="btnSaveEditBio">Simpan Perubahan</button>' +
+            '<button class="btn-danger" id="btnDeleteBioModal">Hapus Pegawai</button>' +
+            '</div>';
+          bindButtonLists(area);
+
+          document.getElementById('btnSaveEditBio').addEventListener('click', function () {
+            var btn = this;
+            var payload = readFormValues(headers, 'ebio_');
+            setBtnBusy(btn, 'Menyimpan...');
+            gs('saveBio', payload).then(function () {
+              toast('Biodata berhasil diperbarui.');
+              closeModal();
+              boot();
+              loadDetail(targetId);
+            }).catch(function (err) { clearBtnBusy(btn); toast('Gagal memperbarui: ' + err, true); });
+          });
+
+          document.getElementById('btnDeleteBioModal').addEventListener('click', function () {
+            if (!confirm('Hapus data pegawai ini beserta seluruh riwayatnya dari Tbl Bio?')) return;
+            var btn = this;
+            setBtnBusy(btn, 'Menghapus...');
+            gs('deleteBio', bio['ID ABSEN']).then(function () {
+              toast('Pegawai dihapus.');
+              closeModal();
+              boot();
+              renderPage('pegawai');
+            }).catch(function (err) { clearBtnBusy(btn); toast('Gagal menghapus: ' + err, true); });
+          });
+        }).catch(function (err) {
+          clearBtnBusy(btnEditBio);
+          toast('Gagal memuat biodata: ' + err, true);
+        });
+      });
+    }
+  }).catch(function (err) {
+    toast('Gagal memuat profil: ' + err, true);
+    renderPage('pegawai');
+  });
+}
+
+// [DIUBAH] Header profil sekarang bersumber dari "Tbl Profil"
+// (detail.profil), termasuk foto pegawai dari kolom LINK FOTO.
+function fillDetailHeader(detail) {
+  var p = detail.profil;
+  var nama = p['NAMA'] || '-';
+  document.getElementById('detNama').textContent = nama;
+
+  var avatarEl = document.getElementById('detAvatar');
+  if (p['FOTO_URL']) {
+    avatarEl.textContent = '';
+    avatarEl.innerHTML = '<img src="' + escapeHtml(p['FOTO_URL']) + '" alt="Foto ' + escapeHtml(nama) + '" ' +
+      'onerror="this.parentElement.textContent=\'' + (nama.trim().charAt(0).toUpperCase() || '-') + '\';">';
+  } else {
+    avatarEl.textContent = nama.trim().charAt(0).toUpperCase();
+  }
+
+  document.getElementById('detJabatan').textContent =
+    (p['JABATAN'] || p['TEMPAT TUGAS']) ? ((p['JABATAN'] || '-') + ' - ' + (p['TEMPAT TUGAS'] || '-')) : 'Jabatan belum diisi';
+
+  var badges = [
+    'ID Absen: ' + p['ID ABSEN'],
+    p['JENIS PEGAWAI'] || null,
+    p['PANGKAT GOL.RUANG'] ? ('Gol. ' + p['PANGKAT GOL.RUANG']) : null
+  ].filter(Boolean);
+  document.getElementById('detBadges').innerHTML = badges.map(function (b) {
+    return '<span class="badge">' + escapeHtml(b) + '</span>';
+  }).join('');
+}
+
+function bindTabs() {
+  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderTabPanel(btn.dataset.tab);
+    });
+  });
+}
+
+function renderTabPanel(tab) {
+  var panel = document.getElementById('tabPanels');
+  var d = CURRENT_DETAIL;
+
+  if (tab === 'biodata') {
+    // Biodata ditampilkan (read-only) dari "Tbl Profil" -- sheet hasil
+    // formula QUERY, aman untuk DIBACA. Untuk MENGUBAH, pakai tombol
+    // "Edit Biodata" yang menulis ke Tbl Bio (lihat loadDetail()).
+    var headers = STATE.headers.PROFIL.filter(function (h) {
+      return h !== 'ID ABSEN' && h !== 'NAMA' && h !== 'LINK FOTO';
+    });
+    panel.innerHTML = '<div class="card"><div class="info-grid">' +
+      headers.map(function (h) {
+        var v = d.profil[h];
+        return '<div class="info-item"><div class="k">' + escapeHtml(h) + '</div><div class="v">' + (v || v === 0 ? escapeHtml(v) : '-') + '</div></div>';
+      }).join('') + '</div></div>';
+    return;
+  }
+
+  var map = {
+    status: { kind: 'status', headers: STATE.headers.STATUS, data: d.status, title: 'Status Kepegawaian' },
+    pend: { kind: 'pend', headers: STATE.headers.PEND, data: d.pend, title: 'Pendidikan' },
+    pangkat: { kind: 'pangkat', headers: STATE.headers.PANGKAT, data: d.pangkat, title: 'Pangkat & Jabatan' },
+    t4tugas: { kind: 't4tugas', headers: STATE.headers.T4TUGAS, data: d.t4tugas, title: 'Tempat Tugas' },
+    sipstr: { kind: 'sipstr', headers: STATE.headers.SIPSTR, data: d.sipstr, title: 'SIP & STR' },
+    kgb: { kind: 'kgb', headers: STATE.headers.KGB, data: d.kgb, title: 'KGB' }
+  };
+  var cfg = map[tab];
+  var listHtml = cfg.data.length ? cfg.data.map(function (rec) {
+    var mainHeaders = cfg.headers.filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+    return '<div class="hist-card">' +
+      '<div class="hist-top">' +
+      '<div class="info-grid">' + mainHeaders.map(function (h) {
+        var v = rec[h];
+        return '<div class="info-item"><div class="k">' + escapeHtml(h) + '</div><div class="v">' + (v || v === 0 ? escapeHtml(v) : '-') + '</div></div>';
+      }).join('') + '</div>' +
+      '<div class="hist-actions">' +
+      '<button class="btn-outline btn-sm" onclick="editRiwayat(\'' + cfg.kind + '\', ' + rec._row + ')">Edit</button>' +
+      '<button class="btn-danger btn-sm" onclick="removeRiwayat(\'' + cfg.kind + '\', ' + rec._row + ')">Hapus</button>' +
+      '</div></div></div>';
+  }).join('') : '<div class="empty-state">Belum ada data ' + escapeHtml(cfg.title.toLowerCase()) + '.</div>';
+
+  panel.innerHTML = '<div class="panel-toolbar"><button class="btn-primary btn-sm" onclick="addRiwayat(\'' + cfg.kind + '\')">+ Tambah ' + escapeHtml(cfg.title) + '</button></div>' + listHtml;
+}
+
+function formatDisplay(v) { return v; } // dipertahankan untuk kompatibilitas, tidak dipakai lagi di tab biodata
+
+// ------- tambah/edit/hapus riwayat -------
+function addRiwayat(kind) {
+  openRiwayatForm(kind, null);
+}
+function editRiwayat(kind, rowNumber) {
+  var map = {
+    status: CURRENT_DETAIL.status, pend: CURRENT_DETAIL.pend, pangkat: CURRENT_DETAIL.pangkat,
+    t4tugas: CURRENT_DETAIL.t4tugas, sipstr: CURRENT_DETAIL.sipstr, kgb: CURRENT_DETAIL.kgb
+  };
+  var rec = map[kind].find(function (r) { return r._row === rowNumber; });
+  openRiwayatForm(kind, rec);
+}
+function removeRiwayat(kind, rowNumber) {
+  if (!confirm('Hapus data riwayat ini?')) return;
+  gs('deleteRiwayat', kind, rowNumber).then(function () {
+    toast('Data riwayat dihapus.');
+    boot();
+    loadDetail(CURRENT_DETAIL.profil['ID ABSEN']);
+  }).catch(function (err) { toast('Gagal: ' + err, true); });
+}
+
+var TITLES_MAP = { status: 'Status Kepegawaian', pend: 'Pendidikan', pangkat: 'Pangkat & Jabatan', t4tugas: 'Tempat Tugas', sipstr: 'SIP & STR', kgb: 'KGB' };
+var HEADER_KEY_MAP = { status: 'STATUS', pend: 'PEND', pangkat: 'PANGKAT', t4tugas: 'T4TUGAS', sipstr: 'SIPSTR', kgb: 'KGB' };
+
+function openRiwayatForm(kind, rec) {
+  var headers = STATE.headers[HEADER_KEY_MAP[kind]].filter(function (h) { return h !== 'NAMA'; });
+  var isEdit = !!rec;
+  var title = (isEdit ? 'Edit ' : 'Tambah ') + TITLES_MAP[kind];
+  var idAbsen = CURRENT_DETAIL.profil['ID ABSEN'];
+
+  var html = '<div class="form-grid">' +
+    headers.map(function (h) {
+      var val = rec ? rec[h] : (h === 'ID ABSEN' ? idAbsen : '');
+      var f = buildFieldHtml(h, val, 'rw_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+      if (h === 'ID ABSEN') f = f.replace('<input', '<input readonly style="background:#f1f5f4"');
+      return f;
+    }).join('') + '</div>' +
+    '<div class="btnrow"><button class="btn-primary" id="btnSaveRiwayat">Simpan</button></div>';
+
+  openModal(title, html);
+  var area = document.getElementById('modalBody');
+  bindButtonLists(area);
+
+  document.getElementById('btnSaveRiwayat').addEventListener('click', function () {
+    var btn = this;
+    var payload = readFormValues(headers, 'rw_');
+    payload['ID ABSEN'] = idAbsen;
+    setBtnBusy(btn, 'Menyimpan...');
+    gs('saveRiwayat', kind, payload, rec ? rec._row : null).then(function () {
+      toast('Data tersimpan.');
+      closeModal();
+      boot();
+      loadDetail(idAbsen);
+    }).catch(function (err) { clearBtnBusy(btn); toast('Gagal menyimpan: ' + err, true); });
+  });
+}
+
+// =========================================================
+// MODAL
+// =========================================================
+function openModal(title, bodyHtml) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalBody').innerHTML = bodyHtml;
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.add('hidden');
+}
+function bindModalClose() {
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalOverlay').addEventListener('click', function (e) {
+    if (e.target.id === 'modalOverlay') closeModal();
+  });
+}
+
+// =========================================================
+// DOWNLOAD TABEL PEGAWAI (Excel / PDF / CSV) -- lihat DownloadPegawai.gs
+// =========================================================
+
+// Dipanggil dari tombol "Download Data" di halaman Data Pegawai.
+// 1) Minta daftar kolom yang tersedia di Tbl Pegawai ke backend
+//    (getPegawaiExportColumns()), 2) tampilkan sbg checklist + pilihan
+//    format di modal generik yang sudah ada, 3) saat user klik
+//    "Download", panggil exportTblPegawai() dan trigger download file
+//    di browser dari hasil base64 yang dikembalikan.
+function openDownloadPegawaiModal() {
+  var openBtn = document.getElementById('btnDownloadPegawai');
+  setBtnBusy(openBtn, 'Memuat kolom...');
+
+  gs('getPegawaiExportColumns').then(function (columns) {
+    clearBtnBusy(openBtn);
+
+    var html =
+      '<div class="field" style="margin-bottom:16px;">' +
+        '<label>Format File</label>' +
+        '<div class="btn-list" id="dlFormatList">' +
+          '<span class="opt selected" data-val="xlsx">Excel (.xlsx)</span>' +
+          '<span class="opt" data-val="pdf">PDF</span>' +
+          '<span class="opt" data-val="csv">CSV</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="field">' +
+        '<label>Pilih Kolom (' + columns.length + ' tersedia)</label>' +
+        '<div class="muted" style="margin:2px 0 8px;">' +
+          '<a href="#" id="dlSelectAll">Pilih Semua</a> &middot; ' +
+          '<a href="#" id="dlSelectNone">Kosongkan</a>' +
+        '</div>' +
+        '<div id="dlColumnList" style="max-height:280px; overflow:auto; border:1px solid var(--border); border-radius:8px; padding:8px 10px;">' +
+          columns.map(function (c) {
+            var safe = escapeHtml(c);
+            return '<label style="display:flex; align-items:center; gap:8px; padding:5px 2px; font-size:13px; cursor:pointer;">' +
+              '<input type="checkbox" class="dl-col-chk" value="' + safe + '" checked> ' + safe +
+              '</label>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div class="btnrow"><button class="btn-primary" id="btnDoDownload">Download</button></div>';
+
+    openModal('Download Tabel Pegawai', html);
+
+    document.querySelectorAll('#dlFormatList .opt').forEach(function (o) {
+      o.addEventListener('click', function () {
+        document.querySelectorAll('#dlFormatList .opt').forEach(function (x) { x.classList.remove('selected'); });
+        o.classList.add('selected');
+      });
+    });
+    document.getElementById('dlSelectAll').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.dl-col-chk').forEach(function (c) { c.checked = true; });
+    });
+    document.getElementById('dlSelectNone').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.dl-col-chk').forEach(function (c) { c.checked = false; });
+    });
+
+    document.getElementById('btnDoDownload').addEventListener('click', function () {
+      var dbtn = this;
+      var format = document.querySelector('#dlFormatList .opt.selected').dataset.val;
+      var cols = Array.prototype.slice.call(document.querySelectorAll('.dl-col-chk:checked'))
+        .map(function (c) { return c.value; });
+
+      if (!cols.length) { toast('Pilih minimal satu kolom.', true); return; }
+
+      setBtnBusy(dbtn, 'Menyiapkan file...');
+      gs('exportTblPegawai', { columns: cols, format: format }).then(function (res) {
+        clearBtnBusy(dbtn);
+        closeModal();
+        triggerBase64Download(res.base64, res.mimeType, res.fileName);
+        toast('File "' + res.fileName + '" siap didownload.');
+      }).catch(function (err) {
+        clearBtnBusy(dbtn);
+        toast('Gagal membuat file: ' + err, true);
+      });
+    });
+  }).catch(function (err) {
+    clearBtnBusy(openBtn);
+    toast('Gagal memuat daftar kolom: ' + err, true);
+  });
+}
+
+// Ubah string base64 hasil dari Apps Script jadi Blob lalu picu
+// download lewat elemen <a download> sementara (Apps Script HtmlService
+// tidak bisa mengirim file untuk didownload langsung, jadi ini
+// jalan satu-satunya di sisi client).
+function triggerBase64Download(base64, mimeType, fileName) {
+  var byteChars = atob(base64);
+  var byteNumbers = new Array(byteChars.length);
+  for (var i = 0; i < byteChars.length; i++) byteNumbers[i] = byteChars.charCodeAt(i);
+  var byteArray = new Uint8Array(byteNumbers);
+  var blob = new Blob([byteArray], { type: mimeType });
+  var url = URL.createObjectURL(blob);
+
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+}
+
+// =========================================================
+// DOWNLOAD DATA PEGAWAI (FILTER LANJUTAN) -- lihat DownloadPegawaiFilter.gs
+// Terpisah dari "Download Data" biasa: sumbernya SEMUA pegawai
+// (termasuk Non-Aktif/Pensiun, bukan cuma Tbl Pegawai yang Aktif),
+// bisa difilter Status & rentang tanggal TMT status terakhir.
+// =========================================================
+function openDownloadFilterModal() {
+  var openBtn = document.getElementById('btnDownloadFilter');
+  setBtnBusy(openBtn, 'Memuat...');
+
+  gs('getFilterDownloadMeta').then(function (meta) {
+    clearBtnBusy(openBtn);
+
+    var html =
+      '<div class="field" style="margin-bottom:14px;">' +
+        '<label>Filter Status (kosongkan = semua status)</label>' +
+        '<div class="btn-list" id="dfStatusList">' +
+          meta.statusOptions.map(function (s) {
+            return '<span class="opt" data-val="' + escapeHtml(s) + '">' + escapeHtml(s) + '</span>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div class="form-grid" style="margin-bottom:14px;">' +
+        '<div class="field field-full">' +
+          '<label>Tanggal Aktif Terakhir Sampai Dengan</label>' +
+          '<input type="date" id="dfTglAkhir">' +
+        '</div>' +
+      '</div>' +
+      '<div class="field" style="margin-bottom:16px;">' +
+        '<label>Format File</label>' +
+        '<div class="btn-list" id="dfFormatList">' +
+          '<span class="opt selected" data-val="xlsx">Excel (.xlsx)</span>' +
+          '<span class="opt" data-val="pdf">PDF</span>' +
+          '<span class="opt" data-val="csv">CSV</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="field">' +
+        '<label>Pilih Kolom (' + meta.columns.length + ' tersedia)</label>' +
+        '<div class="muted" style="margin:2px 0 8px;">' +
+          '<a href="#" id="dfSelectAll">Pilih Semua</a> &middot; ' +
+          '<a href="#" id="dfSelectNone">Kosongkan</a>' +
+        '</div>' +
+        '<div id="dfColumnList" style="max-height:260px; overflow:auto; border:1px solid var(--border); border-radius:8px; padding:8px 10px;">' +
+          meta.columns.map(function (c) {
+            var safe = escapeHtml(c);
+            return '<label style="display:flex; align-items:center; gap:8px; padding:5px 2px; font-size:13px; cursor:pointer;">' +
+              '<input type="checkbox" class="df-col-chk" value="' + safe + '" checked> ' + safe +
+              '</label>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div class="btnrow"><button class="btn-primary" id="btnDoDownloadFilter">Download</button></div>';
+
+    openModal('Download Data Pegawai (Filter)', html);
+
+    // Status: multi-select toggle (beda dari format yang single-select)
+    document.querySelectorAll('#dfStatusList .opt').forEach(function (o) {
+      o.addEventListener('click', function () { o.classList.toggle('selected'); });
+    });
+    document.querySelectorAll('#dfFormatList .opt').forEach(function (o) {
+      o.addEventListener('click', function () {
+        document.querySelectorAll('#dfFormatList .opt').forEach(function (x) { x.classList.remove('selected'); });
+        o.classList.add('selected');
+      });
+    });
+    document.getElementById('dfSelectAll').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.df-col-chk').forEach(function (c) { c.checked = true; });
+    });
+    document.getElementById('dfSelectNone').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.df-col-chk').forEach(function (c) { c.checked = false; });
+    });
+
+    document.getElementById('btnDoDownloadFilter').addEventListener('click', function () {
+      var dbtn = this;
+      var format = document.querySelector('#dfFormatList .opt.selected').dataset.val;
+      var cols = Array.prototype.slice.call(document.querySelectorAll('.df-col-chk:checked'))
+        .map(function (c) { return c.value; });
+      var statuses = Array.prototype.slice.call(document.querySelectorAll('#dfStatusList .opt.selected'))
+        .map(function (o) { return o.dataset.val; });
+      var tglAkhir = document.getElementById('dfTglAkhir').value; // format yyyy-mm-dd bawaan <input type=date>
+
+      if (!cols.length) { toast('Pilih minimal satu kolom.', true); return; }
+
+      setBtnBusy(dbtn, 'Menyiapkan file...');
+      gs('exportPegawaiFilterAdvanced', {
+        columns: cols, format: format, statuses: statuses,
+        tglAkhir: tglAkhir
+      }).then(function (res) {
+        clearBtnBusy(dbtn);
+        closeModal();
+        triggerBase64Download(res.base64, res.mimeType, res.fileName);
+        toast('File "' + res.fileName + '" siap didownload.');
+      }).catch(function (err) {
+        clearBtnBusy(dbtn);
+        toast('Gagal membuat file: ' + err, true);
+      });
+    });
+  }).catch(function (err) {
+    clearBtnBusy(openBtn);
+    toast('Gagal memuat filter: ' + err, true);
+  });
+}
+
+// =========================================================
+// INPUT TABEL RIWAYAT (menu terpisah) -- lihat InputRiwayat.gs
+// Tambah riwayat Status/Pend/Pangkat/T4 Tugas/SIP-STR ke PEGAWAI
+// YANG SUDAH ADA, tanpa perlu buka halaman Profil satu-satu. Boleh
+// isi lebih dari satu bagian sekaligus, dikirim dalam satu kali
+// submit lewat saveRiwayatBulk().
+// =========================================================
+var RIWAYAT_SECTIONS_ = [
+  { kind: 'status', headerKey: 'STATUS', area: 'rwStatusFormArea' },
+  { kind: 'pend', headerKey: 'PEND', area: 'rwPendFormArea' },
+  { kind: 'pangkat', headerKey: 'PANGKAT', area: 'rwPangkatFormArea' },
+  { kind: 't4tugas', headerKey: 'T4TUGAS', area: 'rwT4tugasFormArea' },
+  { kind: 'sipstr', headerKey: 'SIPSTR', area: 'rwSipstrFormArea' },
+  { kind: 'kgb', headerKey: 'KGB', area: 'rwKgbFormArea' }
+];
+var RW_SELECTED_ID_ = null;
+
+function renderInputRiwayatForm() {
+  RW_SELECTED_ID_ = null;
+  document.getElementById('rwFormWrap').classList.add('hidden');
+  document.getElementById('rwSelectedInfo').textContent = '';
+
+  var input = document.getElementById('rwPegawaiSearch');
+  var box = document.getElementById('rwPegawaiResults');
+  input.value = '';
+  box.classList.add('hidden');
+  box.innerHTML = '';
+
+  input.addEventListener('input', debounce(function () {
+    var q = input.value.trim();
+    if (!q) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+    gs('searchPegawaiForRiwayat', q).then(function (list) {
+      if (!list.length) {
+        box.innerHTML = '<div class="search-item muted">Tidak ditemukan.</div>';
+        box.classList.remove('hidden');
+        return;
+      }
+      box.innerHTML = list.map(function (p) {
+        return '<div class="search-item" data-id="' + escapeHtml(p['ID ABSEN']) + '" data-nama="' + escapeHtml(p['NAMA']) + '">' +
+          '<b>' + escapeHtml(p['NAMA']) + '</b><div class="s-sub">ID Absen: ' + escapeHtml(p['ID ABSEN']) + '</div></div>';
+      }).join('');
+      box.classList.remove('hidden');
+      box.querySelectorAll('.search-item[data-id]').forEach(function (item) {
+        item.addEventListener('click', function () {
+          selectPegawaiForRiwayat(item.dataset.id, item.dataset.nama);
+          box.classList.add('hidden');
+        });
+      });
+    }).catch(function (err) { toast('Gagal mencari pegawai: ' + err, true); });
+  }, 250));
+
+  document.addEventListener('click', function (e) {
+    if (e.target !== input && !box.contains(e.target)) box.classList.add('hidden');
+  });
+}
+
+function selectPegawaiForRiwayat(idAbsen, nama) {
+  RW_SELECTED_ID_ = idAbsen;
+  document.getElementById('rwPegawaiSearch').value = nama + ' (' + idAbsen + ')';
+  document.getElementById('rwSelectedInfo').innerHTML =
+    'Pegawai terpilih: <b>' + escapeHtml(nama) + '</b> &middot; ID Absen: <b>' + escapeHtml(idAbsen) + '</b>';
+  document.getElementById('rwFormWrap').classList.remove('hidden');
+
+  RIWAYAT_SECTIONS_.forEach(function (sec) {
+    var headers = STATE.headers[sec.headerKey].filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+    var area = document.getElementById(sec.area);
+    area.innerHTML = '<div class="form-grid">' +
+      headers.map(function (h) {
+        return buildFieldHtml(h, '', 'rw_' + sec.kind + '_' + h.replace(/[^A-Za-z0-9]/g, '_'));
+      }).join('') + '</div>';
+    bindButtonLists(area);
+    area.classList.add('hidden'); // kolaps ulang tiap ganti pegawai
+  });
+  document.querySelectorAll('#rwFormWrap .section-toggle').forEach(function (h3) {
+    h3.classList.remove('open');
+  });
+
+  bindRiwayatSectionToggles_();
+  bindSaveRiwayatBulk_();
+}
+
+// dataset.bound_ mencegah listener terpasang berkali-kali saat user
+// pindah-pindah pegawai di halaman yang sama (tombol & judul section
+// adalah elemen statis di template, hanya isi form-nya yang diganti).
+function bindRiwayatSectionToggles_() {
+  document.querySelectorAll('#rwFormWrap .section-toggle').forEach(function (h3) {
+    if (h3.dataset.bound_) return;
+    h3.dataset.bound_ = '1';
+    h3.addEventListener('click', function () {
+      var area = document.getElementById(h3.dataset.section + 'FormArea');
+      area.classList.toggle('hidden');
+      h3.classList.toggle('open');
+    });
+  });
+}
+
+function bindSaveRiwayatBulk_() {
+  var btn = document.getElementById('btnSaveRiwayatBulk');
+  if (btn.dataset.bound_) return;
+  btn.dataset.bound_ = '1';
+  btn.addEventListener('click', function () {
+    if (!RW_SELECTED_ID_) { toast('Pilih pegawai terlebih dahulu.', true); return; }
+
+    var sections = {};
+    var anyFilled = false;
+    RIWAYAT_SECTIONS_.forEach(function (sec) {
+      var headers = STATE.headers[sec.headerKey].filter(function (h) { return h !== 'ID ABSEN' && h !== 'NAMA'; });
+      var vals = readFormValues(headers, 'rw_' + sec.kind + '_');
+      var hasValue = Object.keys(vals).some(function (k) { return String(vals[k] || '').trim() !== ''; });
+      if (hasValue) { sections[sec.kind] = vals; anyFilled = true; }
+    });
+
+    if (!anyFilled) { toast('Isi minimal satu bagian riwayat sebelum menyimpan.', true); return; }
+
+    setBtnBusy(btn, 'Menyimpan...');
+    gs('saveRiwayatBulk', RW_SELECTED_ID_, sections).then(function (res) {
+      clearBtnBusy(btn);
+      toast('Riwayat tersimpan (' + res.savedCount + ' bagian) & Tbl Pegawai otomatis diperbarui.');
+      renderPage('riwayat');
+    }).catch(function (err) {
+      clearBtnBusy(btn);
+      toast('Gagal menyimpan: ' + err, true);
+    });
+  });
+}
+
+// =========================================================
+// WIDGET NOTIFIKASI DI DASHBOARD -- lihat Notifikasi.gs
+// 3 card: KGB bulan ini, SIP akan berakhir, STR akan berakhir.
+// Klik card -> modal daftar pegawai (checklist), khusus KGB ada
+// tombol "Buat Surat Pengajuan KGB" (masih stub, template/folder
+// disusulkan di tahap berikutnya).
+// =========================================================
+function renderNotifWidgets() {
+  var wrap = document.getElementById('notifWidgets');
+  wrap.innerHTML =
+    notifCardHtml('nwKgb', '...', 'KGB Bulan Ini', false) +
+    notifCardHtml('nwSip', '...', 'SIP Akan Berakhir (30 hari)', true) +
+    notifCardHtml('nwStr', '...', 'STR Akan Berakhir (30 hari)', true);
+
+  gs('getNotifikasiDashboard').then(function (res) {
+    setNotifCardNum('nwKgb', res.kgbBulanIni);
+    setNotifCardNum('nwSip', res.sipAkanBerakhir);
+    setNotifCardNum('nwStr', res.strAkanBerakhir);
+  }).catch(function (err) {
+    toast('Gagal memuat notifikasi: ' + err, true);
+  });
+
+  document.getElementById('nwKgb').addEventListener('click', function () { openNotifModal('KGB'); });
+  document.getElementById('nwSip').addEventListener('click', function () { openNotifModal('SIP'); });
+  document.getElementById('nwStr').addEventListener('click', function () { openNotifModal('STR'); });
+}
+
+function notifCardHtml(id, num, lbl, warn) {
+  return '<div class="stat-card notif-card' + (warn ? ' warn' : '') + '" id="' + id + '">' +
+    '<div class="num">' + num + '</div><div class="lbl">' + lbl + '</div></div>';
+}
+function setNotifCardNum(id, num) {
+  var el = document.getElementById(id);
+  if (el) el.querySelector('.num').textContent = num || 0;
+}
+
+var NOTIF_TITLES_ = { KGB: 'KGB Bulan Ini', SIP: 'SIP Akan Berakhir', STR: 'STR Akan Berakhir' };
+
+function openNotifModal(jenis) {
+  openModal(NOTIF_TITLES_[jenis], '<div class="loading">Memuat...</div>');
+
+  gs('getNotifikasiList', jenis).then(function (raw) {
+    // [FIX] getNotifikasiList() sekarang mengembalikan STRING JSON
+    // (lihat catatan di Notifikasi.gs) supaya lolos dari bug serializer
+    // otomatis google.script.run untuk array-of-object -- wajib di-parse.
+    var list;
+    try {
+      list = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      document.getElementById('modalBody').innerHTML = '<div class="empty-state">Gagal membaca data (format tidak valid).</div>';
+      toast('Gagal membaca data notifikasi: ' + e, true);
+      return;
+    }
+
+    if (!list.length) {
+      document.getElementById('modalBody').innerHTML = '<div class="empty-state">Tidak ada pegawai untuk kategori ini.</div>';
+      return;
+    }
+
+    var rows = list.map(function (p) {
+      return '<label style="display:flex; align-items:center; gap:8px; padding:8px 2px; border-bottom:1px solid var(--border); font-size:13.5px;">' +
+        (jenis === 'KGB' ? '<input type="checkbox" class="nw-chk" value="' + escapeHtml(p.idAbsen) + '"> ' : '') +
+        '<span style="flex:1;"><b>' + escapeHtml(p.nama) + '</b> &middot; ID Absen: ' + escapeHtml(p.idAbsen) + '</span>' +
+        '<span class="muted">' + escapeHtml(p.tanggal) + ' (' + (p.sisaHari >= 0 ? 'H-' + p.sisaHari : 'lewat ' + Math.abs(p.sisaHari) + ' hari') + ')</span>' +
+        '</label>';
+    }).join('');
+
+    var actionHtml = '';
+    if (jenis === 'KGB') {
+      actionHtml =
+        '<div class="btnrow">' +
+        '<button class="btn-outline btn-sm" id="nwSelectAll">Pilih Semua</button>' +
+        '<button class="btn-primary btn-sm" id="nwBuatSurat">Buat Surat Pengajuan KGB</button>' +
+        '</div>';
+    }
+
+    document.getElementById('modalBody').innerHTML =
+      '<div style="max-height:360px; overflow:auto;">' + rows + '</div>' + actionHtml;
+
+    if (jenis === 'KGB') {
+      document.getElementById('nwSelectAll').addEventListener('click', function () {
+        document.querySelectorAll('.nw-chk').forEach(function (c) { c.checked = true; });
+      });
+      document.getElementById('nwBuatSurat').addEventListener('click', function () {
+        var ids = Array.prototype.slice.call(document.querySelectorAll('.nw-chk:checked')).map(function (c) { return c.value; });
+        if (!ids.length) { toast('Centang minimal satu pegawai.', true); return; }
+        var btn = this;
+        setBtnBusy(btn, 'Memproses...');
+        gs('generateSuratPengajuanKGB', ids).then(function (res) {
+          clearBtnBusy(btn);
+          toast(res.message || (res.ok ? 'Surat berhasil dibuat.' : 'Gagal membuat surat.'), !res.ok);
+        }).catch(function (err) {
+          clearBtnBusy(btn);
+          toast('Gagal: ' + err, true);
+        });
+      });
+    }
+  }).catch(function (err) {
+    document.getElementById('modalBody').innerHTML = '<div class="empty-state">Gagal memuat data.</div>';
+    toast('Gagal memuat notifikasi: ' + err, true);
+  });
+}
+
+// =========================================================
+// DMS (Dokumen Manajemen Sistem) -- lihat DMS.gs
+// Upload, cari, preview & download dokumen PDF per pegawai.
+// =========================================================
+var DMS_SELECTED_ID_ = null;
+
+function renderDmsPage() {
+  DMS_SELECTED_ID_ = null;
+  document.getElementById('dmsWrap').classList.add('hidden');
+  document.getElementById('dmsSelectedInfo').textContent = '';
+
+  var input = document.getElementById('dmsPegawaiSearch');
+  var box = document.getElementById('dmsPegawaiResults');
+  input.value = '';
+  box.classList.add('hidden');
+  box.innerHTML = '';
+
+  input.addEventListener('input', debounce(function () {
+    var q = input.value.trim();
+    if (!q) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+    // Reuse pencarian pegawai yang sudah ada (Tbl Bio) -- lihat InputRiwayat.gs
+    gs('searchPegawaiForRiwayat', q).then(function (list) {
+      if (!list.length) {
+        box.innerHTML = '<div class="search-item muted">Tidak ditemukan.</div>';
+        box.classList.remove('hidden');
+        return;
+      }
+      box.innerHTML = list.map(function (p) {
+        return '<div class="search-item" data-id="' + escapeHtml(p['ID ABSEN']) + '" data-nama="' + escapeHtml(p['NAMA']) + '">' +
+          '<b>' + escapeHtml(p['NAMA']) + '</b><div class="s-sub">ID Absen: ' + escapeHtml(p['ID ABSEN']) + '</div></div>';
+      }).join('');
+      box.classList.remove('hidden');
+      box.querySelectorAll('.search-item[data-id]').forEach(function (item) {
+        item.addEventListener('click', function () {
+          selectPegawaiForDms(item.dataset.id, item.dataset.nama);
+          box.classList.add('hidden');
+        });
+      });
+    }).catch(function (err) { toast('Gagal mencari pegawai: ' + err, true); });
+  }, 250));
+
+  document.addEventListener('click', function (e) {
+    if (e.target !== input && !box.contains(e.target)) box.classList.add('hidden');
+  });
+
+  document.getElementById('dmsPreviewClose').addEventListener('click', closeDmsPreview);
+  document.getElementById('dmsPreviewOverlay').addEventListener('click', function (e) {
+    if (e.target.id === 'dmsPreviewOverlay') closeDmsPreview();
+  });
+
+  var uploadBtn = document.getElementById('btnUploadDokumen');
+  if (!uploadBtn.dataset.bound_) {
+    uploadBtn.dataset.bound_ = '1';
+    uploadBtn.addEventListener('click', handleUploadDokumen_);
+  }
+}
+
+function selectPegawaiForDms(idAbsen, nama) {
+  DMS_SELECTED_ID_ = idAbsen;
+  document.getElementById('dmsPegawaiSearch').value = nama + ' (' + idAbsen + ')';
+  document.getElementById('dmsSelectedInfo').innerHTML =
+    'Pegawai terpilih: <b>' + escapeHtml(nama) + '</b> &middot; ID Absen: <b>' + escapeHtml(idAbsen) + '</b>';
+  document.getElementById('dmsWrap').classList.remove('hidden');
+  document.getElementById('dmsFileInput').value = '';
+  loadDokumenPegawai_();
+}
+
+// [DIUBAH] 1 pegawai = 1 dokumen -- render kartu tunggal, bukan daftar.
+function loadDokumenPegawai_() {
+  var box = document.getElementById('dmsCurrentDoc');
+  box.innerHTML = '<div class="loading">Memuat...</div>';
+
+  gs('getDokumenPegawai', DMS_SELECTED_ID_).then(function (raw) {
+    // [FIX] getDokumenPegawai() return STRING JSON (lihat DMS.gs) --
+    // sama seperti getPegawaiDetail()/getNotifikasiList() sebelumnya.
+    var doc;
+    try {
+      doc = raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      box.innerHTML = '<div class="empty-state">Gagal membaca data dokumen.</div>';
+      return;
+    }
+
+    if (!doc) {
+      box.innerHTML = '<div class="empty-state">Belum ada dokumen untuk pegawai ini. Upload di bawah.</div>';
+      return;
+    }
+
+    box.innerHTML =
+      '<div class="hist-card">' +
+        '<div class="hist-top">' +
+          '<div style="font-weight:700;">Dokumen Kepegawaian (PDF)</div>' +
+          '<div class="hist-actions">' +
+            '<button class="btn-outline btn-sm" id="dmsBtnLihat">Lihat</button>' +
+            '<button class="btn-outline btn-sm" id="dmsBtnDownload">Download</button>' +
+            '<button class="btn-danger btn-sm" id="dmsBtnHapus">Hapus</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    document.getElementById('dmsBtnLihat').addEventListener('click', function () {
+      openDmsPreview(doc.previewUrl, 'Dokumen - ' + document.getElementById('dmsPegawaiSearch').value);
+    });
+    document.getElementById('dmsBtnDownload').addEventListener('click', function () {
+      window.open(doc.downloadUrl, '_blank');
+    });
+    document.getElementById('dmsBtnHapus').addEventListener('click', function () {
+      if (!confirm('Hapus dokumen ini? Tindakan tidak bisa dibatalkan.')) return;
+      var btn = this;
+      setBtnBusy(btn, '...');
+      gs('deleteDokumenPegawai', DMS_SELECTED_ID_).then(function () {
+        toast('Dokumen dihapus.');
+        loadDokumenPegawai_();
+      }).catch(function (err) {
+        clearBtnBusy(btn);
+        toast('Gagal menghapus: ' + err, true);
+      });
+    });
+  }).catch(function (err) {
+    box.innerHTML = '<div class="empty-state">Gagal memuat dokumen.</div>';
+    toast('Gagal memuat dokumen: ' + err, true);
+  });
+}
+
+function handleUploadDokumen_() {
+  var btn = this;
+  if (!DMS_SELECTED_ID_) { toast('Pilih pegawai terlebih dahulu.', true); return; }
+
+  var fileInput = document.getElementById('dmsFileInput');
+  var file = fileInput.files[0];
+
+  if (!file) { toast('Pilih file PDF terlebih dahulu.', true); return; }
+  if (file.type !== 'application/pdf') { toast('Hanya file PDF yang diperbolehkan.', true); return; }
+  if (file.size > 15 * 1024 * 1024) { toast('Ukuran file terlalu besar (maks 15 MB).', true); return; }
+
+  setBtnBusy(btn, 'Mengupload...');
+  var reader = new FileReader();
+  reader.onload = function () {
+    var base64 = reader.result.split(',')[1]; // buang prefix "data:application/pdf;base64,"
+    gs('uploadDokumenPegawai', DMS_SELECTED_ID_, base64).then(function () {
+      clearBtnBusy(btn);
+      toast('Dokumen berhasil diupload.');
+      fileInput.value = '';
+      loadDokumenPegawai_();
+    }).catch(function (err) {
+      clearBtnBusy(btn);
+      toast('Gagal upload: ' + err, true);
+    });
+  };
+  reader.onerror = function () {
+    clearBtnBusy(btn);
+    toast('Gagal membaca file.', true);
+  };
+  reader.readAsDataURL(file);
+}
+
+function openDmsPreview(url, nama) {
+  document.getElementById('dmsPreviewTitle').textContent = nama || 'Preview Dokumen';
+  document.getElementById('dmsPreviewFrame').src = url;
+  document.getElementById('dmsPreviewOverlay').classList.remove('hidden');
+}
+function closeDmsPreview() {
+  document.getElementById('dmsPreviewOverlay').classList.add('hidden');
+  document.getElementById('dmsPreviewFrame').src = '';
+}
+
+</script>

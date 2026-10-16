@@ -1,0 +1,1898 @@
+// <script>
+/**
+ * web/app.html
+ * Logika SPA klien SIMPEG. Seluruh data diambil lewat apiCall() di server.
+ */
+
+var STATE = {
+  profile: null,
+  opsi: null,
+  opsiFilter: null,
+  dashboard: null,
+  mon: null,
+  list: null,
+  detail: null,
+  filter: { q: '', jenis: 'SEMUA', unit: 'SEMUA', status: 'SEMUA', offset: 0, limit: 50 },
+  monTab: 'sip',
+  detailTab: 'status'
+};
+
+var LABEL_STATUS = {
+  status: 'Status Kepegawaian',
+  pendidikan: 'Pendidikan',
+  pangkat: 'Pangkat & Golongan',
+  jabatan: 'Jabatan / Tempat Tugas',
+  kgb: 'KGB'
+};
+
+var KOLOM_RIWAYAT = {
+  status: ['status_pegawai', 'tmt_status', 'jenis_pegawai', 'no_sk', 'tmt_sk'],
+  pendidikan: ['tingkat_pend', 'nama_kampus', 'jurusan', 'tahun_lulus', 'no_ijazah'],
+  pangkat: ['gol', 'tmt', 'gaji_pokok', 'jabatan_permenpan', 'nomor_sk'],
+  jabatan: ['tempat_tugas', 'jabatan', 'tmt_tempat_tugas', 'no_sk'],
+  kgb: ['gol', 'tmt_kgb', 'gaji_berkala', 'nomor_sk']
+};
+
+var FIELD_RIWAYAT = {
+  status: [
+    { k: 'status_pegawai', l: 'Status Pegawai', t: 'select', o: 'statusPegawai' },
+    { k: 'tmt_status', l: 'TMT Status', t: 'date' },
+    { k: 'jenis_pegawai', l: 'Jenis Pegawai', t: 'select', o: 'jenisPegawai' },
+    { k: 'tmt_jenis_pegawai', l: 'TMT Jenis Pegawai', t: 'date' },
+    { k: 'no_sk', l: 'Nomor SK', t: 'text' },
+    { k: 'tmt_sk', l: 'TMT SK', t: 'date' },
+    { k: 'keterangan', l: 'Keterangan', t: 'text', full: true }
+  ],
+  pendidikan: [
+    { k: 'tingkat_pend', l: 'Tingkat Pendidikan', t: 'select', o: 'tingkatPend' },
+    { k: 'nama_kampus', l: 'Nama Kampus', t: 'text' },
+    { k: 'jurusan', l: 'Jurusan / Peminatan', t: 'text' },
+    { k: 'tahun_masuk', l: 'Tahun Masuk', t: 'number' },
+    { k: 'tahun_lulus', l: 'Tahun Lulus', t: 'number' },
+    { k: 'no_ijazah', l: 'Nomor Ijazah', t: 'text' },
+    { k: 'gelar_depan', l: 'Gelar Depan', t: 'text' },
+    { k: 'gelar_belakang', l: 'Gelar Belakang', t: 'text' }
+  ],
+  pangkat: [
+    { k: 'gol', l: 'Golongan', t: 'text' },
+    { k: 'tmt', l: 'TMT Pangkat', t: 'date' },
+    { k: 'gaji_pokok', l: 'Gaji Pokok', t: 'number' },
+    { k: 'nama_sk', l: 'Nama SK', t: 'text' },
+    { k: 'nomor_sk', l: 'Nomor SK', t: 'text' },
+    { k: 'jabatan_permenpan', l: 'Jabatan PERMENPAN', t: 'text' },
+    { k: 'kelas_jabatan', l: 'Kelas Jabatan', t: 'number' },
+    { k: 'jabatan_tpp', l: 'Jabatan TPP', t: 'text' }
+  ],
+  jabatan: [
+    { k: 'tempat_tugas', l: 'Tempat Tugas / Unit', t: 'text' },
+    { k: 'jabatan', l: 'Jabatan', t: 'text' },
+    { k: 'tmt_tempat_tugas', l: 'TMT Tempat Tugas', t: 'date' },
+    { k: 'no_sk', l: 'Nomor SK', t: 'text' }
+  ],
+  kgb: [
+    { k: 'gol', l: 'Golongan', t: 'text' },
+    { k: 'tmt_kgb', l: 'TMT KGB', t: 'date' },
+    { k: 'gaji_berkala', l: 'Gaji Berkala', t: 'number' },
+    { k: 'nomor_sk', l: 'Nomor SK', t: 'text' }
+  ]
+};
+
+var FIELD_PEGAWAI = [
+  { k: 'id', l: 'ID Absen', t: 'text' },
+  { k: 'nama', l: 'Nama Lengkap', t: 'text' },
+  { k: 'nik', l: 'NIK', t: 'text' },
+  { k: 'nip', l: 'NIP', t: 'text' },
+  { k: 'jenis_kelamin', l: 'Jenis Kelamin', t: 'select', o: 'jenisKelamin' },
+  { k: 'agama', l: 'Agama', t: 'select', o: 'agama' },
+  { k: 'tempat_lahir', l: 'Tempat Lahir', t: 'text' },
+  { k: 'tanggal_lahir', l: 'Tanggal Lahir', t: 'date' },
+  { k: 'email', l: 'Email', t: 'text' },
+  { k: 'nomor_hp', l: 'Nomor HP', t: 'text' },
+  { k: 'npwp', l: 'NPWP', t: 'text' },
+  { k: 'karpeg', l: 'KARPEG', t: 'text' },
+  { k: 'link_foto', l: 'Link Foto (Drive)', t: 'text', full: true },
+  { k: 'batas_usia_pensiun', l: 'Batas Usia Pensiun (khusus)', t: 'number' },
+  { k: 'catatan', l: 'Catatan', t: 'text', full: true }
+];
+
+/* ------------------------------------------------------------------ */
+/* Utilitas                                                            */
+/* ------------------------------------------------------------------ */
+
+function q(id) { return document.getElementById(id); }
+
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+var BULAN_ID = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+function fmtDateId(v) {
+  if (v === null || v === undefined || v === '') return '-';
+  var s = String(v).trim();
+  var m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) {
+    var bln = parseInt(m[2], 10);
+    return parseInt(m[3], 10) + ' ' + (BULAN_ID[bln - 1] || m[2]) + ' ' + m[1];
+  }
+  return s;
+}
+
+function money(n) {
+  if (n === null || n === undefined || n === '' || isNaN(n)) return '-';
+  var s = String(Math.round(Number(n)));
+  return 'Rp ' + s.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function toast(msg, isError) {
+  var d = document.createElement('div');
+  d.className = 'toast' + (isError ? ' error' : '');
+  d.textContent = msg;
+  q('toastRoot').appendChild(d);
+  setTimeout(function () { if (d.parentNode) d.parentNode.removeChild(d); }, 3500);
+}
+
+function api(action, payload) {
+  return new Promise(function (resolve, reject) {
+    var selesai = false;
+    // Jangan biarkan halaman "Memuat…" selamanya bila server lambat.
+    var pengatur = setTimeout(function () {
+      if (selesai) return;
+      selesai = true;
+      reject(new Error(
+        'Server belum merespons setelah 90 detik. ' +
+        'Jalankan fungsi ujiKecepatanBaca() di editor Apps Script, ' +
+        'lalu kirim hasilnya ke pengembang.'
+      ));
+    }, 90000);
+
+    function tuntas() {
+      if (selesai) return false;
+      selesai = true;
+      clearTimeout(pengatur);
+      return true;
+    }
+
+    google.script.run
+      .withSuccessHandler(function (res) {
+        if (!tuntas()) return;
+        if (!res) { reject(new Error('Tidak ada respons dari server.')); return; }
+        if (res.success === false) { reject(new Error(res.error || 'Kesalahan tidak dikenal.')); return; }
+        resolve(res.data);
+      })
+      .withFailureHandler(function (err) {
+        if (!tuntas()) return;
+        reject(new Error(err && err.message ? err.message : String(err)));
+      })
+      .apiCall(action, payload || {});
+  });
+}
+
+function canDo(resource, action) {
+  if (!STATE.profile) return false;
+  var p = STATE.profile.permissions || STATE.profile.permissionsSnapshot;
+  if (!p) return false;
+  if (p['*'] && (p['*'].indexOf('*') > -1 || p['*'].indexOf(action) > -1)) return true;
+  var a = p[resource];
+  return !!a && (a.indexOf('*') > -1 || a.indexOf(action) > -1);
+}
+
+var RES_JENIS = {
+  status: 'riwayat_status',
+  pendidikan: 'riwayat_pendidikan',
+  pangkat: 'riwayat_pangkat',
+  jabatan: 'riwayat_jabatan',
+  kgb: 'riwayat_kgb'
+};
+
+function setKonten(html) { q('content').innerHTML = html; }
+
+/* ------------------------------------------------------------------ */
+/* Modal                                                               */
+/* ------------------------------------------------------------------ */
+
+function bukaModal(judul, isiHtml, onSimpan, labelSimpan) {
+  var html =
+    '<div class="modal-overlay" id="modalOverlay">' +
+      '<div class="modal">' +
+        '<div class="modal-head"><b>' + esc(judul) + '</b>' +
+          '<button class="modal-close" onclick="tutupModal()">&times;</button></div>' +
+        '<form id="modalForm">' + isiHtml +
+          '<div style="margin-top:16px;display:flex;gap:8px;justify-content:flex-end">' +
+            '<button type="button" class="btn btn-outline" onclick="tutupModal()">Batal</button>' +
+            '<button type="submit" class="btn btn-primary" id="modalSubmit">' + esc(labelSimpan || 'Simpan') + '</button>' +
+          '</div>' +
+        '</form>' +
+      '</div>' +
+    '</div>';
+  q('modalRoot').innerHTML = html;
+  q('modalForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (typeof onSimpan !== 'function') { tutupModal(); return; }
+    var btn = q('modalSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Menyimpan…';
+    Promise.resolve(onSimpan()).then(function () {
+      tutupModal();
+    }).catch(function (err) {
+      btn.disabled = false;
+      btn.textContent = labelSimpan || 'Simpan';
+      toast(err.message, true);
+    });
+  });
+}
+
+function tutupModal() { q('modalRoot').innerHTML = ''; }
+
+function formFieldsHtml(fields, data, kunciId, opsi) {
+  var html = '<div class="form-grid">';
+  fields.forEach(function (f) {
+    var v = (data && data[f.k] !== undefined && data[f.k] !== null) ? data[f.k] : '';
+    var cls = 'field' + (f.full ? ' full' : '');
+    html += '<div class="' + cls + '"><label>' + esc(f.l) + '</label>';
+    if (f.k === kunciId) {
+      html += '<input type="text" name="' + f.k + '" value="' + esc(v) + '" readonly style="background:#f4f7f7">';
+    } else if (f.t === 'select') {
+      var daftar = (opsi && f.o && opsi[f.o]) ? opsi[f.o] : [];
+      html += '<select name="' + f.k + '"><option value="">— pilih —</option>';
+      daftar.forEach(function (opt) {
+        html += '<option value="' + esc(opt) + '"' + (String(v) === String(opt) ? ' selected' : '') + '>' + esc(opt) + '</option>';
+      });
+      // nilai bebas yang belum ada di daftar (data lama) tetap ditampilkan
+      if (v && daftar.map(String).indexOf(String(v)) === -1) {
+        html += '<option value="' + esc(v) + '" selected>' + esc(v) + ' (nilai ada)</option>';
+      }
+      html += '</select>';
+    } else if (f.t === 'date') {
+      var dv = v ? String(v).slice(0, 10) : '';
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(dv)) dv = '';
+      html += '<input type="date" name="' + f.k + '" value="' + esc(dv) + '">';
+      if (v && !dv) html += '<div class="muted" style="margin-top:2px">Tersimpan: ' + esc(v) + '</div>';
+    } else {
+      html += '<input type="' + (f.t === 'number' ? 'number' : 'text') + '" name="' + f.k + '" value="' + esc(v) + '">';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function bacaForm() {
+  var form = q('modalForm');
+  var out = {};
+  FIELD_PEGAWAI.concat(FIELD_RIWAYAT.status, FIELD_RIWAYAT.pendidikan,
+    FIELD_RIWAYAT.pangkat, FIELD_RIWAYAT.jabatan, FIELD_RIWAYAT.kgb, FIELD_USULAN)
+    .forEach(function (f) {
+      var el = form.elements[f.k];
+      if (el) out[f.k] = el.value;
+    });
+  return out;
+}
+
+/* ------------------------------------------------------------------ */
+/* Navigasi                                                            */
+/* ------------------------------------------------------------------ */
+
+var NAV = [
+  { id: 'dashboard', label: 'Dashboard', icon: '▦' },
+  { id: 'pegawai', label: 'Data Pegawai', icon: '👥' },
+  { id: 'monitoring', label: 'Monitoring', icon: '⏰' },
+  { id: 'usulan', label: 'Usulan', icon: '📋' },
+  { id: 'laporan', label: 'Laporan', icon: '📊' },
+  { id: 'diagnosa', label: 'Diagnosa', icon: '🩺' }
+];
+
+function renderNav(aktif) {
+  var html = '';
+  NAV.forEach(function (n) {
+    html += '<button class="nav-item' + (n.id === aktif ? ' active' : '') +
+      '" onclick="location.hash=\'#/' + n.id + '\'">' +
+      '<span>' + n.icon + '</span><span class="txt">' + esc(n.label) + '</span></button>';
+  });
+  q('nav').innerHTML = html;
+}
+
+function judulHalaman(page, sub) {
+  var map = {
+    dashboard: 'Dashboard', pegawai: 'Data Pegawai',
+    monitoring: 'Monitoring', diagnosa: 'Diagnosa',
+    usulan: 'Usulan KP / KGB', laporan: 'Laporan'
+  };
+  q('pageTitle').textContent = (sub || map[page] || page);
+}
+
+function route() {
+  var h = location.hash.replace(/^#\/?/, '');
+  var parts = h.split('/');
+  var page = parts[0] || 'dashboard';
+
+  renderNav(page);
+  if (page === 'pegawai' && parts[1]) {
+    judulHalaman('pegawai', 'Detail Pegawai');
+    renderDetail(decodeURIComponent(parts[1]));
+  } else if (page === 'pegawai') {
+    judulHalaman('pegawai');
+    renderPegawai();
+  } else if (page === 'monitoring') {
+    judulHalaman('monitoring');
+    renderMonitoring();
+  } else if (page === 'diagnosa') {
+    judulHalaman('diagnosa');
+    renderDiagnosa();
+  } else if (page === 'usulan' && parts[1]) {
+    judulHalaman('usulan', 'Detail Usulan');
+    renderDetailUsulan(decodeURIComponent(parts[1]));
+  } else if (page === 'usulan') {
+    judulHalaman('usulan');
+    renderUsulan();
+  } else if (page === 'laporan') {
+    judulHalaman('laporan');
+    renderLaporan();
+  } else {
+    judulHalaman('dashboard');
+    renderDashboard();
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Dashboard                                                  */
+/* ------------------------------------------------------------------ */
+
+function renderDashboard() {
+  setKonten('<div class="loading">Memuat dashboard…</div>');
+  api('dashboard.get').then(function (data) {
+    STATE.dashboard = data;
+    setKonten(htmlDashboard(data));
+  }).catch(function (err) {
+    setKonten('<div class="card"><div class="empty">Gagal memuat dashboard: ' + esc(err.message) + '</div></div>');
+  });
+}
+
+function htmlDashboard(data) {
+  var st = data.statistik || {};
+  var mon = data.monitoring || {};
+  var byJenis = st.byJenisPegawai || {};
+
+  function angka(kunci) {
+    var t = 0;
+    kunci.forEach(function (k) { t += (byJenis[k] || 0); });
+    return t;
+  }
+  var pns = angka(['PNS', 'PNS Titipan']);
+  var p3k = angka(['P3K', 'P3K Titipan', 'PW']);
+  var lain = angka(['Honor', 'Kontrak', 'Lainnya']);
+
+  var h = '';
+
+  var adaAlert = (mon.sipExpired || 0) + (mon.strExpired || 0) > 0;
+  if (adaAlert) {
+    h += '<div class="alert-box">⚠️ <b>Perhatian:</b> ' +
+      (mon.sipExpired ? mon.sipExpired + ' SIP sudah kedaluwarsa. ' : '') +
+      (mon.strExpired ? mon.strExpired + ' STR sudah kedaluwarsa. ' : '') +
+      'Segera tindak lanjuti di halaman Monitoring.</div>';
+  }
+
+  h += '<div class="stat-cards">' +
+    kartu(st.total || 0, 'Total Pegawai') +
+    kartu(pns, 'PNS') +
+    kartu(p3k, 'P3K / PW') +
+    kartu(lain, 'Honor / Kontrak / Lain') +
+  '</div>';
+
+  h += '<div class="stat-cards">' +
+    kartu(mon.sipExpired || 0, 'SIP Kedaluwarsa', 'alert') +
+    kartu(mon.sipAkanBerakhir || 0, 'SIP Akan Berakhir', 'warn') +
+    kartu(mon.strExpired || 0, 'STR Kedaluwarsa', 'alert') +
+    kartu(mon.strAkanBerakhir || 0, 'STR Akan Berakhir', 'warn') +
+    kartu(mon.kgbMendekati || 0, 'KGB Mendekati', 'warn') +
+    kartu(mon.dhtMendekati || 0, 'Menuju Pensiun', 'warn') +
+  '</div>';
+
+  h += '<div class="grid2">';
+  h += '<div class="card"><h3>Komposisi Jenis Pegawai</h3>' + barList(byJenis) + '</div>';
+  h += '<div class="card"><h3>10 Unit Terbesar</h3>' + barListObjek(st.topUnit) + '</div>';
+  h += '</div>';
+
+  h += '<div class="grid2">';
+  h += '<div class="card"><h3>Kelompok Usia</h3>' + barList(st.ageBuckets) + '</div>';
+  h += '<div class="card"><h3>10 Jabatan Terbanyak</h3>' + barListObjek(st.topJabatan) + '</div>';
+  h += '</div>';
+
+  h += '<div class="grid2">';
+  h += '<div class="card"><h3>Pendidikan Terakhir</h3>' + barList(st.byTingkatPend) + '</div>';
+  h += '<div class="card"><h3>Agama</h3>' + barList(st.byAgama) + '</div>';
+  h += '</div>';
+
+  h += '<div class="muted">Terakhir dihitung: ' + esc(data.generatedAt) + '</div>';
+  return h;
+}
+
+function kartu(num, label, cls) {
+  return '<div class="stat-card ' + (cls || '') + '">' +
+    '<div class="num">' + esc(num) + '</div>' +
+    '<div class="lbl">' + esc(label) + '</div></div>';
+}
+
+function barList(obj) {
+  obj = obj || {};
+  var keys = Object.keys(obj);
+  if (!keys.length) return '<div class="empty">Belum ada data.</div>';
+  var max = 0;
+  keys.forEach(function (k) { if (obj[k] > max) max = obj[k]; });
+  keys.sort(function (a, b) { return obj[b] - obj[a]; });
+  var html = '';
+  keys.slice(0, 12).forEach(function (k) {
+    var pct = max ? Math.round(obj[k] * 100 / max) : 0;
+    html += '<div class="bar-row"><div class="nm" title="' + esc(k) + '">' + esc(k) + '</div>' +
+      '<div class="track"><div class="fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="val">' + obj[k] + '</div></div>';
+  });
+  return html;
+}
+
+function barListObjek(entries) {
+  if (!entries || !entries.length) return '<div class="empty">Belum ada data.</div>';
+  var max = 0;
+  entries.forEach(function (e) { if (e[1] > max) max = e[1]; });
+  var html = '';
+  entries.forEach(function (e) {
+    var pct = max ? Math.round(e[1] * 100 / max) : 0;
+    html += '<div class="bar-row"><div class="nm" title="' + esc(e[0]) + '">' + esc(e[0]) + '</div>' +
+      '<div class="track"><div class="fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="val">' + e[1] + '</div></div>';
+  });
+  return html;
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Data Pegawai                                               */
+/* ------------------------------------------------------------------ */
+
+function renderPegawai() {
+  setKonten('<div class="loading">Memuat data pegawai…</div>');
+  var siap = STATE.opsiFilter ? Promise.resolve(STATE.opsiFilter)
+    : api('profile.opsiFilter').then(function (d) { STATE.opsiFilter = d; return d; });
+
+  siap.then(function (opf) {
+    var bolehTambah = canDo('pegawai', 'update');
+    var h = '';
+    h += '<div class="toolbar">' +
+      '<input type="text" id="fQ" placeholder="Cari nama / ID / NIP…" value="' + esc(STATE.filter.q) + '" style="min-width:220px">' +
+      '<select id="fJenis"><option value="SEMUA">Semua Jenis</option>' + opsiHtml(opf.jenis, STATE.filter.jenis) + '</select>' +
+      '<select id="fUnit"><option value="SEMUA">Semua Unit</option>' + opsiHtml(opf.unit, STATE.filter.unit) + '</select>' +
+      '<select id="fStatus"><option value="SEMUA">Semua Status</option>' + opsiHtml(opf.status, STATE.filter.status) + '</select>' +
+      '<button class="btn btn-primary" onclick="terapkanFilter()">Cari</button>' +
+      (bolehTambah ? '<button class="btn btn-outline" onclick="formBiodata(null)">+ Tambah Pegawai</button>' : '') +
+      '</div>';
+    h += '<div class="card"><div id="tabelPegawai"><div class="loading">Memuat…</div></div></div>';
+    setKonten(h);
+
+    q('fQ').addEventListener('keydown', function (e) { if (e.key === 'Enter') terapkanFilter(); });
+    muatDaftarPegawai();
+  }).catch(function (err) {
+    setKonten('<div class="card"><div class="empty">' + esc(err.message) + '</div></div>');
+  });
+}
+
+function opsiHtml(arr, terpilih) {
+  if (!arr) return '';
+  return arr.map(function (v) {
+    return '<option value="' + esc(v) + '"' + (String(v) === String(terpilih) ? ' selected' : '') + '>' + esc(v) + '</option>';
+  }).join('');
+}
+
+function terapkanFilter() {
+  STATE.filter.q = q('fQ').value.trim();
+  STATE.filter.jenis = q('fJenis').value;
+  STATE.filter.unit = q('fUnit').value;
+  STATE.filter.status = q('fStatus').value;
+  STATE.filter.offset = 0;
+  muatDaftarPegawai();
+}
+
+function muatDaftarPegawai() {
+  var box = q('tabelPegawai');
+  if (box) box.innerHTML = '<div class="loading">Memuat…</div>';
+  api('pegawai.list', STATE.filter).then(function (res) {
+    STATE.list = res;
+    if (!box) return;
+    var h = '';
+    if (!res.rows.length) {
+      h = '<div class="empty">Tidak ada pegawai yang cocok dengan filter.</div>';
+    } else {
+      h += '<div class="muted" style="margin-bottom:8px">Menampilkan ' + res.rows.length + ' dari ' + res.total + ' pegawai</div>';
+      h += '<table class="tbl"><thead><tr>' +
+        '<th>ID</th><th>Nama</th><th>Jabatan</th><th>Unit</th><th>Jenis</th><th>Status</th><th></th>' +
+        '</tr></thead><tbody>';
+      res.rows.forEach(function (p) {
+        h += '<tr>' +
+          '<td class="mono">' + esc(p.id) + '</td>' +
+          '<td><b>' + esc(p.nama) + '</b><div class="muted">' + esc(p.nip || p.nik || '') + '</div></td>' +
+          '<td>' + esc(p.jabatan || '-') + '</td>' +
+          '<td>' + esc(p.tempat_tugas || '-') + '</td>' +
+          '<td>' + esc(p.jenis_pegawai || '-') + '</td>' +
+          '<td>' + badgeStatusPegawai(p.status_pegawai) + '</td>' +
+          '<td><span class="link" onclick="bukaDetail(\'' + esc(p.id).replace(/'/g, "\\'") + '\')">Detail</span></td>' +
+        '</tr>';
+      });
+      h += '</tbody></table>';
+      if (res.total > res.rows.length + STATE.filter.offset) {
+        h += '<div style="margin-top:12px;text-align:center">' +
+          '<button class="btn btn-outline" onclick="halamanBerikut()">Muat ' + Math.min(50, res.total - (res.rows.length + STATE.filter.offset)) + ' lagi</button></div>';
+      }
+    }
+    box.innerHTML = h;
+  }).catch(function (err) {
+    if (box) box.innerHTML = '<div class="empty">' + esc(err.message) + '</div>';
+  });
+}
+
+function halamanBerikut() {
+  STATE.filter.offset += STATE.filter.limit;
+  api('pegawai.list', STATE.filter).then(function (res) {
+    var box = q('tabelPegawai');
+    if (!box) return;
+    var tbody = box.querySelector('tbody');
+    var h = '';
+    res.rows.forEach(function (p) {
+      h += '<tr>' +
+        '<td class="mono">' + esc(p.id) + '</td>' +
+        '<td><b>' + esc(p.nama) + '</b><div class="muted">' + esc(p.nip || p.nik || '') + '</div></td>' +
+        '<td>' + esc(p.jabatan || '-') + '</td>' +
+        '<td>' + esc(p.tempat_tugas || '-') + '</td>' +
+        '<td>' + esc(p.jenis_pegawai || '-') + '</td>' +
+        '<td>' + badgeStatusPegawai(p.status_pegawai) + '</td>' +
+        '<td><span class="link" onclick="bukaDetail(\'' + esc(p.id).replace(/'/g, "\\'") + '\')">Detail</span></td>' +
+      '</tr>';
+    });
+    tbody.insertAdjacentHTML('beforeend', h);
+    var btn = box.querySelector('button.btn-outline');
+    if (btn) btn.parentNode.parentNode.removeChild(btn.parentNode);
+  }).catch(function (err) { toast(err.message, true); });
+}
+
+function bukaDetail(id) {
+  location.hash = '#/pegawai/' + encodeURIComponent(id);
+}
+
+function badgeStatusPegawai(s) {
+  if (!s) return '<span class="badge info">-</span>';
+  var kls = 'info';
+  var t = String(s).toLowerCase();
+  if (t.indexOf('pns') > -1) kls = 'ok';
+  else if (t.indexOf('p3k') > -1 || t.indexOf('pw') > -1) kls = 'warn';
+  return '<span class="badge ' + kls + '">' + esc(s) + '</span>';
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Detail Pegawai                                             */
+/* ------------------------------------------------------------------ */
+
+function renderDetail(id) {
+  setKonten('<div class="loading">Memuat detail pegawai…</div>');
+  api('pegawai.detail', { id: id }).then(function (d) {
+    STATE.detail = d;
+    STATE.detailTab = 'status';
+    setKonten(htmlDetail(d));
+  }).catch(function (err) {
+    setKonten('<div class="card"><div class="empty">' + esc(err.message) + '</div>' +
+      '<div style="text-align:center"><button class="btn btn-outline" onclick="location.hash=\'#/pegawai\'">Kembali</button></div></div>');
+  });
+}
+
+function htmlDetail(d) {
+  var p = d.pegawai || {};
+  var r = d.ringkas || {};
+  var bolehUbah = canDo('pegawai', 'update');
+
+  var h = '';
+  h += '<div class="card"><div class="detail-head">' +
+    '<div class="avatar">' + esc(inisial(p.nama)) + '</div>' +
+    '<div style="flex:1">' +
+      '<h2>' + esc(p.nama) + '</h2>' +
+      '<div style="margin-top:6px">' + badgeStatusPegawai(r.status ? r.status.status_pegawai : '') +
+        ' <span class="badge info">' + esc(r.jenis_pegawai || (r.status ? r.status.jenis_pegawai : '-')) + '</span>' +
+        (r.jabatan ? ' <span class="badge info">' + esc(r.jabatan.jabatan || '') + '</span>' : '') +
+      '</div>' +
+      '<div class="muted" style="margin-top:6px">ID: ' + esc(p.id) + ' · ' + esc(r.tempat_tugas || (r.jabatan ? r.jabatan.tempat_tugas : '-')) + '</div>' +
+    '</div>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">' +
+      '<button class="btn btn-outline" onclick="location.hash=\'#/pegawai\'">← Kembali</button>' +
+      (bolehUbah ? '<button class="btn btn-primary" onclick="formBiodata(STATE.detail.pegawai)">Edit Biodata</button>' : '') +
+    '</div>' +
+  '</div></div>';
+
+  h += '<div class="grid2">';
+  h += '<div class="card"><h3>Biodata</h3><div class="kv">' +
+    kv('NIK', p.nik) + kv('NIP', p.nip) +
+    kv('Jenis Kelamin', p.jenis_kelamin) + kv('Agama', p.agama) +
+    kv('Tempat, Tanggal Lahir', (p.tempat_lahir || '-') + ', ' + fmtDateId(p.tanggal_lahir)) +
+    kv('Umur', (r.umur !== null && r.umur !== undefined) ? r.umur + ' tahun' : '-') +
+    kv('Email', p.email) + kv('Nomor HP', p.nomor_hp) +
+    kv('NPWP', p.npwp) + kv('KARPEG', p.karpeg) +
+    '</div></div>';
+  h += '<div class="card"><h3>Kepegawaian</h3><div class="kv">' +
+    kv('Status', r.status ? r.status.status_pegawai : '-') +
+    kv('TMT Status', r.status ? fmtDateId(r.status.tmt_status) : '-') +
+    kv('Golongan', r.pangkat ? r.pangkat.gol : '-') +
+    kv('Gaji Pokok', r.pangkat ? money(r.pangkat.gaji_pokok) : '-') +
+    kv('Jabatan', r.jabatan ? r.jabatan.jabatan : '-') +
+    kv('Tempat Tugas', r.jabatan ? r.jabatan.tempat_tugas : '-') +
+    kv('Pendidikan', r.pendidikan ? r.pendidikan.tingkat_pend : '-') +
+    kv('Masa Kerja', r.masa_kerja) +
+    kv('Perkiraan Pensiun', r.tanggal_pensiun) +
+    '</div></div>';
+  h += '</div>';
+
+  // Tabs riwayat
+  h += '<div class="card">';
+  h += '<div class="tabs">';
+  ['status', 'pendidikan', 'pangkat', 'jabatan', 'kgb'].forEach(function (j) {
+    var jumlah = (d.riwayat[j] || []).length;
+    h += '<button class="tab-btn' + (STATE.detailTab === j ? ' active' : '') +
+      '" onclick="gantiTabDetail(\'' + j + '\')">' + esc(LABEL_STATUS[j]) + ' (' + jumlah + ')</button>';
+  });
+  h += '</div>';
+  h += '<div id="isiTabDetail">' + htmlTabRiwayat(d, STATE.detailTab) + '</div>';
+  h += '</div>';
+
+  h += '<div class="card"><h3>Dokumen</h3>' + htmlTabelDokumen(d.dokumen) + '</div>';
+
+  if (canDo('pegawai', 'update')) {
+    h += '<div class="card"><h3 style="color:var(--danger)">Zona Berbahaya</h3>' +
+      '<div class="muted" style="margin-bottom:10px">Menghapus pegawai juga menghapus seluruh riwayat & dokumennya.</div>' +
+      '<button class="btn btn-danger" onclick="konfirmasiHapusPegawai(\'' + esc(p.id).replace(/'/g, "\\'") + '\',\'' + esc(p.nama).replace(/'/g, "\\'") + '\')">Hapus Pegawai</button></div>';
+  }
+
+  return h;
+}
+
+function inisial(nama) {
+  if (!nama) return '?';
+  var b = String(nama).trim().split(/\s+/);
+  return ((b[0] || '?')[0] + (b[1] ? b[1][0] : '')).toUpperCase();
+}
+
+function kv(k, v) {
+  return '<div><div class="k">' + esc(k) + '</div><div class="v">' + esc(v === null || v === undefined || v === '' ? '-' : v) + '</div></div>';
+}
+
+function gantiTabDetail(j) {
+  STATE.detailTab = j;
+  var tabs = document.querySelectorAll('.tab-btn');
+  var urut = ['status', 'pendidikan', 'pangkat', 'jabatan', 'kgb'];
+  tabs.forEach(function (b, i) {
+    b.className = 'tab-btn' + (urut[i] === j ? ' active' : '');
+  });
+  var isi = q('isiTabDetail');
+  if (isi) isi.innerHTML = htmlTabRiwayat(STATE.detail, j);
+}
+
+var KEPALA = {
+  status_pegawai: 'Status', tmt_status: 'TMT Status', jenis_pegawai: 'Jenis Pegawai',
+  no_sk: 'No. SK', tmt_sk: 'TMT SK',
+  tingkat_pend: 'Tingkat', nama_kampus: 'Kampus', jurusan: 'Jurusan', tahun_lulus: 'Lulus',
+  no_ijazah: 'No. Ijazah',
+  gol: 'Gol', tmt: 'TMT', gaji_pokok: 'Gaji Pokok', jabatan_permenpan: 'Jabatan PERMENPAN',
+  nomor_sk: 'No. SK',
+  tempat_tugas: 'Tempat Tugas', jabatan: 'Jabatan', tmt_tempat_tugas: 'TMT',
+  tmt_kgb: 'TMT KGB', gaji_berkala: 'Gaji Berkala'
+};
+
+function htmlTabRiwayat(d, jenis) {
+  var rows = (d.riwayat[jenis] || []);
+  var kolom = KOLOM_RIWAYAT[jenis];
+  var res = RES_JENIS[jenis] || 'riwayat_status';
+  var bolehUbah = canDo(res, 'update');
+  var bolehHapus = canDo(res, 'delete');
+  var pid = d.pegawai.id;
+
+  var h = '';
+  if (bolehUbah) {
+    h += '<div style="margin-bottom:10px"><button class="btn btn-outline btn-sm" onclick="formRiwayat(\'' + jenis + '\',null,\'' + esc(pid).replace(/'/g, "\\'") + '\')">+ Tambah ' + esc(LABEL_STATUS[jenis]) + '</button></div>';
+  }
+  if (!rows.length) {
+    return h + '<div class="empty">Belum ada data ' + esc(LABEL_STATUS[jenis]) + '.</div>';
+  }
+  h += '<table class="tbl"><thead><tr>';
+  kolom.forEach(function (k) { h += '<th>' + esc(KEPALA[k] || k) + '</th>'; });
+  if (bolehUbah || bolehHapus) h += '<th></th>';
+  h += '</tr></thead><tbody>';
+  rows.forEach(function (r) {
+    h += '<tr>';
+    kolom.forEach(function (k) {
+      var v = r[k];
+      if (k === 'gaji_pokok' || k === 'gaji_berkala') v = money(v);
+      else if (k === 'tmt_status' || k === 'tmt_sk' || k === 'tmt' || k === 'tmt_tempat_tugas' || k === 'tmt_kgb') v = fmtDateId(v);
+      h += '<td>' + esc(v === undefined || v === '' ? '-' : v) + '</td>';
+    });
+    if (bolehUbah || bolehHapus) {
+      h += '<td style="white-space:nowrap">';
+      if (bolehUbah) h += '<span class="link" onclick="formRiwayat(\'' + jenis + '\',STATE.cariRiwayat(\'' + esc(r.id) + '\'),\'' + esc(pid).replace(/'/g, "\\'") + '\')">Edit</span> ';
+      if (bolehHapus) h += '<span class="link" style="color:var(--danger)" onclick="konfirmasiHapusRiwayat(\'' + jenis + '\',\'' + esc(r.id) + '\')">Hapus</span>';
+      h += '</td>';
+    }
+    h += '</tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+// cari baris riwayat di STATE.detail berdasarkan id
+STATE.cariRiwayat = function (id) {
+  if (!STATE.detail) return null;
+  var ketemu = null;
+  Object.keys(STATE.detail.riwayat).forEach(function (j) {
+    (STATE.detail.riwayat[j] || []).forEach(function (r) { if (String(r.id) === String(id)) ketemu = { jenis: j, row: r }; });
+  });
+  return ketemu;
+};
+
+function htmlTabelDokumen(dok) {
+  if (!dok || !dok.length) return '<div class="empty">Belum ada dokumen.</div>';
+  var h = '<table class="tbl"><thead><tr><th>Jenis</th><th>Nomor</th><th>Terbit</th><th>Berlaku s.d.</th><th>Status</th><th>Catatan</th></tr></thead><tbody>';
+  dok.forEach(function (d) {
+    var v = String(d.tmt_valid || '');
+    var lifetime = /seumur\s*hidup/i.test(v);
+    var badge = '<span class="badge info">—</span>';
+    if (lifetime) badge = '<span class="badge ok">Seumur Hidup</span>';
+    else if (v) {
+      var tgl = new Date(v.slice(0, 10) + 'T00:00:00');
+      if (!isNaN(tgl.getTime())) {
+        var sisa = Math.floor((tgl.getTime() - Date.now()) / 86400000);
+        if (sisa < 0) badge = '<span class="badge danger">Kedaluwarsa</span>';
+        else if (sisa <= 90) badge = '<span class="badge warn">' + sisa + ' hari lagi</span>';
+        else badge = '<span class="badge ok">Aktif</span>';
+      }
+    }
+    h += '<tr><td>' + esc(d.jenis) + '</td><td>' + esc(d.nomor) + '</td>' +
+      '<td>' + fmtDateId(d.tmt_terbit) + '</td><td>' + esc(d.tmt_valid) + '</td>' +
+      '<td>' + badge + '</td><td>' + esc(d.catatan) + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Monitoring                                                 */
+/* ------------------------------------------------------------------ */
+
+function renderMonitoring() {
+  setKonten('<div class="loading">Memuat data monitoring…</div>');
+  api('monitoring.get').then(function (data) {
+    STATE.mon = data;
+    setKonten(htmlMonitoring(data));
+  }).catch(function (err) {
+    setKonten('<div class="card"><div class="empty">' + esc(err.message) + '</div></div>');
+  });
+}
+
+function htmlMonitoring(data) {
+  var r = data.ringkas || {};
+  var h = '';
+
+  h += '<div class="stat-cards">' +
+    kartu(r.sipExpired || 0, 'SIP Kedaluwarsa', 'alert') +
+    kartu(r.sipAkanBerakhir || 0, 'SIP Akan Berakhir', 'warn') +
+    kartu(r.strExpired || 0, 'STR Kedaluwarsa', 'alert') +
+    kartu(r.strAkanBerakhir || 0, 'STR Akan Berakhir', 'warn') +
+    kartu(r.kgbMendekati || 0, 'KGB Mendekati', 'warn') +
+    kartu(r.kgbBulanIni || 0, 'KGB Bulan Ini') +
+    kartu(r.dhtMendekati || 0, 'Menuju Pensiun', 'warn') +
+    kartu(r.dhtTahunIni || 0, 'Pensiun Tahun Ini') +
+  '</div>';
+
+  var amb = data.ambang || {};
+  h += '<div class="muted" style="margin-bottom:12px">Ambang peringatan — SIP: H-' + esc((amb.sip || []).join('/H-')) +
+    ' · STR: H-' + esc((amb.str || []).join('/H-')) +
+    ' · KGB: H-' + esc((amb.kgb || []).join('/H-')) +
+    ' · Pensiun: H-' + esc((amb.dht || []).join('/H-')) + '</div>';
+
+  h += '<div class="card">';
+  h += '<div class="tabs">' +
+    tabMon('sip', 'SIP (' + ((data.sip.akanBerakhir || []).length + (data.sip.sudahExpired || []).length) + ')') +
+    tabMon('str', 'STR (' + ((data.str.akanBerakhir || []).length + (data.str.sudahExpired || []).length) + ')') +
+    tabMon('kgb', 'KGB (' + (data.kgb || []).length + ')') +
+    tabMon('pensiun', 'Pensiun (' + (data.pensiun || []).length + ')') +
+    '</div>';
+  h += '<div id="isiTabMon">' + htmlTabMon(data, STATE.monTab) + '</div>';
+  h += '</div>';
+  h += '<div class="muted">Dihitung: ' + esc(data.generatedAt) + '</div>';
+  return h;
+}
+
+function tabMon(id, label) {
+  return '<button class="tab-btn' + (STATE.monTab === id ? ' active' : '') +
+    '" onclick="gantiTabMon(\'' + id + '\')">' + esc(label) + '</button>';
+}
+
+function gantiTabMon(id) {
+  STATE.monTab = id;
+  var urut = ['sip', 'str', 'kgb', 'pensiun'];
+  document.querySelectorAll('.tab-btn').forEach(function (b, i) {
+    b.className = 'tab-btn' + (urut[i] === id ? ' active' : '');
+  });
+  var isi = q('isiTabMon');
+  if (isi) isi.innerHTML = htmlTabMon(STATE.mon, id);
+}
+
+function htmlTabMon(data, id) {
+  if (id === 'kgb') return htmlTabelMonKgb(data.kgb);
+  if (id === 'pensiun') return htmlTabelMonPensiun(data.pensiun);
+  var paket = id === 'sip' ? data.sip : data.str;
+  var h = '<h3 style="font-size:13px;color:var(--danger)">Sudah Kedaluwarsa</h3>' +
+    htmlTabelMonDokumen(paket.sudahExpired, true) +
+    '<h3 style="font-size:13px;color:var(--warn);margin-top:18px">Akan Berakhir</h3>' +
+    htmlTabelMonDokumen(paket.akanBerakhir, false);
+  return h;
+}
+
+function htmlTabelMonDokumen(rows, expired) {
+  if (!rows || !rows.length) return '<div class="empty">Tidak ada data.</div>';
+  var h = '<table class="tbl"><thead><tr><th>Nama</th><th>Unit</th><th>Nomor</th><th>Berlaku s.d.</th><th>Selisih</th><th></th></tr></thead><tbody>';
+  rows.forEach(function (x) {
+    var tgl = x.tmt_valid ? fmtDateId(x.tmt_valid) : '-';
+    var ket = expired ? (Math.abs(x.sisa_hari) + ' hari lalu') : (x.sisa_hari + ' hari lagi');
+    h += '<tr>' +
+      '<td><b>' + esc(x.pegawai ? x.pegawai.nama : x.pegawai_id) + '</b><div class="muted">' + esc(x.pegawai ? x.pegawai.jenis_pegawai : '') + '</div></td>' +
+      '<td>' + esc(x.pegawai ? x.pegawai.tempat_tugas : '') + '</td>' +
+      '<td>' + esc(x.nomor) + '</td>' +
+      '<td>' + esc(tgl) + '</td>' +
+      '<td><span class="badge ' + (expired ? 'danger' : 'warn') + '">' + esc(ket) + '</span></td>' +
+      '<td><span class="link" onclick="bukaDetail(\'' + esc(x.pegawai_id).replace(/'/g, "\\'") + '\')">Detail</span></td>' +
+    '</tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+function htmlTabelMonKgb(rows) {
+  if (!rows || !rows.length) return '<div class="empty">Tidak ada KGB yang mendekati.</div>';
+  var h = '<table class="tbl"><thead><tr><th>Nama</th><th>Unit</th><th>KGB Terakhir</th><th>Perkiraan Berikutnya</th><th>Selisih</th><th></th></tr></thead><tbody>';
+  rows.forEach(function (x) {
+    var lewat = x.sisa_hari < 0;
+    var ket = lewat ? (Math.abs(x.sisa_hari) + ' hari lewat') : (x.sisa_hari + ' hari lagi');
+    h += '<tr>' +
+      '<td><b>' + esc(x.pegawai ? x.pegawai.nama : x.pegawai_id) + '</b><div class="muted">' + esc(x.pegawai ? x.pegawai.jenis_pegawai : '') + '</div></td>' +
+      '<td>' + esc(x.pegawai ? x.pegawai.tempat_tugas : '') + '</td>' +
+      '<td>' + fmtDateId(x.tmt_kgb_terakhir) + '</td>' +
+      '<td>' + esc(x.tmt_kgb_berikut) + '</td>' +
+      '<td><span class="badge ' + (lewat ? 'danger' : 'warn') + '">' + esc(ket) + '</span></td>' +
+      '<td><span class="link" onclick="bukaDetail(\'' + esc(x.pegawai_id).replace(/'/g, "\\'") + '\')">Detail</span></td>' +
+    '</tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+function htmlTabelMonPensiun(rows) {
+  if (!rows || !rows.length) return '<div class="empty">Tidak ada pegawai yang mendekati pensiun.</div>';
+  var h = '<table class="tbl"><thead><tr><th>Nama</th><th>Unit</th><th>Jenis</th><th>Tanggal Lahir</th><th>Perkiraan Pensiun</th><th>Selisih</th><th></th></tr></thead><tbody>';
+  rows.forEach(function (x) {
+    var lewat = x.sisa_hari < 0;
+    var ket = lewat ? (Math.abs(x.sisa_hari) + ' hari lewat') : (x.sisa_hari + ' hari lagi');
+    h += '<tr>' +
+      '<td><b>' + esc(x.pegawai.nama) + '</b></td>' +
+      '<td>' + esc(x.pegawai.tempat_tugas) + '</td>' +
+      '<td>' + esc(x.pegawai.jenis_pegawai) + '</td>' +
+      '<td>' + fmtDateId(x.tanggal_lahir) + '</td>' +
+      '<td>' + esc(x.tanggal_pensiun) + '</td>' +
+      '<td><span class="badge ' + (lewat ? 'danger' : 'warn') + '">' + esc(ket) + '</span></td>' +
+      '<td><span class="link" onclick="bukaDetail(\'' + esc(x.pegawai_id).replace(/'/g, "\\'") + '\')">Detail</span></td>' +
+    '</tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Diagnosa                                                   */
+/* ------------------------------------------------------------------ */
+
+var DIAG_LANGKAH = [
+  ['ping', 'Uji koneksi — tanpa membaca sheet'],
+  ['users', 'Users (1 baris)'],
+  ['kgb', 'RiwayatKGB (120 baris)'],
+  ['status', 'RiwayatStatus (896 baris)'],
+  ['pegawai', 'Pegawai (896 baris)'],
+  ['jabatan', 'RiwayatJabatan (894 baris)'],
+  ['dokumen', 'Dokumen (845 baris)'],
+  ['ringkas', 'Daftar pegawai (3 tabel)'],
+  ['opsi', 'Dropdown filter (2 tabel)'],
+  ['statistik', 'Statistik dashboard (7 tabel)'],
+  ['monitoring', 'Mesin monitoring'],
+  ['dashboard', 'Dashboard lengkap + cache']
+];
+
+function renderDiagnosa() {
+  var rows = '';
+  DIAG_LANGKAH.forEach(function (d) {
+    rows += '<tr><td class="mono">' + esc(d[0]) + '</td><td>' + esc(d[1]) + '</td>' +
+      '<td class="mono" id="diagres-' + esc(d[0]) + '" style="width:55%">—</td></tr>';
+  });
+  var sheetOpt = SHEET_NAMES_UI().map(function (n) {
+    return '<option value="' + esc(n) + '">' + esc(n) + '</option>';
+  }).join('');
+
+  setKonten(
+    '<div class="card"><h3>1. Ukuran setiap sheet (cepat, tidak membaca isi sel)</h3>' +
+    '<div class="muted" style="margin-bottom:12px">Mencari sheet yang "gemuk" — sisa impor CSV sering meninggalkan ribuan baris/kolom kosong, ' +
+    'dan itulah yang membuat aplikasi macet walau datanya sedikit.</div>' +
+    '<button class="btn btn-primary" id="btnDiagInfo" onclick="jalankanDiagInfo()">Cek Ukuran Sheet</button>' +
+    ' <button class="btn btn-danger" id="btnRapikan" onclick="jalankanRapikan()">Rapikan Sheet</button>' +
+    '<div class="muted" style="margin-top:8px">Tombol <b>Rapikan Sheet</b> hanya membuang baris & kolom KOSONG di luar area data (mis. sisa impor CSV).</div>' +
+    '<div id="diagRapikanHasil" style="margin-top:12px"></div>' +
+    '<div id="diagInfoHasil" style="margin-top:14px"></div></div>' +
+
+    '<div class="card"><h3>2. Uji baca satu sheet (bertahap)</h3>' +
+    '<div class="muted" style="margin-bottom:12px">Membaca satu sheet dengan batas baris tertentu. ' +
+    'Kalau 50 baris cepat tapi penuh macet, berarti sheet punya ribuan baris sisa.</div>' +
+    '<div class="toolbar"><select id="diagSheet">' + sheetOpt + '</select>' +
+    '<select id="diagBatas"><option value="0">Semua baris</option><option value="50" selected>50 baris</option><option value="500">500 baris</option></select>' +
+    '<button class="btn btn-primary" onclick="jalankanDiagBaca()">Uji Baca</button></div>' +
+    '<div id="diagBacaHasil"></div></div>' +
+
+    '<div class="card"><h3>3. Diagnosa kecepatan per langkah aplikasi</h3>' +
+    '<div class="muted" style="margin-bottom:12px">' +
+    'Menjalankan setiap bagian aplikasi satu per satu dan mengukur waktunya. ' +
+    'Bila ada langkah yang tidak kunjung selesai, di situ letak masalahnya. ' +
+    'Tombol ini boleh memakan waktu beberapa menit jika ada yang macet.</div>' +
+    '<button class="btn btn-primary" id="btnDiag" onclick="jalankanDiagnosa()">Jalankan Diagnosa</button>' +
+    '<table class="tbl" style="margin-top:16px"><thead><tr><th>Langkah</th><th>Uji</th><th>Hasil (waktu)</th></tr></thead><tbody>' +
+    rows + '</tbody></table>' +
+    '<div id="diagSelesai" style="margin-top:14px"></div></div>'
+  );
+}
+
+function SHEET_NAMES_UI() {
+  return ['Pegawai', 'RiwayatStatus', 'RiwayatPendidikan', 'RiwayatPangkat',
+    'RiwayatJabatan', 'RiwayatKGB', 'MasaKerja', 'Dokumen', 'Users', 'UnitKerja', 'Config'];
+}
+
+function jalankanDiagInfo() {
+  var btn = q('btnDiagInfo');
+  btn.disabled = true;
+  btn.textContent = 'Mengecek…';
+  var t0 = Date.now();
+  api('diag.info').then(function (res) {
+    btn.disabled = false;
+    btn.textContent = 'Cek Ulang';
+    var h = '<div class="muted" style="margin-bottom:8px">Selesai dalam ' + (Date.now() - t0) + ' ms' +
+      (res.spreadsheet ? ' · spreadsheet: ' + esc(res.spreadsheet.nama) : '') + '</div>';
+    if (res.error) {
+      h += '<div class="alert-box">⚠️ ' + esc(res.error) + '</div>';
+    }
+    h += '<table class="tbl"><thead><tr><th>Sheet</th><th>Kapasitas (baris × kolom)</th>' +
+      '<th>Berisi data (baris × kolom)</th><th>Status</th><th>ms</th></tr></thead><tbody>';
+    res.sheets.forEach(function (s) {
+      var kap = s.maxBaris !== undefined ? (s.maxBaris + ' × ' + s.maxKolom) : '-';
+      var isi = s.isiBaris !== undefined ? (s.isiBaris + ' × ' + s.isiKolom) : '-';
+      var status;
+      if (!s.ada) status = '<span class="badge danger">tidak ada</span>';
+      else if (s.error) status = '<span class="badge danger">' + esc(s.error) + '</span>';
+      else if (s.maxBaris > s.isiBaris * 3 + 50) status = '<span class="badge warn">gemuk — perlu dibersihkan</span>';
+      else status = '<span class="badge ok">wajar</span>';
+      h += '<tr><td class="mono">' + esc(s.nama) + '</td><td>' + esc(kap) + '</td><td>' + esc(isi) + '</td>' +
+        '<td>' + status + '</td><td>' + esc(s.ms || 0) + '</td></tr>';
+    });
+    h += '</tbody></table>';
+    q('diagInfoHasil').innerHTML = h;
+  }).catch(function (err) {
+    btn.disabled = false;
+    btn.textContent = 'Cek Ulang';
+    q('diagInfoHasil').innerHTML = '<div class="alert-box">⚠️ ' + esc(err.message) + '</div>';
+  });
+}
+
+function jalankanDiagBaca() {
+  var nama = q('diagSheet').value;
+  var batas = Number(q('diagBatas').value) || 0;
+  q('diagBacaHasil').innerHTML = '<div class="loading">Membaca…</div>';
+  var t0 = Date.now();
+  api('diag.baca', { nama: nama, batas: batas }).then(function (res) {
+    var h = '<table class="tbl"><tbody>';
+    h += '<tr><td>Waktu total (klien)</td><td><b>' + (Date.now() - t0) + ' ms</b></td></tr>';
+    h += '<tr><td>Waktu di server</td><td>' + esc(res.ms) + ' ms</td></tr>';
+    h += '<tr><td>getValues()</td><td>' + esc(res.msGetValues) + ' ms</td></tr>';
+    h += '<tr><td>rowToObj (casting)</td><td>' + esc(res.msRowToObj) + ' ms</td></tr>';
+    h += '<tr><td>Baris dibaca / terpakai</td><td>' + esc(res.barisDibaca) + ' / ' + esc(res.barisTerpakai) + '</td></tr>';
+    h += '<tr><td>Kapasitas sheet</td><td>' + esc(res.maxBaris) + ' baris × ' + esc(res.maxKolom) + ' kolom</td></tr>';
+    h += '<tr><td>Contoh baris pertama</td><td class="mono">' + esc(JSON.stringify(res.contoh)) + '</td></tr>';
+    if (res.error) h += '<tr><td>Error</td><td style="color:var(--danger)">' + esc(res.error) + '</td></tr>';
+    h += '</tbody></table>';
+    q('diagBacaHasil').innerHTML = h;
+  }).catch(function (err) {
+    q('diagBacaHasil').innerHTML = '<div class="alert-box">⚠️ ' + esc(err.message) + '</div>';
+  });
+}
+
+/**
+ * Merapikan seluruh sheet — menghapus baris & kolom kosong berlebih
+ * (hanya di LUAR area data, jadi data aman).
+ */
+function jalankanRapikan() {
+  if (!confirm('Merapikan semua sheet?\n\n' +
+    'Yang dihapus hanya baris & kolom KOSONG di luar area data — ' +
+    'tidak ada data pegawai/riwayat yang tersentuh.\n\nLanjutkan?')) return;
+  var btn = q('btnRapikan');
+  btn.disabled = true;
+  btn.textContent = 'Merapikan…';
+  var t0 = Date.now();
+  api('diag.rapikan').then(function (hasil) {
+    btn.disabled = false;
+    btn.textContent = 'Selesai — Cek Ulang';
+    var h = '<div class="alert-box" style="background:#e2f6ec;border-color:#bfe6d4">' +
+      '✅ Selesai dalam ' + (Date.now() - t0) + ' ms</div>';
+    h += '<table class="tbl"><thead><tr><th>Sheet</th><th>Sebelum</th><th>Sesudah</th><th>Dibuang</th><th>Status</th></tr></thead><tbody>';
+    (hasil || []).forEach(function (r) {
+      var status = r.ok
+        ? '<span class="badge ok">ok</span>'
+        : '<span class="badge danger">' + esc(r.error || 'gagal') + '</span>';
+      var hapus = r.hapus ? (r.hapus.baris + ' baris, ' + r.hapus.kolom + ' kolom') : '-';
+      h += '<tr><td class="mono">' + esc(r.nama) + '</td>' +
+        '<td>' + (r.sebelum ? r.sebelum.baris + ' × ' + r.sebelum.kolom : '-') + '</td>' +
+        '<td>' + (r.sesudah ? r.sesudah.baris + ' × ' + r.sesudah.kolom : '-') + '</td>' +
+        '<td>' + esc(hapus) + '</td><td>' + status + '</td></tr>';
+    });
+    h += '</tbody></table>';
+    q('diagRapikanHasil').innerHTML = h;
+    jalankanDiagInfo();
+  }).catch(function (err) {
+    btn.disabled = false;
+    btn.textContent = 'Coba Lagi';
+    q('diagRapikanHasil').innerHTML = '<div class="alert-box">⚠️ ' + esc(err.message) + '</div>';
+  });
+}
+
+function jalankanDiagnosa() {
+  var btn = q('btnDiag');
+  btn.disabled = true;
+  btn.textContent = 'Menjalankan…';
+  var tAwal = Date.now();
+  var gagal = 0;
+
+  function satu(i) {
+    if (i >= DIAG_LANGKAH.length) {
+      q('diagSelesai').innerHTML = '<b>Selesai</b> dalam ' + Math.round((Date.now() - tAwal) / 1000) +
+        ' detik' + (gagal ? (' — ' + gagal + ' langkah bermasalah') : ' — semua lancar') +
+        '.<div class="muted" style="margin-top:6px">Silakan kirim tangkapan layar halaman ini ke pengembang.</div>';
+      btn.disabled = false;
+      btn.textContent = 'Jalankan Ulang';
+      return;
+    }
+    var kode = DIAG_LANGKAH[i][0];
+    var sel = q('diagres-' + kode);
+    if (!sel) { satu(i + 1); return; }
+    sel.textContent = '… sedang berjalan';
+    var t0 = Date.now();
+    api('diag.langkah', { langkah: kode }).then(function (res) {
+      var ms = Date.now() - t0;
+      var detail = (res === null || res === undefined) ? '' : ' — ' + esc(JSON.stringify(res));
+      sel.innerHTML = '✅ ' + ms + ' ms<span class="muted">' + detail + '</span>';
+      satu(i + 1);
+    }).catch(function (err) {
+      gagal++;
+      sel.innerHTML = '❌ ' + esc(err.message);
+      satu(i + 1);
+    });
+  }
+  satu(0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Usulan KP / KGB (Fase 4)                                    */
+/* ------------------------------------------------------------------ */
+
+var LABEL_STATUS_USULAN = {
+  DRAFT: 'Draf', DIAJUKAN: 'Diajukan', DISETUJUI: 'Disetujui',
+  DITOLAK: 'Ditolak', DIBATALKAN: 'Dibatalkan'
+};
+
+var FIELD_USULAN = [
+  { k: 'jenis', l: 'Jenis Usulan', t: 'select', o: 'jenisUsulan' },
+  { k: 'pegawai_id', l: 'ID Pegawai', t: 'text' },
+  { k: 'periode_tmt', l: 'TMT / Periode Berikutnya', t: 'date' },
+  { k: 'golongan_lama', l: 'Golongan Lama', t: 'text' },
+  { k: 'golongan_baru', l: 'Golongan Baru', t: 'select', o: 'gol' },
+  { k: 'gaji_lama', l: 'Gaji Lama (Rp)', t: 'number' },
+  { k: 'gaji_baru', l: 'Gaji Baru (Rp)', t: 'number' },
+  { k: 'tmt_kgb_terakhir', l: 'TMT KGB Terakhir', t: 'date' },
+  { k: 'catatan', l: 'Catatan', t: 'text', full: true }
+];
+
+function badgeStatusUsulan(s) {
+  var kls = 'info';
+  if (s === 'DISETUJUI') kls = 'ok';
+  else if (s === 'DIAJUKAN') kls = 'warn';
+  else if (s === 'DITOLAK') kls = 'danger';
+  else if (s === 'DIBATALKAN') kls = 'danger';
+  return '<span class="badge ' + kls + '">' + esc(LABEL_STATUS_USULAN[s] || s) + '</span>';
+}
+
+function renderUsulan() {
+  setKonten('<div class="loading">Memuat usulan…</div>');
+  var bolehBuat = canDo('usulan', 'create') || canDo('usulan', 'update');
+
+  Promise.all([api('usulan.daftar', {}), api('usulan.statistik')])
+    .then(function (hasil) {
+      var rows = hasil[0];
+      var st = hasil[1];
+      var h = '';
+
+      h += '<div class="stat-cards">';
+      h += kartu(st.total || 0, 'Total Usulan');
+      h += kartu(st.DRAFT || 0, 'Draf');
+      h += kartu(st.DIAJUKAN || 0, 'Diajukan', 'warn');
+      h += kartu(st.DISETUJUI || 0, 'Disetujui', 'ok');
+      h += kartu(st.DITOLAK || 0, 'Ditolak', 'alert');
+      h += '</div>';
+
+      if (bolehBuat) {
+        h += '<div class="toolbar no-print">' +
+          '<button class="btn btn-primary" onclick="formUsulanBaru()">+ Buat Usulan</button>' +
+          '<span class="muted">Buatusulan kenaikan pangkat (KP) atau gaji berkala (KGB) dari data pegawai yang sudah ada.</span></div>';
+      }
+
+      h += '<div class="card"><div id="tabelUsulan"></div></div>';
+      setKonten(h);
+      gambarTabelUsulan(rows);
+    })
+    .catch(function (err) {
+      setKonten('<div class="card"><div class="empty">' + esc(err.message) + '</div></div>');
+    });
+}
+
+function gambarTabelUsulan(rows) {
+  var box = q('tabelUsulan');
+  if (!box) return;
+  if (!rows.length) {
+    box.innerHTML = '<div class="empty">Belum ada usulan. Klik <b>+ Buat Usulan</b> untuk mulai.</div>';
+    return;
+  }
+  var bolehUbah = canDo('usulan', 'update');
+  var bolehPutus = canDo('usulan', 'approve') || canDo('usulan', 'reject');
+
+  var h = '<table class="tbl"><thead><tr>' +
+    '<th>Nomor Usulan</th><th>Jenis</th><th>Pegawai</th><th>Golongan</th>' +
+    '<th>TMT</th><th>Status</th><th>Diajukan</th><th></th></tr></thead><tbody>';
+
+  rows.forEach(function (u) {
+    h += '<tr>' +
+      '<td class="mono">' + esc(u.nomor_usulan) + '</td>' +
+      '<td>' + (u.jenis === 'KP' ? '<span class="badge info">Kenaikan Pangkat</span>' : '<span class="badge info">KGB</span>') + '</td>' +
+      '<td><b>' + esc(u.nama) + '</b><div class="muted">ID: ' + esc(u.pegawai_id) + '</div></td>' +
+      '<td>' + esc(u.golongan_lama || '-') + ' → <b>' + esc(u.golongan_baru || '-') + '</b></td>' +
+      '<td>' + fmtDateId(u.periode_tmt) + '</td>' +
+      '<td>' + badgeStatusUsulan(u.status) + '</td>' +
+      '<td>' + (u.diajukan_oleh ? esc(u.diajukan_oleh) + '<div class="muted">' + fmtDateId(u.diajukan_at) + '</div>' : '<span class="muted">belum diajukan</span>') + '</td>' +
+      '<td style="white-space:nowrap">' +
+        '<span class="link" onclick="location.hash=\'#/usulan/' + encodeURIComponent(u.id) + '\'">Detail</span>' +
+        ((bolehUbah && u.status === 'DRAFT') ? ' · <span class="link" onclick="formEditUsulan(\'' + esc(u.id) + '\')">Edit</span>' : '') +
+        ((bolehUbah || bolehPutus) ? '' : '') +
+      '</td></tr>';
+  });
+  h += '</tbody></table>';
+  box.innerHTML = h;
+}
+
+/** Langkah 1: pilih jenis + cari pegawai. */
+function formUsulanBaru() {
+  var html =
+    '<div class="form-grid">' +
+      '<div class="field"><label>Jenis Usulan</label>' +
+        '<select id="usulanJenis"><option value="KP">Kenaikan Pangkat (KP)</option>' +
+        '<option value="KGB">KGB</option></select></div>' +
+      '<div class="field full" style="grid-column:1/-1"><label>Cari Pegawai (nama / ID / NIP)</label>' +
+        '<input type="text" id="usulanCari" placeholder="Ketik minimal 2 huruf…" autocomplete="off"></div>' +
+    '</div>' +
+    '<div id="usulanHasilCari" class="muted" style="margin-top:10px">Ketik nama pegawai untuk mencari.</div>';
+
+  bukaModal('Buat Usulan Baru', html, function () {
+    throw new Error('Silakan pilih seorang pegawai dari daftar pencarian.');
+  }, 'Simpan');
+
+  var input = q('usulanCari');
+  input.addEventListener('keyup', function () {
+    var teks = input.value.trim();
+    if (teks.length < 2) {
+      q('usulanHasilCari').innerHTML = '<div class="muted">Ketik minimal 2 huruf…</div>';
+      return;
+    }
+    q('usulanHasilCari').innerHTML = '<div class="loading" style="padding:12px">Mencari…</div>';
+    api('usulan.cariPegawai', { q: teks }).then(function (rows) {
+      if (!rows.length) {
+        q('usulanHasilCari').innerHTML = '<div class="empty">Tidak ditemukan.</div>';
+        return;
+      }
+      var h = '<table class="tbl"><tbody>';
+      rows.forEach(function (p) {
+        h += '<tr><td><b>' + esc(p.nama) + '</b></td><td class="mono">' + esc(p.id) + '</td>' +
+          '<td>' + esc(p.jenis || '-') + '</td>' +
+          '<td><span class="link" onclick="pilihPegawaiUsulan(\'' + esc(p.id) + '\',\'' + esc(p.nama).replace(/'/g, "\\'") + '\')">Pilih</span></td></tr>';
+      });
+      h += '</tbody></table>';
+      q('usulanHasilCari').innerHTML = h;
+    }).catch(function (e) {
+      q('usulanHasilCari').innerHTML = '<div class="empty">' + esc(e.message) + '</div>';
+    });
+  });
+}
+
+/** Setelah pegawai dipilih → ambil data riwayat, tampilkan form lengkap. */
+function pilihPegawaiUsulan(id, nama) {
+  var jenis = q('usulanJenis').value;
+  var modal = document.querySelector('.modal');
+  if (modal) modal.innerHTML = '<div class="loading" style="padding:40px">Menyiapkan data ' + esc(nama) + '…</div>';
+
+  api('usulan.siapkan', { pegawai_id: id, jenis: jenis }).then(function (d) {
+    var data = {};
+    FIELD_USULAN.forEach(function (f) { data[f.k] = d[f.k] !== undefined ? d[f.k] : ''; });
+    data.jenis = jenis;
+    data.pegawai_id = id;
+
+    var info =
+      '<div class="kv" style="margin-bottom:14px">' +
+        kv('Nama', d.nama) + kv('Jenis Pegawai', d.jenis_pegawai) +
+        kv('Tempat Tugas', d.tempat_tugas) + kv('Jabatan', d.jabatan) +
+        kv('Masa Kerja', d.masa_kerja) + kv('TMT RS Pertama', d.tmt_rs_pertama) +
+      '</div>';
+
+    var isi = formFieldsHtml(FIELD_USULAN, data, null, STATE.opsi) +
+      '<div class="muted" style="margin:8px 0 12px">Usulan untuk: <b>' + esc(d.nama) + '</b></div>' +
+      info +
+      (d.catatan ? '<div class="alert-box" style="background:#fdf3e0;border-color:#f0dfae">ℹ️ ' + esc(d.catatan) + '</div>' : '');
+
+    bukaModal((jenis === 'KP' ? 'Usulan Kenaikan Pangkat — ' : 'Usulan KGB — ') + d.nama, isi, function () {
+      var semua = bacaForm();
+      var kirim = {
+        jenis: jenis,
+        pegawai_id: id,
+        periode_tmt: semua.periode_tmt,
+        golongan_lama: semua.golongan_lama,
+        golongan_baru: semua.golongan_baru,
+        gaji_lama: semua.gaji_lama,
+        gaji_baru: semua.gaji_baru,
+        tmt_kgb_terakhir: semua.tmt_kgb_terakhir,
+        catatan: semua.catatan
+      };
+      if (!kirim.periode_tmt) throw new Error('TMT/Periode wajib diisi.');
+      return api('usulan.simpan', { data: kirim }).then(function (baru) {
+        toast('Usulan ' + baru.nomor_usulan + ' dibuat sebagai DRAF.');
+        tampilUsulan();
+      });
+    }, 'Simpan Draf');
+  }).catch(function (err) {
+    tutupModal();
+    toast(err.message, true);
+  });
+}
+
+function formEditUsulan(id) {
+  api('usulan.detail', { id: id }).then(function (d) {
+    var u = d.usulan;
+    var kirim = {
+      jenis: u.jenis, pegawai_id: u.pegawai_id, periode_tmt: u.periode_tmt,
+      golongan_lama: u.golongan_lama, golongan_baru: u.golongan_baru,
+      gaji_lama: u.gaji_lama, gaji_baru: u.gaji_baru,
+      tmt_kgb_terakhir: u.tmt_kgb_terakhir, catatan: u.catatan
+    };
+    bukaModal('Edit Usulan ' + u.nomor_usulan,
+      formFieldsHtml(FIELD_USULAN, kirim, null, STATE.opsi),
+      function () {
+        var semua = bacaForm();
+        var payload = {
+          jenis: u.jenis, pegawai_id: u.pegawai_id, periode_tmt: semua.periode_tmt,
+          golongan_lama: semua.golongan_lama, golongan_baru: semua.golongan_baru,
+          gaji_lama: semua.gaji_lama, gaji_baru: semua.gaji_baru,
+          tmt_kgb_terakhir: semua.tmt_kgb_terakhir, catatan: semua.catatan
+        };
+        if (!payload.periode_tmt) throw new Error('TMT/Periode wajib diisi.');
+        return api('usulan.simpan', { id: u.id, data: payload }).then(function () {
+          toast('Usulan diperbarui.');
+          if (location.hash.indexOf('#/usulan/') === 0) renderDetailUsulan(u.id);
+          else tampilUsulan();
+        });
+      }, 'Simpan');
+  }).catch(function (err) { toast(err.message, true); });
+}
+
+function renderDetailUsulan(id) {
+  setKonten('<div class="loading">Memuat detail usulan…</div>');
+  api('usulan.detail', { id: id }).then(function (d) {
+    var u = d.usulan;
+    var p = d.pendukung || {};
+    var bolehUbah = canDo('usulan', 'update');
+    var bolehSetuju = canDo('usulan', 'approve');
+    var bolehTolak = canDo('usulan', 'reject');
+
+    var h = '<div class="card"><div class="detail-head">' +
+      '<div class="avatar">' + (u.jenis === 'KP' ? 'KP' : 'KGB') + '</div>' +
+      '<div style="flex:1">' +
+        '<h2>' + esc(u.nomor_usulan) + '</h2>' +
+        '<div style="margin-top:6px">' + badgeStatusUsulan(u.status) +
+          ' <span class="badge info">' + (u.jenis === 'KP' ? 'Kenaikan Pangkat' : 'Kenaikan Gaji Berkala') + '</span></div>' +
+        '<div class="muted" style="margin-top:6px">Dibuat ' + esc(u.created_at) +
+          (u.diajukan_oleh ? ' · Diajukan ' + esc(u.diajukan_oleh) + ' (' + fmtDateId(u.diajukan_at) + ')' : '') +
+          (u.diputuskan_oleh ? ' · Diputuskan ' + esc(u.diputuskan_oleh) + ' (' + fmtDateId(u.diputuskan_at) + ')' : '') + '</div>' +
+      '</div>' +
+      '<div><button class="btn btn-outline" onclick="location.hash=\'#/usulan\'">← Kembali</button></div>' +
+    '</div></div>';
+
+    h += '<div class="grid2">';
+    h += '<div class="card"><h3>Pegawai</h3><div class="kv">' +
+      kv('Nama', p.pegawai ? p.pegawai.nama : u.pegawai_id) +
+      kv('ID Absen', u.pegawai_id) +
+      kv('NIP', p.pegawai ? (p.pegawai.nip || '-') : '-') +
+      kv('Tempat / Tanggal Lahir', p.pegawai ? ((p.pegawai.tempat_lahir || '-') + ', ' + fmtDateId(p.pegawai.tanggal_lahir)) : '-') +
+      kv('Jabatan', p.jabatan || '-') +
+      kv('Tempat Tugas', p.tempat_tugas || '-') +
+      kv('Jenis Pegawai', p.jenis_pegawai || '-') +
+      kv('Umur', p.umur ? p.umur + ' tahun' : '-') +
+      '</div></div>';
+    h += '<div class="card"><h3>Rincian Usulan</h3><div class="kv">' +
+      kv('Golongan Lama', u.golongan_lama || '-') +
+      kv('Golongan Baru', u.golongan_baru || '-') +
+      kv('Gaji Lama', u.gaji_lama ? money(u.gaji_lama) : '-') +
+      kv('Gaji Baru', u.gaji_baru ? money(u.gaji_baru) : '-') +
+      (u.jenis === 'KGB' ? kv('TMT KGB Terakhir', fmtDateId(u.tmt_kgb_terakhir)) : '') +
+      kv('TMT / Periode', fmtDateId(u.periode_tmt)) +
+      kv('Catatan', u.catatan || '-') +
+      (u.alasan_keputusan ? kv('Alasan Keputusan', u.alasan_keputusan) : '') +
+      (u.file_sk_url ? kv('File SK', '<a href="' + esc(u.file_sk_url) + '" target="_blank">Buka dokumen SK</a>') : '') +
+      '</div></div>';
+    h += '</div>';
+
+    // Tombol tindakan
+    var aksi = [];
+    if (u.status === 'DRAFT' && bolehUbah) {
+      aksi.push('<button class="btn btn-primary btn-sm" onclick="aksiAjukan(\'' + esc(u.id) + '\')">Ajukan</button>');
+      aksi.push('<button class="btn btn-outline btn-sm" onclick="formEditUsulan(\'' + esc(u.id) + '\')">Edit</button>');
+    }
+    if (u.status === 'DIAJUKAN' && bolehSetuju) {
+      aksi.push('<button class="btn btn-primary btn-sm" onclick="aksiSetujui(\'' + esc(u.id) + '\')">Setujui</button>');
+    }
+    if (u.status === 'DIAJUKAN' && bolehTolak) {
+      aksi.push('<button class="btn btn-danger btn-sm" onclick="aksiTolak(\'' + esc(u.id) + '\')">Tolak</button>');
+    }
+    if ((u.status === 'DRAFT' || u.status === 'DIAJUKAN') && bolehUbah) {
+      aksi.push('<button class="btn btn-outline btn-sm" onclick="aksiBatalkan(\'' + esc(u.id) + '\')">Batalkan Usulan</button>');
+    }
+    if (u.status === 'DISETUJUI') {
+      aksi.push('<button class="btn btn-primary btn-sm" onclick="aksiCetakSk(\'' + esc(u.id) + '\')">Buat Dokumen SK</button>');
+      aksi.push('<button class="btn btn-outline btn-sm" onclick="aksiPratinjauSk(\'' + esc(u.id) + '\')">Pratinjau SK</button>');
+    }
+    if (u.status === 'DRAFT' && bolehUbah) {
+      aksi.push('<button class="btn btn-danger btn-sm" onclick="aksiHapusUsulan(\'' + esc(u.id) + '\')">Hapus</button>');
+    }
+
+    if (aksi.length) {
+      h += '<div class="card no-print"><h3>Tindakan</h3><div style="display:flex;gap:8px;flex-wrap:wrap">' + aksi.join('') + '</div></div>';
+    }
+
+    // Riwayat tindakan
+    h += '<div class="card"><h3>Jejak Persetujuan</h3>';
+    if (!d.riwayat.length) {
+      h += '<div class="empty">Belum ada tindakan.</div>';
+    } else {
+      h += '<table class="tbl"><thead><tr><th>Waktu</th><th>Aksi</th><th>Oleh</th><th>Catatan</th></tr></thead><tbody>';
+      d.riwayat.forEach(function (r) {
+        h += '<tr><td class="mono">' + esc(r.waktu) + '</td><td>' + esc(r.aksi) + '</td>' +
+          '<td>' + esc(r.user_nama || '-') + '</td><td>' + esc(r.catatan || '-') + '</td></tr>';
+      });
+      h += '</tbody></table>';
+    }
+    h += '</div>';
+
+    if (u.status === 'DISETUJUI') {
+      h += '<div class="card no-print"><div id="skPreviewBox"></div></div>';
+    }
+
+    setKonten(h);
+  }).catch(function (err) {
+    setKonten('<div class="card"><div class="empty">' + esc(err.message) + '</div></div>');
+  });
+}
+
+function tampilUsulan() {
+  location.hash = '#/usulan';
+  renderUsulan();
+}
+
+function aksiAjukan(id) {
+  bukaModal('Ajukan Usulan', '<div class="field"><label>Catatan pengajuan (opsional)</label>' +
+    '<input type="text" id="ajukanCatatan" placeholder="mis. diteruskan ke Direktur"></div>',
+    function () {
+      return api('usulan.ajukan', { id: id, catatan: q('ajukanCatatan').value }).then(function () {
+        toast('Usulan diajukan.');
+        renderDetailUsulan(id);
+      });
+    }, 'Ajukan');
+}
+
+function aksiSetujui(id) {
+  bukaModal('Setujui Usulan', '<div class="field"><label>Catatan persetujuan (opsional)</label>' +
+    '<input type="text" id="setujuiCatatan" placeholder="mis. disetujui sesuai usulan"></div>',
+    function () {
+      return api('usulan.setujui', { id: id, catatan: q('setujuiCatatan').value }).then(function () {
+        toast('Usulan disetujui. Sekarang SK bisa dicetak.');
+        renderDetailUsulan(id);
+      });
+    }, 'Setujui');
+}
+
+function aksiTolak(id) {
+  bukaModal('Tolak Usulan', '<div class="field"><label>Alasan penolakan (wajib)</label>' +
+    '<input type="text" id="tolakAlasan" placeholder="mis. belum memenuhi masa kerja"></div>',
+    function () {
+      var alasan = q('tolakAlasan').value.trim();
+      if (!alasan) throw new Error('Alasan penolakan wajib diisi.');
+      return api('usulan.tolak', { id: id, alasan: alasan }).then(function () {
+        toast('Usulan ditolak.');
+        renderDetailUsulan(id);
+      });
+    }, 'Tolak');
+}
+
+function aksiBatalkan(id) {
+  if (!confirm('Batalkan usulan ini? Statusnya akan menjadi DIBATALKAN.')) return;
+  api('usulan.batalkan', { id: id }).then(function () {
+    toast('Usulan dibatalkan.');
+    renderDetailUsulan(id);
+  }).catch(function (e) { toast(e.message, true); });
+}
+
+function aksiHapusUsulan(id) {
+  if (!confirm('Hapus usulan ini beserta jejaknya?')) return;
+  api('usulan.hapus', { id: id }).then(function () {
+    toast('Usulan dihapus.');
+    tampilUsulan();
+  }).catch(function (e) { toast(e.message, true); });
+}
+
+function aksiPratinjauSk(id) {
+  var box = q('skPreviewBox');
+  if (box) box.innerHTML = '<div class="loading">Menyiapkan pratinjau…</div>';
+  api('usulan.pratinjauSk', { id: id }).then(function (res) {
+    var box2 = q('skPreviewBox');
+    if (box2) box2.innerHTML = res.html;
+    bukaModal('Pratinjau SK', res.html + '<div class="muted" style="margin-top:10px">Gunakan tombol <b>Buat Dokumen SK</b> untuk menyimpan sebagai file .doc di Drive (bisa dibuka & diedit di Word).</div>', null, 'Tutup');
+  }).catch(function (e) {
+    if (box) box.innerHTML = '<div class="empty">' + esc(e.message) + '</div>';
+    toast(e.message, true);
+  });
+}
+
+function aksiCetakSk(id) {
+  var box = q('skPreviewBox');
+  if (box) box.innerHTML = '<div class="loading">Membuat dokumen SK di Drive…</div>';
+  api('usulan.cetakSk', { id: id }).then(function (res) {
+    toast('Dokumen SK tersimpan: ' + res.nama);
+    var box2 = q('skPreviewBox');
+    if (box2) box2.innerHTML = '<div class="alert-box" style="background:#e2f6ec;border-color:#bfe6d4">' +
+      '✅ SK tersimpan di Drive: <b>' + esc(res.nama) + '</b><br>' +
+      '<a href="' + esc(res.url) + '" target="_blank">Buka dokumen</a> · ' +
+      '<span class="muted">Nomor SK: ' + esc(res.nomorSk) + ' (bisa diubah setelah dokumen dibuka)</span></div>';
+    renderDetailUsulan(id);
+  }).catch(function (e) {
+    if (box) box.innerHTML = '<div class="empty">' + esc(e.message) + '</div>';
+    toast(e.message, true);
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Halaman: Laporan (Fase 4)                                            */
+/* ------------------------------------------------------------------ */
+
+var LAPORAN_TAB = [
+  { id: 'unit', label: 'Rekap per Unit' },
+  { id: 'golongan', label: 'Golongan' },
+  { id: 'kgb', label: 'Jadwal KGB' },
+  { id: 'pensiun', label: 'Mendekati Pensiun' },
+  { id: 'usulan', label: 'Rekap Usulan' },
+  { id: 'ekspor', label: 'Ekspor Data' }
+];
+
+var STATE_LAP = { tab: 'unit' };
+
+function renderLaporan() {
+  var tabBtn = LAPORAN_TAB.map(function (t) {
+    return '<button class="tab-btn' + (STATE_LAP.tab === t.id ? ' active' : '') +
+      '" onclick="gantiTabLaporan(\'' + t.id + '\')">' + esc(t.label) + '</button>';
+  }).join('');
+
+  setKonten(
+    '<div class="card">' +
+    '<div class="tabs no-print">' + tabBtn + '</div>' +
+    '<div class="lap-tombol no-print">' +
+      '<button class="btn btn-primary btn-sm" onclick="cetakLaporan()">🖨️ Cetak / Simpan PDF</button>' +
+      (STATE_LAP.tab === 'ekspor' ? '' : '<button class="btn btn-outline btn-sm" onclick="eksporCsvLaporan()">⬇️ Unduh CSV</button>') +
+    '</div>' +
+    '<div id="isiLaporan"><div class="loading">Memuat laporan…</div></div>' +
+    '</div>'
+  );
+  muatTabLaporan();
+}
+
+function gantiTabLaporan(id) {
+  STATE_LAP.tab = id;
+  renderLaporan();
+}
+
+function muatTabLaporan() {
+  var box = q('isiLaporan');
+  if (!box) return;
+  box.innerHTML = '<div class="loading">Memuat…</div>';
+
+  var pemanggil = {
+    unit: function () { return api('laporan.rekapUnit').then(tampilLaporanUnit); },
+    golongan: function () { return api('laporan.golongan').then(tampilLaporanGolongan); },
+    kgb: function () { return api('laporan.kgbBerikut').then(tampilLaporanKgb); },
+    pensiun: function () { return api('laporan.pensiun').then(tampilLaporanPensiun); },
+    usulan: function () { return api('laporan.usulan').then(tampilLaporanUsulan); },
+    ekspor: function () { return tampilLaporanEkspor(); }
+  }[STATE_LAP.tab];
+
+  pemanggil().catch(function (err) {
+    box.innerHTML = '<div class="empty">' + esc(err.message) + '</div>';
+  });
+}
+
+function kopLaporan(judul) {
+  return '<div class="kop-surat judul-laporan"><b>' + esc(CONFIG_TEKS_NAMA_INSTANSI) + '</b>' +
+    '<div class="muted">SUB BAGIAN KEPEGAWAIAN</div>' +
+    '<div style="font-weight:700;margin-top:6px">' + esc(judul) + '</div>' +
+    '<div class="muted">Per ' + fmtDateId(new Date().toISOString().slice(0, 10)) + '</div></div>';
+}
+var CONFIG_TEKS_NAMA_INSTANSI = 'RSUD Luwuk';
+
+function tampilLaporanUnit(d) {
+  var h = kopLaporan('Rekapitulasi Pegawai per Unit Kerja');
+  h += '<table class="tbl"><thead><tr><th>Unit / Tempat Tugas</th>' +
+    d.kolomJenis.map(function (j) { return '<th>' + esc(j) + '</th>'; }).join('') +
+    '<th>Total</th></tr></thead><tbody>';
+  d.rows.forEach(function (r) {
+    h += '<tr><td>' + esc(r.unit) + '</td>' +
+      d.kolomJenis.map(function (j) { return '<td>' + (r.jenis[j] || 0) + '</td>'; }).join('') +
+      '<td><b>' + r.total + '</b></td></tr>';
+  });
+  h += '<tr style="font-weight:800;background:#f0f7f6"><td>TOTAL</td>' +
+    d.kolomJenis.map(function (j) {
+      var t = d.rows.reduce(function (a, r) { return a + (r.jenis[j] || 0); }, 0);
+      return '<td>' + t + '</td>';
+    }).join('') + '<td>' + d.total + '</td></tr>';
+  h += '</tbody></table>';
+  q('isiLaporan').innerHTML = h;
+}
+
+function tampilLaporanGolongan(d) {
+  var h = kopLaporan('Rekapitulasi Golongan / Ruang');
+  h += '<table class="tbl"><thead><tr><th>Golongan</th><th>Jumlah Pegawai</th>' +
+    '<th>Gaji Pokok Terendah</th><th>Gaji Pokok Tertinggi</th><th>Contoh Pegawai</th></tr></thead><tbody>';
+  d.rows.forEach(function (r) {
+    h += '<tr><td><b>' + esc(r.gol) + '</b></td><td>' + r.jumlah + '</td>' +
+      '<td>' + (r.gajiMin ? money(r.gajiMin) : '-') + '</td>' +
+      '<td>' + (r.gajiMax ? money(r.gajiMax) : '-') + '</td>' +
+      '<td class="muted">' + esc(r.pegawai.join(', ')) + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  h += '<div class="muted" style="margin-top:8px">Total pegawai bergolongan: ' + d.totalBerGolongan +
+    ' · yang punya gaji pokok tercatat: ' + d.totalBerGajiPokok + '</div>';
+  q('isiLaporan').innerHTML = h;
+}
+
+function tampilLaporanKgb(d) {
+  var h = kopLaporan('Jadwal Kenaikan Gaji Berkala');
+  if (!d.rows.length) {
+    h += '<div class="empty">Belum ada data KGB.</div>';
+  } else {
+    h += '<table class="tbl"><thead><tr><th>Nama</th><th>Unit</th><th>Golongan</th>' +
+      '<th>KGB Terakhir</th><th>KGB Berikutnya</th><th>Sisa Hari</th></tr></thead><tbody>';
+    d.rows.forEach(function (r) {
+      var badge = r.sisa_hari < 0 ? 'danger' : (r.sisa_hari <= 90 ? 'warn' : 'ok');
+      h += '<tr><td><b>' + esc(r.nama) + '</b></td><td>' + esc(r.unit || '-') + '</td>' +
+        '<td>' + esc(r.golongan || '-') + '</td><td>' + fmtDateId(r.tmt_terakhir) + '</td>' +
+        '<td><b>' + fmtDateId(r.tmt_berikut) + '</b></td>' +
+        '<td><span class="badge ' + badge + '">' + esc(r.sisa_hari) + '</span></td></tr>';
+    });
+    h += '</tbody></table>';
+  }
+  q('isiLaporan').innerHTML = h;
+}
+
+function tampilLaporanPensiun(d) {
+  var h = kopLaporan('Pegawai Mendekati Batas Usia Pensiun');
+  if (!d.rows.length) {
+    h += '<div class="empty">Belum ada data.</div>';
+  } else {
+    h += '<table class="tbl"><thead><tr><th>Nama</th><th>Unit</th><th>Jabatan</th><th>Jenis</th>' +
+      '<th>Golongan</th><th>Tanggal Lahir</th><th>Perkiraan Pensiun</th><th>Sisa Hari</th></tr></thead><tbody>';
+    d.rows.forEach(function (r) {
+      var badge = r.sisa_hari < 0 ? 'danger' : (r.sisa_hari <= 180 ? 'warn' : 'ok');
+      h += '<tr><td><b>' + esc(r.nama) + '</b></td><td>' + esc(r.unit || '-') + '</td>' +
+        '<td>' + esc(r.jabatan || '-') + '</td><td>' + esc(r.jenis || '-') + '</td>' +
+        '<td>' + esc(r.golongan || '-') + '</td><td>' + fmtDateId(r.tanggal_lahir) + '</td>' +
+        '<td><b>' + esc(r.tanggal_pensiun) + '</b></td>' +
+        '<td><span class="badge ' + badge + '">' + esc(r.sisa_hari) + '</span></td></tr>';
+    });
+    h += '</tbody></table>';
+  }
+  q('isiLaporan').innerHTML = h;
+}
+
+function tampilLaporanUsulan(d) {
+  var h = kopLaporan('Rekapitulasi Usulan KP / KGB');
+  h += '<div class="stat-cards" style="margin-bottom:14px">';
+  h += kartu(d.total || 0, 'Total Usulan');
+  ['DRAFT', 'DIAJUKAN', 'DISETUJUI', 'DITOLAK'].forEach(function (s) {
+    h += kartu(d.perStatus[s] || 0, LABEL_STATUS_USULAN[s]);
+  });
+  h += kartu(d.perJenis.KP || 0, 'Kenaikan Pangkat');
+  h += kartu(d.perJenis.KGB || 0, 'KGB');
+  h += '</div>';
+
+  if (!d.rows.length) {
+    h += '<div class="empty">Belum ada usulan.</div>';
+  } else {
+    h += '<table class="tbl"><thead><tr><th>Nomor Usulan</th><th>Jenis</th><th>Pegawai</th>' +
+      '<th>Golongan</th><th>TMT</th><th>Status</th></tr></thead><tbody>';
+    d.rows.forEach(function (u) {
+      h += '<tr><td class="mono">' + esc(u.nomor_usulan) + '</td><td>' + esc(u.jenis) + '</td>' +
+        '<td>' + esc(u.nama) + '</td><td>' + esc(u.golongan_lama || '-') + ' → ' + esc(u.golongan_baru || '-') + '</td>' +
+        '<td>' + fmtDateId(u.periode_tmt) + '</td><td>' + badgeStatusUsulan(u.status) + '</td></tr>';
+    });
+    h += '</tbody></table>';
+  }
+  q('isiLaporan').innerHTML = h;
+}
+
+function tampilLaporanEkspor() {
+  var h = kopLaporan('Ekspor Data Pegawai');
+  h += '<div class="muted" style="margin-bottom:14px">Berisi seluruh data pegawai (' +
+    'biodata, status, golongan, jabatan, pendidikan, masa kerja, KGB terakhir, perkiraan pensiun) ' +
+    'dalam format <b>CSV</b> yang langsung bisa dibuka di Microsoft Excel.</div>';
+  h += '<button class="btn btn-primary" onclick="unduhEksporPegawai()">⬇️ Unduh Data Pegawai (CSV)</button>';
+  h += '<div id="eksporStatus" style="margin-top:12px"></div>';
+  q('isiLaporan').innerHTML = h;
+  return Promise.resolve();
+}
+
+function unduhEksporPegawai() {
+  q('eksporStatus').innerHTML = '<div class="loading" style="padding:16px">Menyiapkan data…</div>';
+  api('laporan.pegawaiLengkap').then(function (d) {
+    unduhCsv('SIMPEG-Data-Pegawai-' + formatToday() + '.csv', d.kolom, d.rows);
+    q('eksporStatus').innerHTML = '<div class="alert-box" style="background:#e2f6ec;border-color:#bfe6d4">✅ ' +
+      d.rows.length + ' baris berhasil diunduh.</div>';
+  }).catch(function (e) {
+    q('eksporStatus').innerHTML = '<div class="alert-box">⚠️ ' + esc(e.message) + '</div>';
+  });
+}
+
+function eksporCsvLaporan() {
+  var pemanggil = {
+    unit: 'laporan.rekapUnit',
+    golongan: 'laporan.golongan',
+    kgb: 'laporan.kgbBerikut',
+    pensiun: 'laporan.pensiun'
+  }[STATE_LAP.tab];
+
+  if (!pemanggil) {
+    toast('Tab ini tidak punya ekspor CSV.', true);
+    return;
+  }
+
+  api(pemanggil).then(function (d) {
+    var kolom, rows, nama;
+    if (STATE_LAP.tab === 'unit') {
+      kolom = [{ key: 'unit', label: 'Unit / Tempat Tugas' }]
+        .concat(d.kolomJenis.map(function (j) { return { key: 'jenis.' + j, label: j }; }))
+        .concat([{ key: 'total', label: 'Total' }]);
+      rows = d.rows.map(function (r) {
+        var o = { unit: r.unit, total: r.total };
+        d.kolomJenis.forEach(function (j) { o['jenis.' + j] = r.jenis[j] || 0; });
+        return o;
+      });
+      nama = 'SIMPEG-Rekap-Unit.csv';
+    } else if (STATE_LAP.tab === 'golongan') {
+      kolom = [{ key: 'gol', label: 'Golongan' }, { key: 'jumlah', label: 'Jumlah' },
+        { key: 'gajiMin', label: 'Gaji Terendah' }, { key: 'gajiMax', label: 'Gaji Tertinggi' }];
+      rows = d.rows;
+      nama = 'SIMPEG-Rekap-Golongan.csv';
+    } else if (STATE_LAP.tab === 'kgb') {
+      kolom = [{ key: 'nama', label: 'Nama' }, { key: 'unit', label: 'Unit' },
+        { key: 'golongan', label: 'Golongan' }, { key: 'tmt_terakhir', label: 'KGB Terakhir' },
+        { key: 'tmt_berikut', label: 'KGB Berikutnya' }, { key: 'sisa_hari', label: 'Sisa Hari' }];
+      rows = d.rows;
+      nama = 'SIMPEG-Jadwal-KGB.csv';
+    } else {
+      kolom = [{ key: 'nama', label: 'Nama' }, { key: 'unit', label: 'Unit' },
+        { key: 'jabatan', label: 'Jabatan' }, { key: 'jenis', label: 'Jenis' },
+        { key: 'golongan', label: 'Golongan' }, { key: 'tanggal_lahir', label: 'Tanggal Lahir' },
+        { key: 'tanggal_pensiun', label: 'Perkiraan Pensiun' }, { key: 'sisa_hari', label: 'Sisa Hari' }];
+      rows = d.rows;
+      nama = 'SIMPEG-Mendekati-Pensiun.csv';
+    }
+    unduhCsv(nama, kolom, rows);
+    toast('CSV diunduh: ' + nama);
+  }).catch(function (e) { toast(e.message, true); });
+}
+
+function formatToday() {
+  var d = new Date();
+  return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+
+function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+/** Unduh data sebagai CSV (dibuka langsung oleh Excel). */
+function unduhCsv(namaFile, kolom, rows) {
+  function sel(v) {
+    if (v === null || v === undefined) v = '';
+    v = String(v);
+    if (/[",;\r\n]/.test(v)) v = '"' + v.replace(/"/g, '""') + '"';
+    return v;
+  }
+  var head = kolom.map(function (k) { return sel(k.label); }).join(';');
+  var body = (rows || []).map(function (r) {
+    return kolom.map(function (k) {
+      var v = r[k.key];
+      return sel(v);
+    }).join(';');
+  }).join('\r\n');
+
+  var isi = '\uFEFF' + head + '\r\n' + body;
+  var blob = new Blob([isi], { type: 'text/csv;charset=utf-8;' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = namaFile;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 3000);
+}
+
+function cetakLaporan() {
+  var isi = q('isiLaporan');
+  if (!isi) return;
+  window.print();
+}
+
+/* ------------------------------------------------------------------ */
+/* Form: Biodata Pegawai                                               */
+/* ------------------------------------------------------------------ */
+
+function formBiodata(pegawai) {
+  var baru = !pegawai;
+  var data = pegawai || {};
+  var isi = formFieldsHtml(FIELD_PEGAWAI, data, baru ? null : 'id', STATE.opsi);
+  bukaModal(baru ? 'Tambah Pegawai' : 'Edit Biodata — ' + (data.nama || ''), isi, function () {
+    var payload = bacaForm();
+    if (baru && !String(payload.id || '').trim()) throw new Error('ID Absen wajib diisi.');
+    if (!String(payload.nama || '').trim()) throw new Error('Nama wajib diisi.');
+    // buang field riwayat yang tidak relevan untuk biodata
+    var biodata = {};
+    FIELD_PEGAWAI.forEach(function (f) { biodata[f.k] = payload[f.k]; });
+    var aksi = (baru ? 'pegawai.simpan' : 'pegawai.simpan');
+    return api(aksi, { data: biodata }).then(function () {
+      toast(baru ? 'Pegawai baru disimpan.' : 'Biodata diperbarui.');
+      flushLokal();
+      if (baru) {
+        location.hash = '#/pegawai';
+        renderPegawai();
+      } else {
+        renderDetail(biodata.id);
+      }
+    });
+  }, 'Simpan');
+}
+
+function konfirmasiHapusPegawai(id, nama) {
+  if (!confirm('Hapus pegawai "' + nama + '" beserta seluruh riwayat & dokumennya? Tindakan ini tidak dapat dibatalkan.')) return;
+  api('pegawai.hapus', { id: id }).then(function () {
+    toast('Pegawai dihapus.');
+    flushLokal();
+    location.hash = '#/pegawai';
+    renderPegawai();
+  }).catch(function (err) { toast(err.message, true); });
+}
+
+/* ------------------------------------------------------------------ */
+/* Form: Riwayat                                                       */
+/* ------------------------------------------------------------------ */
+
+function formRiwayat(jenis, ref, pegawaiId) {
+  var row = ref && ref.row ? ref.row : null;
+  var data = row ? row : {};
+  var fields = FIELD_RIWAYAT[jenis];
+  var isi = formFieldsHtml(fields, data, null, STATE.opsi);
+  if (!isLifetimeJenis(jenis)) { /* no-op */ }
+  bukaModal((row ? 'Edit ' : 'Tambah ') + LABEL_STATUS[jenis], isi, function () {
+    var payload = bacaForm();
+    var kirim = { pegawai_id: pegawaiId };
+    fields.forEach(function (f) { kirim[f.k] = payload[f.k]; });
+    if (row && row.id) kirim.id = row.id;
+    return api('riwayat.simpan', { jenis: jenis, data: kirim }).then(function () {
+      toast('Riwayat ' + LABEL_STATUS[jenis] + ' disimpan.');
+      flushLokal();
+      renderDetail(pegawaiId);
+    });
+  }, 'Simpan');
+}
+
+function isLifetimeJenis(jenis) { return jenis === 'dokumen'; }
+
+function konfirmasiHapusRiwayat(jenis, id) {
+  if (!confirm('Hapus data ' + LABEL_STATUS[jenis] + ' ini?')) return;
+  api('riwayat.hapus', { jenis: jenis, id: id }).then(function () {
+    toast('Riwayat dihapus.');
+    flushLokal();
+    renderDetail(STATE.detail.pegawai.id);
+  }).catch(function (err) { toast(err.message, true); });
+}
+
+function flushLokal() {
+  STATE.dashboard = null;
+  STATE.mon = null;
+  STATE.list = null;
+  STATE.opsiFilter = null;
+}
+
+/* ------------------------------------------------------------------ */
+/* Inisialisasi                                                        */
+/* ------------------------------------------------------------------ */
+
+function tampilkanDitolak(email) {
+  renderNav('');
+  q('pageTitle').textContent = 'Akses Ditolak';
+  setKonten('<div class="card" style="max-width:560px;margin:60px auto;text-align:center">' +
+    '<div style="font-size:44px">🔒</div>' +
+    '<h2 style="margin:10px 0">Akun Belum Terdaftar</h2>' +
+    '<div class="muted" style="margin-bottom:8px">Akun Google Anda:</div>' +
+    '<div class="mono" style="font-weight:700;margin-bottom:16px">' + esc(email || '(tidak diketahui)') + '</div>' +
+    '<div class="muted">Hubungi Subbag Kepegawaian agar akun ini didaftarkan pada sheet <b>Users</b> beserta perannya.</div>' +
+    '</div>');
+}
+
+function boot() {
+  api('profile.get').then(function (prof) {
+    STATE.profile = prof;
+    if (!prof || prof.registered === false) { tampilkanDitolak(prof ? prof.email : ''); return; }
+    q('userChip').textContent = (prof.nama || prof.email || '') + (prof.role ? ' · ' + prof.role : '');
+    return api('config.opsi').then(function (o) { STATE.opsi = o; });
+  }).then(function () {
+    if (!STATE.profile || STATE.profile.registered === false) return;
+    window.addEventListener('hashchange', route);
+    route();
+  }).catch(function (err) {
+    q('content').innerHTML = '<div class="card"><div class="empty">Gagal memuat aplikasi: ' + esc(err.message) + '</div></div>';
+  });
+}
+
+boot();
+// </script>
+
+/* ------------------------------------------------------------------ */
+/* Override API – fetch to Apps Script */
+function api(action, payload) {
+  const endpoint = 'https://script.google.com/macros/s/AKfycbx7Bmc_8371a6Kd1CYC4KsNVUknAgZgLWoF_BAfnN852XycaYY7ScwcIs599O2yaMUa/exec';
+  const url = new URL(endpoint);
+  url.searchParams.set('action', action);
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload || {})
+  };
+  return fetch(url, options)
+    .then(res => res.text())
+    .then(txt => {
+      const data = JSON.parse(txt);
+      if (!data) throw new Error('Tidak ada respons dari server.');
+      if (data.success === false) throw new Error(data.error || 'Kesalahan tidak dikenal.');
+      return data.data;
+    });
+}
+

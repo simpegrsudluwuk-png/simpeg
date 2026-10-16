@@ -1,0 +1,23 @@
+{
+  "name": "simpeg-rsud-luwuk",
+  "version": "0.1.0",
+  "description": "Aplikasi SIMPEG RSUD Luwuk berbasis Google Apps Script + Google Spreadsheet",
+  "private": true,
+  "scripts": {
+    "login": "clasp login",
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "watch": "clasp push --watch",
+    "open": "clasp open",
+    "deploy": "clasp deploy --description \"SIMPEG v1\"",
+    "deploy:dev": "clasp deploy --description \"SIMPEG dev\"",
+    "logs": "clasp logs",
+    "versions": "clasp versions"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.4.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,894 @@
+﻿ID,ID Pegawai,Golongan,Nama SK,Nomor SK,TMT Pangkat,Gaji Pokok,Jabatan PERMENPAN,Kelas Jabatan,Nomor SK Fungsional,TMT SK Fungsional,Tanggal SK Fungsional,Tunjangan PAK,Jabatan TPP,Dibuat Oleh,Dibuat
+RPG-000001,76295,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000002,18760,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000003,99466,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000004,89307,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000005,31679,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000006,35104,PW,,,2025-11-01,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000007,53800,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000008,6462,V,,,2025-03-01,2511500,Pengadministrasi Perkantoran,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000009,21437,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000010,79837,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000011,78614,PW,,,2025-11-01,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000012,91694,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000013,51205,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000014,97706,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000015,12889,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000016,92671,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000017,50115,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000018,18932,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000019,96267,PW,,,2025-11-01,,Bidan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000020,364715,IV/d,,,2022-04-01,,Dokter Umum Utama,14,,,,,Dokter Utama,,2026-10-13 14:58:14
+RPG-000021,659753,IV/c,,,2017-10-01,,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000022,290276,IV/d,,,2022-04-01,,Dokter Umum Utama,14,,,,,Dokter Utama,,2026-10-13 14:58:14
+RPG-000023,122729,Kontrak,,,2026-05-01,,Dokter Spesialis Anak Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000024,80704,IV/c,,,2023-10-01,,Dokter Spesialis Anak Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000025,139812,III/b,,,2018-09-01,,Dokter Spesialis Anasthesi Pertama,9,,,,,Dokter Pertama,,2026-10-13 14:58:14
+RPG-000026,846624,IV/c,,,2019-10-01,,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000027,313848,IV/c,,,2020-04-01,,Apoteker Ahli Madya,11,,,,,Apoteker Ahli Madya,,2026-10-13 14:58:14
+RPG-000028,987038,IV/b,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000029,834717,IV/c,,,2021-10-01,,Apoteker Ahli Madya,11,,,,,Apoteker Ahli Madya,,2026-10-13 14:58:14
+RPG-000030,604640,IV/a,,,2010-04-01,,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000031,458167,IV/c,,,2023-04-01,,Apoteker Ahli Madya,11,,,,,Apoteker Ahli Madya,,2026-10-13 14:58:14
+RPG-000032,685044,III/c,,,2025-01-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000033,881620,III/b,,,2011-02-01,,Dokter Spesialis Bedah Pertama,9,,,,,Dokter Pertama,,2026-10-13 14:58:14
+RPG-000034,762641,IV/b,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000035,338413,III/d,,,2024-12-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000036,644400,III/d,,,2016-04-01,,Analis Kepegawaian Ahli Muda,10,,,,,Analis Kepegawaian Muda,,2026-10-13 14:58:14
+RPG-000037,224235,IV/a,,,2018-04-01,,Kepala Bidang Pelayanan Medik,11,,,,,Kepala Bidang Pelayanan Medik,,2026-10-13 14:58:14
+RPG-000038,698187,III/d,,,2019-04-01,,Asisten Apoteker Penyelia,8,,,,,Asisten Apoteker Penyelia,,2026-10-13 14:58:14
+RPG-000039,809549,IV/c,,,2021-10-01,4238500,Dokter Spesialis Forensik Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000040,743635,III/b,,,2024-12-01,300000,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000041,30520,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000042,24064,VII,,,2023-04-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000043,9985,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000044,69664,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000045,18171,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000046,3918,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000047,868442,IV/a,,,2021-04-01,,Adminkes Ahli Muda,9,,,,,Adminkes Ahli Muda,,2026-10-13 14:58:14
+RPG-000048,514973,III/d,,,2020-04-01,,Asisten Apoteker Penyelia,8,,,,,Asisten Apoteker Penyelia,,2026-10-13 14:58:14
+RPG-000049,43812,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000050,50007,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000051,677097,III/d,,,2013-04-01,,Pengadministrasi Perkantoran,8,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000052,466895,III/d,,,2023-04-01,3743100,Apoteker Ahli Muda,9,,,,,Apoteker Ahli Muda,,2026-10-13 14:58:14
+RPG-000053,965366,IV/a,,,2023-10-01,,Bidan Ahli Madya,11,,,,,Bidah Ahli Madya,,2026-10-13 14:58:14
+RPG-000054,96186,III/c,,,2021-10-01,,Bidan Penyelia,8,,,,,Bidan Penyelia,,2026-10-13 14:58:14
+RPG-000055,309244,IV/a,,,2026-02-01,4624300,Dokter Spesialis Jiwa Madya,12,,,,,Dokter Spesialis Madya,,2026-10-13 14:58:14
+RPG-000056,862451,III/c,,,2023-04-01,,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000057,944799,III/c,,,2021-04-01,,Asisten Apoteker Penyelia,8,,,,,Asisten Apoteker Penyelia,,2026-10-13 14:58:14
+RPG-000058,716231,III/c,,,2024-10-01,4126600,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000059,521994,III/b,,,2021-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000060,446002,III/d,,,2025-11-01,,Apoteker Ahli Muda,9,,,,,Apoteker Ahli Muda,,2026-10-13 14:58:14
+RPG-000061,178602,III/d,,,2024-02-01,,Asisten Apoteker Penyelia,8,,,,,Asisten Apoteker Penyelia,,2026-10-13 14:58:14
+RPG-000062,93153,III/d,,,2024-02-01,,Apoteker Ahli Muda,9,,,,,Apoteker Ahli Muda,,2026-10-13 14:58:14
+RPG-000063,942403,III/d,,,2023-04-01,3518100,Dokter Spesialis Kulit Kelamin Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000064,56560,IV/a,,,2022-04-01,,Kepala Bidang Keperawatan,11,,,,,Kepala Bidang Keperawatan,,2026-10-13 14:58:14
+RPG-000065,239859,III/a,,,2021-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000066,67636,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000067,746282,IV/c,,,2019-04-01,,Dokter Spesialis Mata Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000068,309326,IV/b,,,2023-04-01,,Dokter Spesialis Mata Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000069,550541,IV/b,,,2023-10-01,,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000070,49111,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000071,80435,X,,,2023-04-01,3091900,Apoteker Ahli Pertama,8,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000072,880663,III/d,,,2018-04-01,,Analis Keuangan Pusat & Daerah Ahli Muda,9,,,,,Analis Keuangan Pusat & Daerah Muda,,2026-10-13 14:58:14
+RPG-000073,998707,III/d,,,,,Perencana Ahli Muda,10,,,,,Perencana Muda,,2026-10-13 14:58:14
+RPG-000074,722267,IV/a,,,2025-06-01,4770000,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000075,848569,III/a,,,2023-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000076,59759,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000077,515929,III/d,,,2018-04-01,,Analis Keuangan Pusat & Daerah Ahli Muda,9,,,,,Analis Keuangan Pusat & Daerah Muda,,2026-10-13 14:58:14
+RPG-000078,20915,PW,,,2025-11-01,,Adminkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000079,918866,III/a,,,2024-05-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000080,619337,III/a,,,2024-04-30,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000081,18695,PW,,,2025-11-01,,Adminkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000082,16685,Kontrak,,,2025-02-01,,Dokter Spesialis Orthopedi Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000083,796583,III/a,,,2024-04-01,2873500,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000084,443941,IV/c,,,2023-04-01,,Dokter Spesialis Patologi Klinik Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000085,272842,IV/c,,,2021-10-01,4651800,Dokter Spesialis Dalam Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000086,917379,III/d,,,2023-10-01,,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000087,56078,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000088,613065,III/a,,,2024-04-01,2873500,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000089,358155,III/d,,,2019-10-01,,Analis Kepegawaian Ahli Muda,10,,,,,Analis Kepegawaian Muda,,2026-10-13 14:58:14
+RPG-000090,998745,X,,,2024-03-01,,Apoteker Ahli Pertama,8,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000091,998752,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000092,748810,IV/a,,,2020-10-01,,Adminkes Ahli Madya,11,,,,,Adminkes Ahli Madya,,2026-10-13 14:58:14
+RPG-000093,130036,III/d,,,2020-10-01,,Tenaga Sanitasi Lingkungan Penyelia,8,,,,,Sanitarian Penyelia,,2026-10-13 14:58:14
+RPG-000094,801305,IV/b,,,2024-10-01,4819900,Nutrisionis Ahli Madya,11,,,,,Nutrisionis Ahli Madya,,2026-10-13 14:58:14
+RPG-000095,76204,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000096,329109,III/d,,,2026-06-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000097,688071,IV/b,,,2026-09-01,4672800,Dokter Spesialis Dalam Madya,12,,,,,Dokter Spesialis Dalam Madya,,2026-10-13 14:58:14
+RPG-000098,67395,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000099,993753,III/d,,,2026-01-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000100,732616,IV/a,,,2025-02-01,4084900,Dokter Spesialis Paru Madya,12,,,,,Dokter Spesialis Madya,,2026-10-13 14:58:14
+RPG-000101,902714,IV/a,,,2026-01-01,,Nutrisionis Ahli Madya,11,,,,,Nutrisionis Ahli Madya,,2026-10-13 14:58:14
+RPG-000102,864549,III/d,,,2026-01-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000103,26759,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000104,23877,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000105,946188,IV/a,,,2026-03-01,4483100,Nutrisionis Ahli Madya,11,,,,,Nutrisionis Ahli Madya,,2026-10-13 14:58:14
+RPG-000106,47699,VII,,,2022-02-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000107,20298,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000108,174900,III/d,,,2020-10-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000109,807669,III/d,,,2023-04-01,3982600,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000110,93178,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000111,636301,III/a,,,2002-10-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000112,829822,III/d,,,2024-08-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Ahli Muda,,2026-10-13 14:58:14
+RPG-000113,13662,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000114,846304,III/d,,,2022-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000115,460401,IV/a,,,2023-10-01,,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000116,481152,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000117,548284,III/c,,,2018-10-01,,Adminkes Ahli Muda,9,,,,,Adminkes Ahli Muda,,2026-10-13 14:58:14
+RPG-000118,619038,IV/a,,,2025-06-01,3799400,Dokter Umum Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000119,96917,III/b,,,2022-04-01,,Penelaah Tehnis Kebijakan,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000120,607695,III/b,,,2023-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000121,685500,III/d,,,2024-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000122,243053,III/c,,,2019-04-01,,Penelaah Tehnis Kebijakan,7,,,,,Pengelola Layanan Kesehatan,,2026-10-13 14:58:14
+RPG-000123,774289,III/d,,,2024-06-01,3799400,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000124,98679,III/a,,,2023-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000125,796056,IV/a,,,2021-04-01,,Dokter Spesialis Radiologi Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000126,708484,IV/a,,,2021-04-01,,Dokter Spesialis Radiologi Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000127,159054,IV/a,,,2025-10-29,,Plt. Direktur RSUD Luwuk,14,,,,,Direktur RSUD Luwuk,,2026-10-13 14:58:14
+RPG-000128,54535,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000129,8900,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000130,93321,X,,,2025-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000131,65173,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000132,166561,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000133,32449,IV/a,,,2020-04-01,,Tenaga Sanitasi Lingkungan Ahli Madya,11,,,,,Sanitarian Ahli Madya,,2026-10-13 14:58:14
+RPG-000134,956822,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000135,983095,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000136,403922,III/d,,,2020-10-01,,Dokter Spesialis Obsgin Ginekologi Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000137,30337,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000138,296477,IV/a,,,2021-04-01,,Tenaga Sanitasi Lingkungan Ahli Madya,11,,,,,Sanitarian Ahli Madya,,2026-10-13 14:58:14
+RPG-000139,19745,III/d,,,2020-10-01,,Tenaga Sanitasi Lingkungan Ahli Muda,9,,,,,Sanitarian Muda,,2026-10-13 14:58:14
+RPG-000140,56533,III/d,,,2020-04-01,,Apoteker Ahli Muda,9,,,,,Apoteker Ahli Muda,,2026-10-13 14:58:14
+RPG-000141,23277,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000142,14944,III/d,,,2026-04-01,4301200,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000143,54205,IV/a,,,2022-04-01,,Tenaga Sanitasi Lingkungan Ahli Madya,11,,,,,Sanitarian Ahli Madya,,2026-10-13 14:58:14
+RPG-000144,480781,III/c,,,2022-04-01,,Pranata Hubungan Masyarakat Ahli Muda,9,,,,,Pranata Hubungan Masyarakat Muda,,2026-10-13 14:58:14
+RPG-000145,368229,IV/b,,,2023-10-01,4194600,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000146,139673,III/c,,,2025-01-01,,Penelaah Tehnis Kebijakan,7,,,,,Pengolah Data dan Informasi,,2026-10-13 14:58:14
+RPG-000147,192069,III/c,,,2025-01-01,,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000148,295132,IV/a,,,2024-10-01,,Tenaga Sanitasi Lingkungan Ahli Madya,11,,,,,Sanitarian Ahli Madya,,2026-10-13 14:58:14
+RPG-000149,636091,IV/a,,,2023-10-01,,Tenaga Sanitasi Lingkungan Ahli Madya,11,,,,,Sanitarian Ahli Madya,,2026-10-13 14:58:14
+RPG-000150,870550,III/d,,,2023-10-01,3743100,Tenaga Sanitasi Lingkungan Ahli Muda,9,,,,,Sanitarian Ahli Muda,,2026-10-13 14:58:14
+RPG-000151,731564,III/c,,,2020-10-01,,Pengelola Pengadaan Barang dan Jasa Muda,9,,,,,Pengelola Pengadaan Barang dan Jasa Muda,,2026-10-13 14:58:14
+RPG-000152,816774,III/d,,,2023-10-01,3518100,Tenaga Sanitasi Lingkungan Ahli Muda,9,,,,,Sanitarian Ahli Muda,,2026-10-13 14:58:14
+RPG-000153,90902,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000154,746347,III/b,,,2023-10-01,3445500,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000155,410756,III/d,,,2024-04-01,,TPKIP Ahli Muda,9,,,,,TPKIP Ahli Muda,,2026-10-13 14:58:14
+RPG-000156,896550,III/d,,,2026-06-01,3919100,Tenaga Sanitasi Lingkungan Penyelia,8,,,,,Tenaga Sanitasi Lingkungan Penyelia,,2026-10-13 14:58:14
+RPG-000157,865457,IV/a,,,2021-10-01,,Adminkes Ahli Muda,9,,,,,Adminkes Ahli Muda,,2026-10-13 14:58:14
+RPG-000158,937301,III/d,,,2024-10-01,3779400,Pranata Labkes Penyelia,8,,,,,Pranata Labkes Penyelia,,2026-10-13 14:58:14
+RPG-000159,45356,VII,,,2024-03-01,,Perawat Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000160,904814,III/c,,,2021-10-01,,Pranata Labkes Penyelia,8,,,,,Pranata Labkes Penyelia,,2026-10-13 14:58:14
+RPG-000161,862105,III/d,,,2024-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000162,412834,III/b,,,2020-10-01,3481600,Perawat Mahir,8,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000163,413924,III/b,,,2024-12-01,3607500,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000164,266646,III/c,,,2024-02-01,3591200,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000165,668524,III/c,,,2023-04-01,,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000166,206687,III/d,,,2024-06-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000167,308967,III/b,,,2022-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000168,522798,III/a,,,2025-11-01,3461100,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000169,460687,IV/c,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000170,818733,III/d,,,2024-10-01,3683400,Pranata Labkes Ahli Muda,9,,,,,Pranata Labkes Ahli Muda,,2026-10-13 14:58:14
+RPG-000171,307533,IV/b,,,2025-08-01,5128300,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000172,730734,III/c,,,2022-04-01,,Pranata Labkes Penyelia,8,,,,,Pranata Labkes Penyelia,,2026-10-13 14:58:14
+RPG-000173,907493,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000174,656728,III/c,,,2025-06-01,,Pranata Labkes Ahli Muda,9,,,,,Pranata Labkes Ahli Muda,,2026-10-13 14:58:14
+RPG-000175,90333,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000176,709994,III/c,,,2025-08-01,3761000,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000177,903386,III/c,,,2022-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000178,948327,III/b,,,2023-10-01,3238300,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000179,8372,III/b,,,2024-08-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000180,173901,III/b,,,2023-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000181,15196,III/c,,,2023-10-01,3375300,Pranata Labkes Ahli Muda,9,,,,,Pranata Labkes Muda,,2026-10-13 14:58:14
+RPG-000182,181519,III/c,,,2024-04-01,,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000183,795284,III/b,,,2020-04-01,3554000,Pengolah Data Kepegawaian,6,,,,,Pengolah Data dan Informasi,,2026-10-13 14:58:14
+RPG-000184,28222,III/d,,,2024-12-01,4042500,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000185,956410,III/c,,,2024-04-01,3760100,Pranata Labkes Penyelia,8,,,,,Pranata Labkes Penyelia,,2026-10-13 14:58:14
+RPG-000186,82074,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000187,194630,III/c,,,2024-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000188,988584,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000189,979267,III/b,,,2016-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000190,197873,III/b,,,2023-04-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000191,158041,IV/a,,,2020-10-01,,Bidan Ahli Madya,11,,,,,Bidah Ahli Madya,,2026-10-13 14:58:14
+RPG-000192,41631,VII,,,2023-04-01,,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000193,532516,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000194,360781,III/d,,,2024-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000195,926300,III/d,,,2024-04-01,3799400,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000196,478484,III/c,,,2024-12-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000197,189647,III/c,,,2024-02-01,3272200,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000198,936919,III/c,,,2024-12-01,3426000,Bidan Penyelia,8,,,,,,,2026-10-13 14:58:14
+RPG-000199,841551,III/c,,,2021-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000200,944128,III/b,,,2023-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000201,867841,III/b,,,2025-04-01,3607500,Penata Anestesi Ahli Pertama,8,,,,,Penata Anatesi Pertama,,2026-10-13 14:58:14
+RPG-000202,856289,II/c,,,2018-08-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000203,7677,III/a,,,2024-04-01,2873500,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000204,929177,II/c,,,2019-03-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000205,64398,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000206,81433,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000207,46089,VII,,,2023-04-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000208,966150,III/c,,,2024-06-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000209,97398,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000210,49738,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000211,72810,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000212,889089,III/b,,,2022-10-01,,Penelaah Tehnis Kebijakan,7,,,,,Pengolah Data dan Informasi,,2026-10-13 14:58:14
+RPG-000213,89635,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000214,10338,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000215,32093,VII,,,2024-03-01,2858800,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000216,58086,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000217,77050,X,,,2025-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000218,885873,III/b,,,2023-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000219,9473,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000220,90840,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000221,178313,III/a,,,2020-04-01,3409800,Pengadministrasi Perkantoran,7,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000222,46726,IX,,,2023-04-01,,Bidan Ahli Pertama,8,,,,,,,2026-10-13 14:58:14
+RPG-000224,46947,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000225,13699,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000226,516433,III/b,,,2023-04-01,,Perawat Mahir,7,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000227,15781,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000228,531062,III/d,,,2020-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000229,624878,III/d,,,2024-08-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000230,425387,III/c,,,2023-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000231,465562,III/b,,,2022-04-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000232,841332,III/b,,,2024-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000233,252569,III/c,,,2024-09-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000234,909593,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000235,234239,III/a,,,2023-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000236,50843,III/a,,,2023-04-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000237,89259,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000238,4599,III/a,,,2023-10-01,3517200,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000239,42374,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000240,140713,III/d,,,2024-04-01,4042500,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000241,12583,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000242,64873,III/a,,,2025-04-01,3461100,Bendahara Pengeluaran,7,,,,,,,2026-10-13 14:58:14
+RPG-000243,758062,BLUD,,,2025-01-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000244,70410,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000245,15580,VII,,,2022-03-01,,Perawat Terampil,6,,,,,,,2026-10-13 14:58:14
+RPG-000246,145142,III/b,,,2023-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000247,31231,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000248,52087,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000249,913562,BLUD,,,2025-05-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000250,332504,II/d,,,2022-04-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000251,92576,II/d,,,2022-04-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000252,20572,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000253,69051,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000254,2571,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000255,321206,III/b,,,2025-06-01,3607500,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000256,54573,IV/a,,,2022-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000257,86823,X,,,2023-04-01,3091900,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000258,201917,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000259,5762,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000260,33317,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000261,13153,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000262,39342,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000263,46609,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000264,1264,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,,,2026-10-13 14:58:14
+RPG-000265,68202,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000266,70485,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000267,25927,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000268,67443,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000269,98296,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000270,226624,II/d,,,2022-04-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000271,4133484,BLUD,,,2025-01-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000272,814553,II/d,,,2025-04-01,3320600,Pengadministrasi Perkantoran,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000273,118460,II/d,,,2025-04-01,3320600,Pengadministrasi Perkantoran,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000274,4934,III/b,,,2024-04-01,3607500,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000275,307279,III/b,,,2024-10-01,3607500,Penelaah Tehnis Kebijakan,7,,,,,Pengadministrasi Kepegawaian,,2026-10-13 14:58:14
+RPG-000276,883750,III/b,,,2025-10-01,3607500,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000277,419326,III/a,,,2023-10-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000278,390650,II/c,,,2023-10-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000279,815891,II/b,,,2025-01-01,,Pengelola Umum Operasional,1,,,,,Pengelola Umum Operasional,,2026-10-13 14:58:14
+RPG-000280,156040,I/b,,,2025-01-01,,Pengelola Umum Operasional,1,,,,,Pengelola Umum Operasional,,2026-10-13 14:58:14
+RPG-000281,362199,I/a,,,2025-01-01,,Pengelola Umum Operasional,1,,,,,Pengelola Umum Operasional,,2026-10-13 14:58:14
+RPG-000282,80360,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000283,39543,Honor,,,2025-11-01,,Pramutaman,0,,,,,,,2026-10-13 14:58:14
+RPG-000284,28217,IX,,,2024-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Adminkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000285,42268,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000286,75374,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000287,48203,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000288,92856,PW,,,2025-11-01,,TPKIP Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000289,30762,VII,,,2025-10-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000290,50163,V,,,2025-03-01,2511500,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000291,47617,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000292,93251,PW,,,2025-11-01,,Pengelola Umum Operasional,0,,,,,Pengelola Umum Operasional,,2026-10-13 14:58:14
+RPG-000293,99374,V,,,2025-03-01,2511500,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000294,89938,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000295,17951,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000296,76642,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000297,74748,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000298,80073,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000299,40311,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000300,4165,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000301,8729,PW,,,2025-11-01,,Penata Layanan Operasional,7,,,,,Penata Layanan Operasional,,2026-10-13 14:58:14
+RPG-000302,97018,IX,,,2024-03-01,3203600,TPKIP Ahli Pertama,8,,,,,TPKIP Ahli Pertama,,2026-10-13 14:58:14
+RPG-000303,10645,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000304,43837,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000305,76885,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000306,7445,PW,,,2025-11-01,,TPKIP Ahli Pertama,8,,,,,TPKIP Ahli Pertama,,2026-10-13 14:58:14
+RPG-000307,27854,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000308,4577,PW,,,2025-11-01,,Penata Layanan Operasional,7,,,,,Penata Layanan Operasional,,2026-10-13 14:58:14
+RPG-000309,87401,PW,,,2025-11-01,,Penata Layanan Operasional,7,,,,,Penata Layanan Operasional,,2026-10-13 14:58:14
+RPG-000310,80103,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000311,81313,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000312,1000261,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000313,45071,PW,,,2025-11-01,,Operator Layanan Operasional,0,,,,,,,2026-10-13 14:58:14
+RPG-000314,36847,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000315,2602,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000316,93375,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000317,43523,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000318,63859,IX,,,2024-03-01,3203600,Tenaga Sanitasi Lingkungan Ahli Pertama,8,,,,,,,2026-10-13 14:58:14
+RPG-000319,54428,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000320,12365,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000321,79669,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000322,92155,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000323,94528,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000324,99185,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000325,27791,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000326,40077,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000327,59960,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,8,,,,,,,2026-10-13 14:58:14
+RPG-000328,98489,PW,,,2025-11-01,,TPKIP Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000329,51926,V,,,2025-03-01,2511500,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000330,24195,PW,,,2025-11-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000331,11547,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000332,4771,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000333,80225,PW,,,2025-11-01,,Adminkes Ahli Pertama,8,,,,,Adminkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000334,31230,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000335,65486,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000336,401615,IV/a,,,2021-04-01,,Bidan Ahli Madya,11,,,,,Bidah Ahli Madya,,2026-10-13 14:58:14
+RPG-000337,4134546,IX,,,2024-03-01,3203600,Tenaga Sanitasi Lingkungan Ahli Pertama,8,,,,,Sanitarian Ahli Pertama,,2026-10-13 14:58:14
+RPG-000338,413004,IV/a,,,2020-04-01,,Adminkes Ahli Madya,11,,,,,Adminkes Ahli Madya,,2026-10-13 14:58:14
+RPG-000339,901955,III/d,,,2024-11-01,,Fisioterapis Ahli Muda,9,,,,,Fisioterapis Ahli Muda,,2026-10-13 14:58:14
+RPG-000340,66434,VII,,,2025-03-01,2858800,Fisioterapis Terampil,6,,,,,Fisioterapis Terampil,,2026-10-13 14:58:14
+RPG-000341,483213,III/d,,,2020-10-01,,Radiografer Penyelia,8,,,,,Radiografer Penyelia,,2026-10-13 14:58:14
+RPG-000342,891508,III/d,,,2020-10-01,,Radiografer Penyelia,8,,,,,Radiografer Penyelia,,2026-10-13 14:58:14
+RPG-000343,51538,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000344,39097,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000345,29616,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000346,67047,V,,,2025-03-01,2858800,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000347,5806,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000348,11057,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000349,72330,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000350,2645,PW,,,2025-11-01,,Operator Layanan Operasional,0,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000351,52075,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000352,61143,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000353,53022,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000354,56439,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000355,27146,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000356,14388,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000357,24640,IX,,,2024-03-01,3203600,TPKIP Ahli Pertama,8,,,,,TPKIP Ahli Pertama,,2026-10-13 14:58:14
+RPG-000358,89538,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000359,14334,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000360,8162,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000361,77852,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000362,94771,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000363,3240,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000364,47182,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000365,88003,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,,,2026-10-13 14:58:14
+RPG-000366,58356,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000367,22038,PW,,,2025-11-01,,Pengelola Umum Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000368,11951,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000369,56522,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000370,8221,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000371,8333,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000372,7977,VII,,,2024-03-01,2858800,Radiografer Terampil,6,,,,,Radiografer Terampil,,2026-10-13 14:58:14
+RPG-000373,96097,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000374,16567,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000375,27803,IX,,,2024-03-01,3203600,Tenaga Sanitasi Lingkungan Ahli Pertama,8,,,,,Sanitarian Ahli Pertama,,2026-10-13 14:58:14
+RPG-000376,717305,III/c,,,2020-10-01,,Fisioterapis Penyelia,8,,,,,Fisioterafis Penyelia,,2026-10-13 14:58:14
+RPG-000377,602776,III/c,,,2021-10-01,,Fisioterapis Ahli Muda,9,,,,,Fisioterafis Muda,,2026-10-13 14:58:14
+RPG-000378,258560,III/c,,,2022-04-01,,Fisioterapis Penyelia,8,,,,,Fisioterafis Penyelia,,2026-10-13 14:58:14
+RPG-000379,8768,VII,,,2024-03-01,2858800,Fisioterapis Terampil,6,,,,,Fisioterafis Terampil,,2026-10-13 14:58:14
+RPG-000380,41083,VII,,,2025-03-01,2858800,Fisioterapis Terampil,6,,,,,Fisioterapis Terampil,,2026-10-13 14:58:14
+RPG-000381,99017,VII,,,2024-03-01,2858800,Fisioterapis Terampil,6,,,,,Fisioterafis Terampil,,2026-10-13 14:58:14
+RPG-000382,72884,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000383,585071,III/d,,,,,TPKIP Penyelia,8,,,,,Penyuluh Kesmas Penyelia,,2026-10-13 14:58:14
+RPG-000384,824887,III/d,,,2023-10-01,,Perekam Medis Penyelia,8,,,,,Perekam Medis Penyelia,,2026-10-13 14:58:14
+RPG-000385,37035,IV/a,,,2024-08-01,4084900,Adminkes Ahli Madya,11,,,,,Adminkes Ahli Madya,,2026-10-13 14:58:14
+RPG-000386,77668,III/b,,,2024-12-01,3287000,Tehnisi Tranfusi Darah Mahir,7,,,,,,,2026-10-13 14:58:14
+RPG-000387,84499,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000388,395722,II/c,,,2025-04-01,2564200,Tehnisi Tranfusi Darah Pelaksana,6,,,,,Tehnisi Tranfusi Darah Pelaksana,,2026-10-13 14:58:14
+RPG-000389,630223,IV/a,,,2025-12-01,4213500,Bidan Ahli Madya,11,,,,,Bidan Ahli Madya,,2026-10-13 14:58:14
+RPG-000390,72707,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000391,581401,III/d,,,2025-04-01,4042500,Bidan Penyelia,8,,,,,Bidan Penyelia,,2026-10-13 14:58:14
+RPG-000392,120037,III/c,,,2024-10-01,4256600,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000393,481875,III/a,,,2020-04-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000394,9122,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000395,827120,III/a,,,2023-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000396,9977,III/a,,,2024-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000397,46344,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000398,8853,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000399,93193,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000400,92706,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000401,4134810,VII,,,2022-02-01,2647200,Bidan Terampil,7,,,,,,,2026-10-13 14:58:14
+RPG-000402,60319,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000403,84967,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000404,75856,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000405,1000144,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000406,31809,VII,,,2022-02-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000407,85473,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000408,68528,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000409,8488,IV/b,,,2025-10-01,5456400,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000410,626282,III/b,,,2024-04-01,2995000,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000411,62853,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000412,53012,IV/a,,,2021-10-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000413,15643,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000414,41643,III/d,,,2024-09-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000415,785418,III/a,,,2023-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000416,82214,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000417,42609,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000418,24400,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000419,15551,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000420,5725,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000421,7507,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000422,44172,PW,,,2025-11-01,,TPKIP Ahli Pertama,8,,,,,TPKIP Ahli Pertama,,2026-10-13 14:58:14
+RPG-000423,33274,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000424,946220,IV/a,,,2025-04-01,4346200,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000425,54992,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000426,240801,III/d,,,2024-12-01,600000,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000427,310250,III/a,,,2018-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000428,46306,PW,,,2025-11-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000430,89955,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000431,85141,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000432,10887,VII,,,2023-04-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000433,2490,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000434,393594,III/d,,,2025-04-01,,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000435,999203,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000436,560060,III/d,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000437,354757,III/b,,,2019-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000438,756418,III/a,,,2018-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000439,576373,III/b,,,2024-04-01,3607500,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000440,514528,III/b,,,2024-04-01,2995000,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000441,16863,III/a,,,2024-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000442,62335,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000443,59220,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000444,88192,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000445,3627,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000446,16231,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000447,33646,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000448,9756,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000449,31723,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000450,13452,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000451,42915,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000452,96898,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000453,15057,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000454,76555,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000455,76438,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000456,35618,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000457,417923,IV/b,,,2025-06-01,5456400,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000458,698432,III/d,,,2020-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000459,168742,IV/a,,,2025-04-01,4346200,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000460,802664,III/d,,,2020-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000461,439519,III/d,,,2024-08-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000462,11759,III/d,,,2022-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000463,444711,III/b,,,2023-04-01,,Terapis Gigi dan Mulut Penyelia,8,,,,,Terapis Gigi dan Mulut Ahli Penyelia,,2026-10-13 14:58:14
+RPG-000464,806380,III/d,,,2023-04-01,,Terapis Gigi dan Mulut Ahli Muda,9,,,,,Terapis Gigi dan Mulut Ahli Muda,,2026-10-13 14:58:14
+RPG-000465,900368,III/d,,,2026-04-01,3919100,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000466,376023,III/c,,,2023-04-01,,Terapis Gigi dan Mulut Penyelia,8,,,,,Terapis Gigi dan Mulut Penyelia,,2026-10-13 14:58:14
+RPG-000467,792464,III/d,,,2024-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000468,101348,III/d,,,2022-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000469,686521,III/d,,,2026-04-01,4301200,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000470,676353,III/b,,,2020-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000471,189973,III/c,,,2022-10-01,3172300,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000472,121055,III/c,,,2023-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000473,941680,III/a,,,2018-04-01,,Pengadministrasi Perkantoran,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000474,899553,III/c,,,2025-04-01,4256600,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000475,22393,PW,,,2025-11-01,,Adminkes Ahli Pertama,7,,,,,Adminkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000476,168328,III/b,,,2022-04-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000477,797540,III/a,,,2025-01-01,,Pengadministrasi Perkantoran,5,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000478,689768,II/d,,,2018-10-01,,Perawat Terampil,6,,,,,Pemulasaran Jenasah,,2026-10-13 14:58:14
+RPG-000479,297816,III/a,,,2021-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000480,991620,III/b,,,2024-06-01,,Perawat Ahli Pertama,8,,,,,,,2026-10-13 14:58:14
+RPG-000481,592334,III/b,,,2025-06-01,3461100,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000482,98372,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000483,32327,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000484,84407,VII,,,2024-03-01,2858800,Terapis Gigi dan Mulut Terampil,6,,,,,Terapis Gigi dan Mulut Terampil,,2026-10-13 14:58:14
+RPG-000485,61746,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000486,49643,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000487,614301,IV/a,,,2023-10-01,,Bidan Ahli Madya,11,,,,,Bidah Ahli Madya,,2026-10-13 14:58:14
+RPG-000488,13666,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000489,790445,III/a,,,2024-04-01,2873500,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000490,4076,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000491,128084,III/a,,,2023-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000492,12833,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000493,88124,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000494,1000114,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000495,371515,III/c,,,2023-04-01,,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000496,790971,IV/b,,,2023-04-01,4603500,Bidan Ahli Madya,11,,,,,Bidan Ahli Madya,,2026-10-13 14:58:14
+RPG-000497,455176,III/b,,,2022-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000498,89378,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000499,998753,VII,,,2022-02-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000500,681567,IV/b,,,2022-04-01,4603500,Bidan Ahli Madya,11,,,,,Bidan Ahli Madya,,2026-10-13 14:58:14
+RPG-000501,20032,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000502,90689,X,,,,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000503,20426,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000504,22266,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000505,883014,III/b,,,2024-04-01,2995000,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000506,700816,III/a,,,2025-06-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000507,920226,III/b,,,2021-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000508,37068,III/a,,,2024-04-01,2873500,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000509,334492,III/a,,,2023-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000510,25491,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000511,72547,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000512,388279,III/c,,,2023-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000513,464,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000514,428647,III/d,,,2022-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000515,34110,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000516,466451,III/b,,,2023-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000517,23054,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000518,67422,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000519,15652,PW,,,2025-11-01,,Adminkes Ahli Pertama,8,,,,,Adminkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000520,62251,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000521,246288,III/d,,,2020-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000522,225368,III/c,,,2019-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000523,78660,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000524,29461,III/c,,,2025-01-01,,Penelaah Tehnis Kebijakan,7,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000525,47397,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,,,2026-10-13 14:58:14
+RPG-000526,21355,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000527,25529,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000528,47052,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000529,454462,III/c,,,2018-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000530,99678,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000531,570094,III/a,,,2022-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000532,279991,III/b,,,2023-10-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000533,38709,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000534,78140,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000535,670008,III/b,,,2026-07-01,3497300,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000536,843768,III/b,,,2020-04-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000537,42703,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000538,41574,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000539,52610,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000540,30395,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000541,29105,PW,,,2025-11-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000542,48288,III/d,,,2024-06-01,4169900,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000543,78187,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000544,678885,III/c,,,2023-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000545,772710,III/c,,,2022-10-01,3272200,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000546,83649,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000547,50887,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000548,952654,IV/c,,,2026-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000549,660461,III/d,,,2020-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000550,817187,IV/a,,,2022-10-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000551,771106,III/d,,,2024-04-01,3799400,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000552,550697,III/c,,,2021-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000553,500687,III/c,,,2022-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000554,70845,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000555,97224,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000556,87065,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000557,11701,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000558,5791,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000559,54436,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000560,96130,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000561,321284,III/c,,,2023-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000562,538830,III/a,,,2023-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000563,597482,III/a,,,2023-10-01,,Perawat Mahir,7,,,,,Perawat Mahir,,2026-10-13 14:58:14
+RPG-000564,5123,PW,,,2025-11-01,,Tenaga Sanitasi Lingkungan Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000565,15854,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000566,96942,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000567,24576,VII,,,2023-04-01,2647200,Asisten Penata Anestesi Terampil,6,,,,,Asisten Penata Anestesi Terampil,,2026-10-13 14:58:14
+RPG-000568,18573,Kontrak,,,2019-09-02,,Dokter Spesialis Obsgin Ginekologi Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000569,364810,III/d,,,,,Dokter Spesialis Neurologi Muda,10,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000570,645995,III/d,,,2025-06-01,,Dokter Spesialis Neurologi Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000571,68030,Honor,,,2027-03-01,,Operator Layanan Operasional,0,,,,,,,2026-10-13 14:58:14
+RPG-000572,95697,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000573,35667,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000574,20886,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000575,3654,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000576,25497,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000577,29769,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000578,91936,PW,,,2025-11-01,,Pengelola Umum Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000579,6589,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000580,58076,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000581,43354,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000582,9042,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000583,33796,PW,,,2025-11-01,,Penata Layanan Operasional,7,,,,,Penata Layanan Operasional,,2026-10-13 14:58:14
+RPG-000584,998452,II/c,,,2025-04-01,2564200,Tehnisi Tranfusi Darah Pelaksana,6,,,,,Tehnisi Tranfusi Darah Pelaksana,,2026-10-13 14:58:14
+RPG-000585,462660,III/d,,,2024-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000586,678062,III/c,,,2022-10-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000587,102915,III/d,,,2026-07-01,4301200,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000588,54139,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000589,55821,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000590,4134316,X,,,2024-04-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000591,58430,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000592,73145,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000593,88306,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000594,35595,VII,,,2024-03-01,2858800,Asisten Apoteker Terampil,6,,,,,Asisten Apoteker Terampil,,2026-10-13 14:58:14
+RPG-000595,68948,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000596,93145,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000597,930482,IV/c,,,2025-04-01,,Dokter Spesialis THT Madya,12,,,,,Dokter Madya,,2026-10-13 14:58:14
+RPG-000598,84868,IX,,,2023-04-01,3203600,Penata Anestesi Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000599,27709,VII,,,2024-03-01,2858800,Nutrisionis Terampil,6,,,,,Nutrisionis Terampil,,2026-10-13 14:58:14
+RPG-000600,72623,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000601,12031,VII,,,2024-03-01,2858800,Nutrisionis Terampil,6,,,,,Nutrisionis Terampil,,2026-10-13 14:58:14
+RPG-000602,47797,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,,,2026-10-13 14:58:14
+RPG-000603,83671,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000604,35870,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000605,575258,III/b,,,2023-10-01,2950600,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000606,4752,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000607,90513,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000608,86223,R3/L,,,2024-12-31,,,0,,,,,,,2026-10-13 14:58:14
+RPG-000609,22343,X,,,2023-04-01,3091900,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000610,30745,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000611,21912,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000613,47389,Kontrak,,,2020-01-02,,Dokter Spesialis Patologi Anatomi Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000614,14744,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000615,30122,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000616,998949,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000617,93033,X,,,2024-03-01,3339100,Apoteker Ahli Pertama,8,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000618,274,IV/a,,,2023-04-01,,Bidan Ahli Madya,11,,,,,Bidah Ahli Madya,,2026-10-13 14:58:14
+RPG-000619,99944,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000620,4134054,X,,,2026-01-12,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000621,311695,II/c,,,2023-04-01,2859800,Pengadministrasi Perkantoran,5,,,,,Penelaah Tehnis Kebijakan,,2026-10-13 14:58:14
+RPG-000622,66158,PW,,,2025-11-01,,Perawat Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000623,31913,PW,,,2025-11-01,,Adminkes Ahli Pertama,8,,,,,Adminkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000624,65209,PW,,,2025-11-01,,Operator Layanan Operasional,0,,,,,,,2026-10-13 14:58:14
+RPG-000625,81033,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000626,769007,III/a,,,2025-06-01,3057300,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000627,993144,III/d,,,2016-10-16,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000628,37580,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000629,55176,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000630,10294,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000631,80051,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000632,93347,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000633,35420,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000634,20325,VII,,,2024-03-01,2858800,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000635,48333,PW,,,2025-11-01,,Penata Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000636,72951,VII,,,2024-03-01,2858800,Radiografer Terampil,6,,,,,Radiografer Terampil,,2026-10-13 14:58:14
+RPG-000637,35077,VII,,,2025-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000638,96951,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000639,37362,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000640,50052,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000641,67654,PW,,,2025-11-01,,Dokter Umum Pertama,9,,,,,Dokter Ahli Pertama,,2026-10-13 14:58:14
+RPG-000642,25691,VII,,,2024-03-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000643,21831,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000644,10677,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000645,15360,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000646,4133407,III/b,,,2025-06-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahlu Pertama,,2026-10-13 14:58:14
+RPG-000647,28503,PW,,,2025-11-01,,Pengelola Layanan Operasional,6,,,,,Pengelola Layanan Operasional,,2026-10-13 14:58:14
+RPG-000648,58712,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000649,875223,III/d,,,2020-04-01,,Nutrisionis Ahli Muda,9,,,,,Nutrisionis Muda,,2026-10-13 14:58:14
+RPG-000650,70697,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000651,640491,III/a,,,2023-04-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000652,29859,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000653,890970,III/c,,,2024-10-01,600000,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000654,48157,III/c,,,2023-04-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000655,213811,III/d,,,2025-02-01,,Dokter Spesialis Patologi Klinik Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000656,595381,II/d,,,2021-10-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000657,58467,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000658,60797,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000659,34226,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000660,98095,PW,,,2025-11-01,,Pengelola Layanan Operasional,6,,,,,Pengelola Layanan Operasional,,2026-10-13 14:58:14
+RPG-000661,40873,VII,,,2024-03-01,2858800,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000662,206599,II/c,,,2022-02-01,1841400,Tehnisi Tranfusi Darah Pelaksana,6,,,,,Tehnisi Tranfusi Darah Pelaksana,,2026-10-13 14:58:14
+RPG-000663,281631,III/d,,,2017-10-01,,Radiografer Penyelia,8,,,,,Radiografer Penyelia,,2026-10-13 14:58:14
+RPG-000664,15226,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,,,2026-10-13 14:58:14
+RPG-000665,908873,Kontrak,,,2023-05-01,,Dokter Spesialis Anak Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000666,807673,III/a,,,2024-10-01,,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000667,27249,Kontrak,,,2022-03-01,,Dokter Umum Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000668,67018,PW,,,2025-11-01,,Pengelola Layanan Operasional,,,,,,Pengelola Layanan Operasional,,2026-10-13 14:58:14
+RPG-000669,16577,PK,,,2025-06-01,,Pranata Labkes Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000670,81098,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000671,345868,III/b,,,2022-02-01,,Dokter Umum Pertama,9,,,,,Dokter Pertama,,2026-10-13 14:58:14
+RPG-000672,711495,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000673,907551,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000674,920255,VII,,,2022-02-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000675,175075,VII,,,2022-02-01,,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000676,473677,III/a,,,2022-02-01,,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000677,442084,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000678,910159,VII,,,2022-02-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000679,39178,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000680,42522,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000681,77117,IX,,,2024-03-01,3203600,Fisioterapis Ahli Pertama,8,,,,,Fisioterapis Ahli Pertama,,2026-10-13 14:58:14
+RPG-000682,4,IV/a,,,2015-10-01,,Kepala Bagian Umum,11,,,,,Kepala Bagian Umum,,2026-10-13 14:58:14
+RPG-000683,822,IV/a,,,,,Kepala Bagian Perencanaan,11,,,,,Kepala Bagian Perencanaan,,2026-10-13 14:58:14
+RPG-000684,43277,PW,,,2025-11-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000685,79887,III/d,,,2012-04-01,,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000686,21595,PW,,,2025-11-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000687,73446,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000688,78215,PW,,,2025-11-01,,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000689,74383,PW,,,2025-11-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000690,15971,KKI,,,2026-01-01,,Petugas Kebersihan-Binatu,,,,,,,,2026-10-13 14:58:14
+RPG-000691,4135216,R4/L-2,,,2025-07-14,,Bidan Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000692,46537,PW,,,2025-11-01,,Perawat Terampil,6,,,,,,,2026-10-13 14:58:14
+RPG-000693,18542,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000694,36811,PW,,,2025-11-01,,Bidan Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000695,77485,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000696,76669,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,,,2026-10-13 14:58:14
+RPG-000697,68483,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000698,28437,PW,,,2025-11-01,,Operator Layanan Operasional,5,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000699,47596,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000700,4134166,X,,,2026-02-11,,Apoteker Ahli Pertama,8,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000701,99866,KKI,,,2026-01-01,,Petugas Kebersihan-Binatu,,,,,,,,2026-10-13 14:58:14
+RPG-000702,69356,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000703,75628,VII,,,2025-10-01,2858800,Teknisi Elektromedik Terampil,6,,,,,Teknisi Elektromedis Terampil,,2026-10-13 14:58:14
+RPG-000704,325268,III/c,,,2023-10-01,,Dokter Spesialis Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000705,999455,Kontrak,,,2022-01-02,,Dokter Spesialis Obsgin Ginekologi Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000706,93977,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000707,998744,PW,,,2025-11-01,,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000708,51987,PK,,,2025-07-01,,Radiografer Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000709,73928,PW,,,2025-11-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000710,999533,PW,,,2025-11-01,,Adminkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000711,547428,III/c,,,2023-10-01,3272200,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000712,69108,PW,,,2025-11-01,,Operator Layanan Operasional,,,,,,,,2026-10-13 14:58:14
+RPG-000713,771845,IV/a,,,2023-04-01,,Perawat Ahli Madya,11,,,,,Perawat Ahli Madya,,2026-10-13 14:58:14
+RPG-000714,542814,III/c,,,2023-10-01,3272200,Dokter Spesialis Gigi Konservasi Muda,10,,,,,Dokter Spesialis Muda,,2026-10-13 14:58:14
+RPG-000715,72893,III/a,,,2026-03-01,2785700,Penata Anestesi Ahli Pertama,8,,,,,Penata Anestesi Ahli Pertama,,2026-10-13 14:58:14
+RPG-000716,82945,III/a,,,2026-03-01,2785700,Penata Anestesi Ahli Pertama,8,,,,,Penata Anestesi Ahli Pertama,,2026-10-13 14:58:14
+RPG-000717,998743,Kontrak,,,2023-01-09,,Dokter Umum Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000718,998709,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000719,998713,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000720,998711,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000721,998741,Kontrak,,,2023-02-15,,Dokter Umum Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000722,4134540,Kontrak,,,2025-07-01,,Dokter Spesialis Jantung Pembuluh Darah Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000723,998953,PW,,,2025-11-01,,Perawat Terampil,,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000724,998932,III/c,,,2023-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000725,998943,PK,,,2025-06-01,,Nutrisionis Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000726,998958,PW,,,2025-11-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000727,998948,PW,,,2025-11-01,,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000728,998956,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000729,998965,PK,,,2025-06-01,,Pranata Labkes Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000730,998962,PK,,,2025-06-01,,Pranata Labkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000731,998963,PK,,,2025-06-01,,Pranata Labkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000732,998964,PK,,,2025-06-01,,Pranata Labkes Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000733,999534,PK,,,2025-06-01,,Asisten Apoteker Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000734,999518,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000735,999517,PK,,,2025-06-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000736,999549,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000737,999546,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000738,1000403,Kontrak,,,2023-08-15,,Dokter Spesialis Anasthesi Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000739,999700,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000740,999687,PK,,,2025-06-01,,Fisioterapis Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000741,999688,PK,,,2025-06-01,,Apoteker Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000742,999715,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000743,999703,II/c,,,2018-08-01,2332500,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000744,999984,III/c,,,2018-04-01,2929100,Dokter Spesialis Patologi Klinik Muda,10,,,,,Dokter Muda,,2026-10-13 14:58:14
+RPG-000745,1000055,PK,,,2025-06-01,,Pranata Labkes Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000746,4134610,Kontrak,,,2024-01-31,,Dokter Spesialis Bedah Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000747,1000097,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,0,,,,,,,2026-10-13 14:58:14
+RPG-000748,1000098,PK,,,2025-06-01,,Terapis Gigi dan Mulut Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000749,1000058,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000750,1000010,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000751,1000068,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000752,1000070,PK,,,2025-06-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000753,1000072,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000754,1000069,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000755,1000090,PK,,,2025-06-01,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000756,1000071,III/a,,,2023-04-01,2830900,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000757,1000094,III/d,,,2024-12-01,4169900,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000758,1000095,III/b,,,,,Apoteker Ahli Pertama,8,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000759,1000103,III/c,,,2023-04-01,3272200,Perawat Penyelia,8,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000760,1000105,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000761,1000159,PK,,,2025-06-01,,Penata Anestesi Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000762,1000109,PK,,,2025-06-01,,Radiografer Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000763,1000130,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000764,1000126,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000765,1000150,IX,,,2024-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000766,1000110,VII,,,2024-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000767,1000117,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000768,1000125,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000769,1000120,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000770,1000112,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000771,1000127,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000772,1000116,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000773,1000113,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000774,1000122,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000775,1000129,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000776,1000146,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000777,1000123,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000778,1000142,VII,,,2024-03-01,2858800,Pranata Labkes Terampil,6,,,,,Pranata Labkes Terampil,,2026-10-13 14:58:14
+RPG-000779,1000124,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000780,1000119,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000781,1000149,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000782,1000128,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000783,1000115,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000784,1000111,VII,,,2024-03-01,2858800,Nutrisionis Terampil,6,,,,,Nutrisionis Terampil,,2026-10-13 14:58:14
+RPG-000785,1000121,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000786,1000147,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000787,1000118,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000788,1000151,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000789,1000148,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000790,1000169,KKI,,,2026-01-01,,Petugas Transporter,0,,,,,Operator Aplikasi Absensi,,2026-10-13 14:58:14
+RPG-000791,1000168,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000792,1000160,PK,,,2025-06-01,,Nutrisionis Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000793,1000173,PK,,,2025-06-01,,Nutrisionis Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000794,1000181,PK,,,2025-06-01,,Terapis Gigi dan Mulut Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000795,1000184,PK,,,2025-06-01,,Pranata Labkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000796,1000179,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000797,1000182,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000798,1000183,KKI,,,2025-01-01,,Petugas Kebersihan-CCSD,,,,,,,,2026-10-13 14:58:14
+RPG-000799,1000206,PK,,,2025-06-01,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000800,1000188,VII,,,2024-03-01,2858800,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000801,1000246,KKI,,,2025-01-01,,Juru Masak,,,,,,,,2026-10-13 14:58:14
+RPG-000802,1000253,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000803,1000256,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000804,1000260,PK,,,2025-06-01,,Perekam Medik Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000805,1000270,PK,,,2025-06-01,,Pranata Labkes Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000806,1000283,PK,,,2025-06-01,,Radiografer Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000807,1000268,II/d,,,2021-10-01,2474700,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000808,1000282,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000809,1000285,KKI,,,2025-01-01,,Petugas Kebersihan-Binatu,,,,,,,,2026-10-13 14:58:14
+RPG-000810,1000287,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000811,1000288,PK,,,2025-06-01,,Perawat Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000812,1000399,Kontrak,,,2024-09-02,,Dokter Umum Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000813,4132874,Kontrak,,,2022-08-01,,Dokter Spesialis Dalam Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000814,4132882,Kontrak,,,2024-03-04,,Dokter Umum Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000815,4132946,II/d,,,2021-10-01,2474700,Perawat Terampil,6,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000816,4132948,PK,,,2025-06-01,,Penata Anestesi Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000817,4133016,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000818,4132982,III/b,,,2024-04-01,,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000819,4133021,KKI,,,2026-01-01,,Petugas Transporter,,,,,,Petugas Transporter,,2026-10-13 14:58:14
+RPG-000820,4132987,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000821,4133020,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000822,4133051,PK,,,2025-06-01,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000823,4133029,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,0,,,,,,,2026-10-13 14:58:14
+RPG-000824,4133046,PK,,,2025-06-01,,Apoteker Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000825,4133047,Kontrak,,,2025-02-12,,Dokter Umum Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000826,4133080,III/b,,,2018-08-01,2724400,Dokter Spesialis Paru Pertama,8,,,,,Dokter Pertama,,2026-10-13 14:58:14
+RPG-000827,4133133,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000828,4133132,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000829,4133283,III/a,,,2026-03-01,2785700,Pranata Labkes Ahli Pertama,8,,,,,Pranata Labkes Ahli Pertama,,2026-10-13 14:58:14
+RPG-000830,4133284,III/a,,,2026-03-01,2785700,Pranata Komputer Ahli Pertama,8,,,,,Pranata Komputer Ahli Pertama,,2026-10-13 14:58:14
+RPG-000831,4133131,Kontrak,,,2025-03-01,,Dokter Umum Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000832,4133532,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,0,,,,,,,2026-10-13 14:58:14
+RPG-000833,4133533,PK,,,2025-06-01,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000834,4133535,PK,,,2025-06-01,,Apoteker Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000835,4133536,PK,,,2025-06-01,,Pranata Labkes Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000836,12121212,Kontrak,,,2025-07-01,,Dokter Spesialis Bedah Mulut Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000837,4133111,Kontrak,,,2025-07-01,,Dokter Spesialis Dalam Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000838,4133755,Kontrak,,,2025-09-01,,Dokter Umum Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000839,4133756,Kontrak,,,2025-09-01,,Dokter Umum Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000840,4133565,IX,,,2025-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000841,4133563,IX,,,2025-03-01,3203600,Bidan Ahli Pertama,8,,,,,Bidan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000842,4133566,IX,,,2025-03-01,3203600,Adminkes Ahli Pertama,8,,,,,Administrator Kesehatan Ahli Pertama,,2026-10-13 14:58:14
+RPG-000843,4133578,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000844,4133579,VII,,,2025-03-01,2858800,Bidan Terampil,6,,,,,Bidan Terampil,,2026-10-13 14:58:14
+RPG-000845,4133643,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000846,4133677,PK,,,2025-08-08,,Nutrisionis Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000847,4133673,KKI,,,2026-01-01,1500000,Pramu Bakti/Pramusaji,,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000848,4133666,KKI,,,2026-01-01,,Petugas Transporter,0,,,,,,,2026-10-13 14:58:14
+RPG-000849,4133757,Kontrak,,,2025-09-01,,Dokter Spesialis Bedah Saraf Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000850,4133762,PK,,,2025-09-19,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000851,4133761,PK,,,2025-09-19,,Perawat Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000852,4133794,PK,,,2025-10-16,,Perawat Ahli Pertama,0,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000853,4133811,KKI,,,2025-10-16,,Petugas Kebersihan-CCSD,0,,,,,,,2026-10-13 14:58:14
+RPG-000854,4133795,PK,,,2025-10-16,,Perekam Medik Terampil,0,,,,,,,2026-10-13 14:58:14
+RPG-000855,4133814,KKI,,,2026-01-01,,Petugas Transporter,,,,,,,,2026-10-13 14:58:14
+RPG-000856,4133815,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000857,4133827,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,0,,,,,,,2026-10-13 14:58:14
+RPG-000858,4133823,PK,,,,,Perawat Terampil,,,,,,,,2026-10-13 14:58:14
+RPG-000859,4133825,PK,,,,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000860,4133824,PK,,,2025-11-13,,Perawat Ahli Pertama,0,,,,,,,2026-10-13 14:58:14
+RPG-000861,4133826,PK,,,,,Perawat Ahli Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000862,4133832,KKI,,,2025-11-05,,Pengemudi,,,,,,,,2026-10-13 14:58:14
+RPG-000863,4133872,X,,,2025-10-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000864,4133910,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,,,2026-10-13 14:58:14
+RPG-000865,4133909,PK,,,2025-12-01,,Perawat Terampil,,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000866,4133907,PK,,,2025-12-01,,Perawat Ahli Pertama,,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000867,4133906,KKI,,,2026-01-01,,Pramu Bakti/Pramusaji,,,,,,Pengadministrasi Perkantoran,,2026-10-13 14:58:14
+RPG-000868,4133905,PK,,,2025-12-01,,Pranata Labkes Ahli Pertama,,,,,,Pranata Laboratorium Kesehatan,,2026-10-13 14:58:14
+RPG-000869,4133904,PK,,,2025-12-01,,Perawat Ahli Pertama,,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000870,4133903,PK,,,2025-12-01,,Pranata Labkes Ahli Pertama,,,,,,Pranata Laboratorium Kesehatan,,2026-10-13 14:58:14
+RPG-000871,4133902,PK,,,2025-12-01,,Perawat Ahli Pertama,,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000872,4133891,PK,,,2025-12-01,,Perawat Terampil,,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000873,4133892,KKI,,,2025-12-01,,Petugas Kebersihan-Binatu,,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000874,4133893,PK,,,2025-12-01,,Radiografer Terampil,,,,,,Radiografer Terampil,,2026-10-13 14:58:14
+RPG-000875,4133894,PK,,,2025-12-01,,Pranata Labkes Ahli Pertama,,,,,,Pranata Laboratorium Kesehatan,,2026-10-13 14:58:14
+RPG-000876,4133895,PK,,,2025-12-01,,Apoteker Ahli Pertama,,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000877,4133896,PK,,,2025-12-01,,Radiografer Terampil,,,,,,Radiografer Terampil,,2026-10-13 14:58:14
+RPG-000878,4133897,PK,,,2025-12-01,,Apoteker Ahli Pertama,,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000879,4133898,PK,,,2025-12-01,,Apoteker Ahli Pertama,,,,,,Apoteker Ahli Pertama,,2026-10-13 14:58:14
+RPG-000880,4133899,Kontrak,,,2025-12-01,,Dokter Umum Pertama,,,,,,Dokter Umum,,2026-10-13 14:58:14
+RPG-000881,4133900,PK,,,2025-12-01,,Perawat Terampil,,,,,,Perawat Terampil,,2026-10-13 14:58:14
+RPG-000882,4133901,PK,,,2025-12-01,,Penata Anestesi Ahli Pertama,,,,,,Penata Anestesi Ahli Pertama,,2026-10-13 14:58:14
+RPG-000883,4133918,Kontrak,,,2025-12-10,,Dokter Umum Pertama,,,,,,Dokter Umum Pertama,,2026-10-13 14:58:14
+RPG-000884,4133822,Kontrak,,,2025-11-01,,Dokter Umum Pertama,,,,,,Dokter Umum Pertama,,2026-10-13 14:58:14
+RPG-000885,4133821,Kontrak,,,2025-11-01,,Dokter Umum Pertama,,,,,,Dokter Umum Pertama,,2026-10-13 14:58:14
+RPG-000886,4133920,III/a,,,2023-04-01,2920100,Bidan Mahir,7,,,,,Bidan Mahir,,2026-10-13 14:58:14
+RPG-000887,4134034,KKI,,,2026-01-19,,Pengemudi,0,,,,,Operator Layanan Operasional,,2026-10-13 14:58:14
+RPG-000888,4134038,II/d,,,2025-10-01,3672700,Terapis Gigi dan Mulut Terampil,6,,,,,Terapis Gigi dan Mulut Terampil,,2026-10-13 14:58:14
+RPG-000889,4134276,III/d,,,2022-04-01,,Perawat Ahli Muda,9,,,,,Perawat Penyelia,,2026-10-13 14:58:14
+RPG-000890,4134317,III/d,,,2025-10-01,,Perawat Ahli Muda,9,,,,,Perawat Ahli Muda,,2026-10-13 14:58:14
+RPG-000891,4133845,X,,,2024-03-01,3339100,Perawat Ahli Pertama,8,,,,,Perawat Ahli Pertama,,2026-10-13 14:58:14
+RPG-000892,4134561,III/d,,,,,Dokter Spesialis Anasthesi Muda,10,,,,,Dokter Spesialis Muda,,2026-10-13 14:58:14
+RPG-000893,9134618,Kontrak,,,,,Dokter Spesialis Anasthesi Pertama,,,,,,,,2026-10-13 14:58:14
+RPG-000894,4134804,III/d,,,2023-10-01,3306500,Bidan Ahli Muda,9,,,,,Bidan Ahli Muda,,2026-10-13 14:58:14
+RPG-000895,4134806,IV/d,,,2021-12-10,,Dokter Umum Ahli Utama,14,,,,,,,2026-10-13 14:58:14
+RPG-000896,4135610,II/c,,,2026-03-01,2485900,Pranata Labkes Terampil,,,,,,,,2026-10-13 14:58:14

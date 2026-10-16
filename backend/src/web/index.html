@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?= appName ?></title>
+  <?!= include('web/style'); ?>
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">SP</div>
+      <div>
+        <div class="brand-title"><?= appName ?></div>
+        <div class="brand-sub">v<?= versi ?></div>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidebar-footer">RSUD Luwuk<br>Subbag Kepegawaian</div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-title" id="pageTitle">Memuat…</div>
+      <div class="user-chip" id="userChip"></div>
+    </div>
+    <div id="content"><div class="loading">Memuat data…</div></div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<?!= include('web/app'); ?>
+</body>
+</html>

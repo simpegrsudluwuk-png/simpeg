@@ -1,0 +1,41 @@
+name: Deploy GAS Backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy-backend.yml'
+
+jobs:
+  clasp-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install clasp
+        run: npm i -g @google/clasp
+
+      - name: Authenticate clasp
+        env:
+          CLASP_CREDENTIALS: ${{ secrets.CLASP_CREDENTIALS }}
+        run: |
+          echo "$CLASP_CREDENTIALS" > clasp-credentials.json
+          clasp login --creds clasp-credentials.json
+
+      - name: Push to GAS
+        run: |
+          clasp push
+
+      - name: Deploy as new version
+        run: |
+          clasp deploy --description "Automated deploy $(date +'%Y-%m-%d %H:%M:%S')"
